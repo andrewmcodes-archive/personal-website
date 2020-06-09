@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% include head.html %}
+</head>
+
+<body class="min-h-screen {{ page.layout }} {{ page.page_class }}">
+  {% include navbar.html %}
+
+  <main class="text-gray-700">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+</body>
+
+</html>
