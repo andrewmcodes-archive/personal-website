@@ -20,3 +20,7 @@ group :development, :test do
   gem "pry"
   gem "standard"
 end
+
+group :bridgetown_plugins do
+  gem "bridgetown-seo-tag", "~> 3.0"
+end

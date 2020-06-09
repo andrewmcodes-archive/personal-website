@@ -1,0 +1,25 @@
+<div class="relative px-4 pt-16 pb-20 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+  <div class="absolute inset-0">
+    <div class="h-1/3 sm:h-2/3"></div>
+  </div>
+  <div class="relative mx-auto max-w-7xl">
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-50 sm:text-4xl sm:leading-10">
+        Blog
+      </h2>
+    </div>
+    <div class="grid max-w-lg gap-5 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
+      {% for post in site.posts limit:3 %}
+      {% include post_item.html %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="max-w-md mx-auto mt-5 sm:flex sm:justify-center md:mt-8">
+    <div class="rounded-md shadow">
+      <a href="#"
+        class="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-blue-600 border border-transparent rounded-md hover:bg-blue-500 focus:outline-none focus:shadow-outline-blue md:py-4 md:text-lg md:px-10">
+        See More
+      </a>
+    </div>
+  </div>
+</div>

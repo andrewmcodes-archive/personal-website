@@ -5,14 +5,20 @@
   {% include head.html %}
 </head>
 
-<body class="min-h-screen {{ page.layout }} {{ page.page_class }}">
-  {% include navbar.html %}
+{% if bridgetown.environment == "development" %}
 
-  <main class="text-gray-700">
-    {{ content }}
-  </main>
+<body class="debug-screens min-h-screen text-gray-100 bg-cool-gray-900 {{ page.layout }} {{ page.page_class }}">
+  {% else %}
 
-  {% include footer.html %}
-</body>
+  <body class="min-h-screen text-gray-100 bg-cool-gray-900 {{ page.layout }} {{ page.page_class }}">
+    {% endif %}
+    {% include navbar.html %}
+
+    <main class="main">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+  </body>
 
 </html>

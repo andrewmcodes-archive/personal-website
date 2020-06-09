@@ -1,0 +1,13 @@
+- name: Rubocop Linter Action
+  url: https://rubocop-linter-action.readthedocs.io
+  repo: https://github.com/andrewmcodes/rubocop-linter-action
+  role: author
+  category: ci
+  tags:
+    - ruby_on_rails
+- name: RailsBytes
+  url: https://railsbytes.com
+  role: contributor
+  category: rails
+  tags:
+    - ruby_on_rails

@@ -16,3 +16,7 @@ application.register('dropdown', Dropdown)
 // application.register('tabs', Tabs)
 // application.register('popover', Popover)
 application.register('toggle', Toggle)
+
+import '../styles/prism.scss'
+import Prism from './prism.js'
+Prism.highlightAll()

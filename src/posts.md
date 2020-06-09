@@ -1,15 +1,16 @@
 ---
 layout: page
-title: Posts
+title: Blog
+subtitle: Blog index
 permalink: /posts/
 ---
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
-
-If you have a lot of posts, you may want to consider adding [pagination](https://www.bridgetownrb.com/docs/content/pagination)!
+<section class="text-gray-500 bg-gray-900 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="grid max-w-lg gap-5 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
+    {% for post in site.posts %}
+    {% include post_item.html %}
+    {% endfor %}
+    </div>
+  </div>
+</section>

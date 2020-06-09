@@ -2,6 +2,24 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
-
-{{ content }}
+<section>
+  <div class="pb-32 gradient-blue">
+    <header class="py-10">
+      <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold leading-9 text-white">
+          {{ page.title }}
+        </h1>
+      </div>
+    </header>
+  </div>
+  <div class="-mt-32">
+    <div class="px-4 pb-12 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div class="px-5 py-6 bg-white rounded-lg shadow sm:px-6">
+        <img class="object-cover w-full h-64 mb-8" src="{{ page.header_img }}" alt="{{ page.title }} header image" />
+        <div class="markdown">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

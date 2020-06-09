@@ -1,0 +1,35 @@
+panelist:
+  - name: The Ruby Blend
+    url: https://www.therubyblend.com
+    start_date: 2020-01-13
+    end_date:
+  - name: Remote Ruby
+    url: https://remoteruby.transistor.fm
+    start_date: 2019-12-06
+    end_date:
+  - name: Ruby Rogues
+    url: https://devchat.tv/ruby-rogues/
+    start_date: 2018-12-11
+    end_date: 2019-11-06
+
+guest:
+  - show: Remote Ruby
+    url: https://remoteruby.transistor.fm/52
+    date: 2019-09-20
+    title: Joined by Andrew Mason
+    episode: 52
+  - show: Rails with Jason
+    url: https://www.codewithjason.com/rails-with-jason-podcast/andrew-mason-docker/
+    date: 2019-08-21
+    title: Two Docker Noobs Talk About Docker - with Andrew Mason
+    episode: 11
+  - show: The Ruby Testing Podcast
+    url: https://podcasts.apple.com/us/podcast/the-ruby-testing-podcast/id1385192624?i=1000422112280
+    date: 2018-10-18
+    title: Testing Q&A with Listener Andrew Mason
+    episode: 15
+  - show: Ruby on Rails Podcast
+    url: https://5by5.tv/rubyonrails/320
+    date: 2020-05-27
+    title: ViewComponents in Action with Andrew Mason
+    episode: 320
