@@ -30,6 +30,6 @@ navigation:
   - name: "About"
     url: "/about"
   - name: "Blog"
-    url: "/blog"
+    url: "/posts"
   - name: "Projects"
     url: "/projects"

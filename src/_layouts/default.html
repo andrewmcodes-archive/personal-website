@@ -6,19 +6,17 @@
 </head>
 
 {% if bridgetown.environment == "development" %}
+{% assign body_classes = "debug-screens min-h-screen text-gray-100 bg-cool-gray-900" %}
+{% else %}
+{% assign body_classes = "min-h-screen text-gray-100 bg-cool-gray-900" %}
+{% endif %}
 
-<body class="debug-screens min-h-screen text-gray-100 bg-cool-gray-900 {{ page.layout }} {{ page.page_class }}">
-  {% else %}
-
-  <body class="min-h-screen text-gray-100 bg-cool-gray-900 {{ page.layout }} {{ page.page_class }}">
-    {% endif %}
-    {% include navbar.html %}
-
-    <main class="main">
-      {{ content }}
-    </main>
-
-    {% include footer.html %}
-  </body>
+<body class="{{ body_classes }} {{ page.layout }} {{ page.page_class }}">
+  {% include navbar.html %}
+  <main class="main">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+</body>
 
 </html>

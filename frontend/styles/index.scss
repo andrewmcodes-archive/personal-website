@@ -408,3 +408,37 @@ pre code.markdown {
     #396afc
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+.btn {
+  @apply flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 transition duration-150 ease-in-out border border-transparent rounded-md;
+}
+
+.btn-primary {
+  @apply text-white bg-red-500;
+}
+
+.btn-primary:hover {
+  @apply bg-red-400;
+}
+
+.btn-primary:focus {
+  @apply outline-none border-red-600 shadow-outline-red;
+}
+
+.btn-secondary {
+  @apply text-red-500 bg-white;
+}
+
+.btn-secondary:hover {
+  @apply text-red-400;
+}
+
+.btn-secondary:focus {
+  @apply outline-none border-red-300 shadow-outline-red;
+}
+
+@screen md {
+  .btn {
+    @apply py-4 text-lg px-10;
+  }
+}
