@@ -6,4 +6,3 @@ layout: home
 
 <section>{% include home/hero.html %}</section>
 <section>{% include home/blog_section.html %}</section>
-<section>{% include home/experience_section.html %}</section>

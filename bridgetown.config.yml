@@ -22,19 +22,19 @@ timezone: America/New_York
 pagination:
   enabled: true
 
-collections:
-  experience:
-    output: true
-    permalink: /:collection/:path
-    sort_by: order
-    name: Work Experience
+# collections:
+#   experience:
+#     output: true
+#     permalink: /:collection/:path
+#     sort_by: order
+#     name: Work Experience
 
 defaults:
-  - scope:
-      path: _experience
-    values:
-      layout: experience
   - scope:
       path: _posts
     values:
       layout: post
+  # - scope:
+  #     path: _experience
+  #   values:
+  #     layout: experience
