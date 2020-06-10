@@ -19,8 +19,8 @@ url: "https://andrewm.codes"
 permalink: simple
 timezone: America/New_York
 
-pagination:
-  enabled: true
+# pagination:
+#   enabled: true
 
 # collections:
 #   experience:

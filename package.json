@@ -5,19 +5,18 @@
   "scripts": {
     "build": "bundle exec bridgetown build",
     "deploy": "NODE_ENV=production yarn webpack-build && yarn build",
-    "prettier:check": "prettier-standard -- --check",
-    "prettier:format": "prettier-standard --",
+    "prettier-check": "prettier-standard -- --check",
+    "prettier-format": "prettier-standard --",
     "serve": "bundle exec bridgetown serve",
-    "snapshot:dev": "yarn percy snapshot output/",
+    "snapshot-dev": "yarn percy snapshot output/",
     "start": "node start.js",
     "sync": "node sync.js",
     "webpack-build": "webpack --mode production",
-    "webpack-dev": "webpack --mode development -w"
+    "webpack-dev": "webpack --mode development -w",
+    "webpack-analyze": "mkdir -p output && node_modules/.bin/webpack --profile --json > output/stats.json && node_modules/.bin/webpack-bundle-analyzer output/stats.json"
   },
   "dependencies": {
-    "particles.js": "^2.0.0",
-    "stimulus": "^1.1.1",
-    "tailwindcss-stimulus-components": "^1.1.0"
+    "stimulus": "^1.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -41,6 +40,7 @@
     "tailwindcss": "^1.4.6",
     "tailwindcss-debug-screens": "^0.1.0",
     "webpack": "^4.42.1",
+    "webpack-bundle-analyzer": "^3.8.0",
     "webpack-cli": "^3.3.11",
     "webpack-manifest-plugin": "^2.2.0"
   }

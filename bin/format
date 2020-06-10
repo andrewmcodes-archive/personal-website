@@ -3,4 +3,4 @@
 echo "== Checking StandardRb =="
 bundle exec standardrb --fix
 echo "== Checking Prettier-Standard =="
-yarn run prettier:format
+yarn run prettier-format

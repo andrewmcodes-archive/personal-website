@@ -7,7 +7,7 @@ module.exports = {
   devtool: 'source-map',
   // Set some or all of these to true if you want more verbose logging:
   stats: {
-    modules: false,
+    modules: true,
     builtAt: false,
     timings: false,
     children: false
