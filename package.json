@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "bundle exec bridgetown build",
-    "deploy": "yarn webpack-build && yarn build",
+    "deploy": "NODE_ENV=production yarn webpack-build && yarn build",
     "prettier:check": "prettier-standard -- --check",
     "prettier:format": "prettier-standard --",
     "serve": "bundle exec bridgetown serve",
