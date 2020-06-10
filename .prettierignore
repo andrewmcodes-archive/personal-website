@@ -5,3 +5,4 @@ dist/
 .cache/
 .bridgetown-cache
 .bridgetown-webpack
+*.html

@@ -1,8 +1,9 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-
 layout: home
 ---
 
-<section>{% include home/hero.html %}</section>
-<section>{% include home/blog_section.html %}</section>
+{% render "home/hero" %}
+{% render "home/cta" %}
+{% render "home/blog", posts: site.posts %}
+{% render "home/involvement" %}
+{% render "shared/subscribe" %}

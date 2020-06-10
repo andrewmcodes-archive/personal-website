@@ -1,0 +1,16 @@
+---
+layout: page
+title: Blog
+pagination:
+- enabled: true
+---
+
+<section class="px-4 py-12">
+  <div class="flex flex-wrap -mx-4">
+    {% for post in paginator.documents %}
+    {% render "shared/blog_post_card", post: post %}
+    {% endfor %}
+
+    {% render "shared/pagination", paginator: paginator %}
+  </div>
+</section>

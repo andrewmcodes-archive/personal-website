@@ -19,8 +19,8 @@ url: "https://andrewmcodes-v2.netlify.app"
 permalink: simple
 timezone: America/New_York
 
-# pagination:
-#   enabled: true
+pagination:
+  enabled: true
 
 # collections:
 #   experience:
