@@ -1,14 +1,20 @@
 <meta charset="utf-8" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-{% capture page_title %}{{ page.title | strip_html | strip_newlines }}{%
-endcapture %}
+
+{% capture page_title %}{{ page.title | strip_html | strip_newlines }}{% endcapture %}
+
 <title>
-  {% if page_title != "" %}{{ page_title | escape }} | {{ site.metadata.title |
-  escape }}{% else %}{{ site.metadata.title | escape }}: {{
-  site.metadata.tagline | escape }}{% endif %}
+  {% if page_title != "" %}{{ page_title | escape }} |
+  {{ site.metadata.title | escape }}{% else %}{{ site.metadata.title | escape }}:
+  {{site.metadata.tagline | escape }}{% endif %}
 </title>
 
 <meta name="description" content="{{ site.metadata.description }}" />
 
-<link rel="stylesheet" href="{% webpack_path css %}" />
-<script src="{% webpack_path js %}" defer></script>
+<!-- <link rel="stylesheet" href="{% webpack_path css %}" />
+
+<script src="{% webpack_path js %}" defer></script> -->
+
+<link rel="stylesheet" href="/frontend/styles/index.css">
+<script src="/frontend/javascript/index.js" type="module" defer></script>

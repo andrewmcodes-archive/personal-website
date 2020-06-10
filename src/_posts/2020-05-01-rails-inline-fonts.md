@@ -10,6 +10,7 @@ tags:
   - ruby
   - tutorial
   - beginners
+order: 1
 ---
 
 # Instantly speed up your Rails application by self-hosting your fonts

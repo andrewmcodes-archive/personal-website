@@ -1,0 +1,15 @@
+{
+  "plugins": ["@snowpack/babel-plugin-package-import"],
+  "scripts": {
+    "run:format": "eslint --fix",
+    "run:lint": "eslint",
+    "mount:_site": "mount output --to /",
+    "mount:js": "mount frontend/javascript",
+    "mount:web_modules": "mount web_modules",
+    "build:css": "postcss",
+    "run:btown": "bundle exec bridgetown build"
+  },
+  "installOptions": {
+    "NODE_ENV": true
+  }
+}

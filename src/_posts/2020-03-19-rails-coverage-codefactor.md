@@ -10,6 +10,7 @@ tags:
   - tutorial
   - rails
   - beginners
+order: 1
 ---
 
 # [CodeFactor](https://codefactor.io)

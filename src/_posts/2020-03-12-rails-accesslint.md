@@ -10,6 +10,7 @@ tags:
   - tutorial
   - rails
   - beginners
+order: 1
 ---
 
 Accessibility (`A11Y`) testing cannot be fully automated, and requires special attention in order to get right. There are, however; some tools out there that can help us automate part of it and make it a first class concern.

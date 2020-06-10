@@ -1,14 +1,8 @@
-*.html
-*.css
-
-/plugins/
 /node_modules/
 /web_modules/
-dist/
 output/
 build/
-.cache/
 .build/
 .bridgetown-cache/
 .bridgetown-webpack/
-frontend/styles/prism.css
+*.css

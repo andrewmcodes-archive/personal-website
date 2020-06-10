@@ -1,8 +1,8 @@
-const concurrently = require('concurrently')
+const concurrently = require('concurrently');
 
 // By default, configure Bridgetown to use port 4001 so Browsersync can use 4000
 // See also Browsersync settings in sync.js
-const port = 4001
+const port = 4001;
 
 /////////////////
 // Concurrently
@@ -13,17 +13,17 @@ concurrently(
     {
       command: 'sleep 4; yarn serve --port ' + port,
       name: 'Bridgetown',
-      prefixColor: 'green'
+      prefixColor: 'green',
     },
-    { command: 'sleep 8; yarn sync', name: 'Live', prefixColor: 'blue' }
+    { command: 'sleep 8; yarn sync', name: 'Live', prefixColor: 'blue' },
   ],
   {
     restartTries: 3,
-    killOthers: ['failure', 'success']
-  }
+    killOthers: ['failure', 'success'],
+  },
 ).then(
   () => {
-    console.log('Done.')
+    console.log('Done.');
   },
-  () => {}
-)
+  () => {},
+);
