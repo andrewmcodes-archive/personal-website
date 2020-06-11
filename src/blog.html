@@ -1,8 +1,6 @@
 ---
 layout: page
 title: Blog
-pagination:
-- enabled: true
 ---
 
 <section class="px-4 py-12">
@@ -10,7 +8,5 @@ pagination:
     {% for post in paginator.documents %}
     {% render "shared/blog_post_card", post: post %}
     {% endfor %}
-
-    {% render "shared/pagination", paginator: paginator %}
   </div>
 </section>

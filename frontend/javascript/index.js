@@ -1,6 +1,7 @@
 import { Application } from 'stimulus'
 import { definitionsFromContext } from 'stimulus/webpack-helpers'
 import Prism from './prism.js'
+import '../styles/index.css'
 
 const application = Application.start()
 const context = require.context('./controllers', true, /\.js$/)

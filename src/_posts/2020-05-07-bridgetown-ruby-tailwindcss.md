@@ -12,7 +12,6 @@ tags:
   - tailwind
   - bridgetown
   - beginners
-order: 1
 ---
 
 ## What is Bridgetown

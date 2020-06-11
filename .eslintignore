@@ -1,8 +1,0 @@
-/node_modules/
-/web_modules/
-output/
-build/
-.build/
-.bridgetown-cache/
-.bridgetown-webpack/
-*.css

@@ -18,10 +18,8 @@
 bower_components
 dist
 node_modules
-output
-src/_output
 stats.json
 vendor
-web_modules
 yarn-debug.log*
 yarn-error.log
+output/

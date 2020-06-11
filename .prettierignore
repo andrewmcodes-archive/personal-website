@@ -1,5 +1,4 @@
 *.html
-*.css
 
 /plugins/
 /node_modules/
