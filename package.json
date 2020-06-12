@@ -30,13 +30,18 @@
     "webpack-dev": "webpack --mode development -w",
     "webpack-analyze": "mkdir -p output && node_modules/.bin/webpack --profile --json > output/stats.json && node_modules/.bin/webpack-bundle-analyzer output/stats.json"
   },
-  "browserslist": ["defaults", "maintained node versions", "> 5%"],
+  "browserslist": [
+    "defaults",
+    "maintained node versions",
+    "> 5%"
+  ],
   "dependencies": {
     "stimulus": "^1.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-decorators": "^7.10.1",
     "@babel/plugin-transform-runtime": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@tailwindcss/ui": "^0.3.0",

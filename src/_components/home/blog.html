@@ -1,6 +1,6 @@
 <section class="px-4 py-12">
   <h2 class="mb-4 mb-8 text-4xl text-center font-heading">Latest posts</h2>
-  <div class="flex flex-wrap -mx-4">
+  <div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
     {% for post in posts limit:3 %}
     {% render "shared/blog_post_card", post: post %}
     {% endfor %}
