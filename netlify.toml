@@ -1,1 +1,9 @@
-# TODO
+[build]
+  command = "yarn deploy"
+  publish = "output"
+
+[build.environment]
+  NODE_VERSION = "13"
+
+[context.production.environment]
+  BRIDGETOWN_ENV = "production"
