@@ -27,8 +27,6 @@ social:
   #   url: "https://www.linkedin.com/in/andrew-mason/"
 
 navigation:
-  - name: "Home"
-    url: "/"
   - name: "About"
     url: "/about"
   - name: "Blog"
@@ -39,6 +37,3 @@ actions:
   primary:
     name: "Hire Me!"
     url: "/"
-  secondary:
-    name: "View Blog"
-    url: "/blog"
