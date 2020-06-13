@@ -21,7 +21,7 @@
     "serve": "bundle exec bridgetown serve",
     "deploy": "yarn webpack-build && yarn build",
     "prettier-check": "prettier-standard -- --check .",
-    "prettier-format": "prettier-standard -- .",
+    "prettier-format": "prettier-standard -- *",
     "snapshot-dev": "yarn percy snapshot output/",
     "start": "node start.js",
     "sync": "node sync.js",
@@ -29,7 +29,11 @@
     "webpack-dev": "webpack --mode development -w",
     "webpack-analyze": "mkdir -p output && node_modules/.bin/webpack --profile --json > output/stats.json && node_modules/.bin/webpack-bundle-analyzer output/stats.json"
   },
-  "browserslist": ["defaults", "maintained node versions", "> 5%"],
+  "browserslist": [
+    "defaults",
+    "maintained node versions",
+    "> 5%"
+  ],
   "dependencies": {
     "@swup/body-class-plugin": "^1.0.2",
     "@swup/slide-theme": "^1.0.5",
