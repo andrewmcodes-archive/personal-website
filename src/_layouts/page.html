@@ -2,21 +2,8 @@
 layout: default
 ---
 
-<section class="py-10">
-  <header>
-    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-bold leading-tight text-cool-gray-100">
-        {{ page.title }}
-      </h1>
-    </div>
-  </header>
-  <main class="mt-12">
-    <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <div class="px-5 py-6 bg-white rounded-lg shadow sm:px-6">
-        <div class="markdown">
-          {{ content }}
-        </div>
-      </div>
-    </div>
-  </main>
-</section>
+{% rendercontent "shared/section", title: page.title %}
+<div class="markdown">
+  {{ content }}
+</div>
+{% endrendercontent %}

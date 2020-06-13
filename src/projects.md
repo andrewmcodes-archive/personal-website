@@ -6,5 +6,5 @@ permalink: /projects/
 ---
 
 {% for project in site.data.projects %}
-{% include projects/project_item.html %}
+{% render "projects/item", project: project %}
 {% endfor %}

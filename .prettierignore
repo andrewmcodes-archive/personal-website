@@ -1,7 +1,14 @@
-/node_modules/
-/plugins/
+*.html
+*.liquid
 
+/plugins/
+/node_modules/
+/web_modules/
 dist/
+output/
+build/
 .cache/
-.bridgetown-cache
-.bridgetown-webpack
+.build/
+.bridgetown-cache/
+.bridgetown-webpack/
+frontend/styles/prism.css

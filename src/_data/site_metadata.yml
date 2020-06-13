@@ -14,22 +14,28 @@ author:
   name: Andrew Mason
 
 social:
-  twitter:
+  - name: "twitter"
     username: "@andrewmcodes"
     url: "https://twitter.com/andrewmcodes"
-  github:
+    icon_url: "icons/twitter.svg"
+  - name: "github"
     username: "andrewmcodes"
     url: "https://github.com/andrewmcodes"
-  linkedin:
-    username: "andrew-mason"
-    url: "https://www.linkedin.com/in/andrew-mason/"
+    icon_url: "icons/twitter.svg"
+  # - name: "linkedin"
+  #   username: "andrew-mason"
+  #   url: "https://www.linkedin.com/in/andrew-mason/"
 
 navigation:
-  - name: "Home"
-    url: "/"
   - name: "About"
     url: "/about"
   - name: "Blog"
-    url: "/posts"
+    url: "/blog"
   - name: "Projects"
     url: "/projects"
+  - name: "Contact"
+    url: "/contact"
+actions:
+  primary:
+    name: "Hire Me!"
+    url: "/hire-me"

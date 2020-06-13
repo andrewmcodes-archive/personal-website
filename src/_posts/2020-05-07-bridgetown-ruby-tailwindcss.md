@@ -182,6 +182,8 @@ main {
 }
 ```
 
+{% raw %}
+
 ```html
 <!-- src/_layouts/default.html -->
 
@@ -202,6 +204,10 @@ main {
 </html>
 ```
 
+{% endraw %}
+
+{% raw %}
+
 ```html
 <!-- src/_layouts/home.html -->
 --- layout: default ---
@@ -216,6 +222,8 @@ main {
   </div>
 </div>
 ```
+
+{% endraw %}
 
 ```html
 <!-- src/_layouts/page.html & src/_layouts/post.html -->

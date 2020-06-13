@@ -24,6 +24,7 @@ concurrently(
 ).then(
   () => {
     console.log('Done.')
+    console.log('\033[0G')
   },
   () => {}
 )

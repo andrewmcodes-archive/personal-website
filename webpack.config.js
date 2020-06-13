@@ -36,7 +36,8 @@ module.exports = {
           options: {
             presets: ['@babel/preset-env'],
             plugins: [
-              '@babel/plugin-proposal-class-properties',
+              ['@babel/plugin-proposal-decorators', { legacy: true }],
+              ['@babel/plugin-proposal-class-properties', { loose: true }],
               [
                 '@babel/plugin-transform-runtime',
                 {
@@ -56,23 +57,12 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sassOptions: {
-                includePaths: [
-                  path.resolve(__dirname, 'src/_components'),
-                  path.resolve(__dirname, 'src/_includes')
-                ]
+                includePaths: [path.resolve(__dirname, 'src/_components')]
               }
             }
           },
           {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: [
-                require('postcss-import'),
-                require('tailwindcss'),
-                require('autoprefixer')
-              ]
-            }
+            loader: 'postcss-loader'
           }
         ]
       },

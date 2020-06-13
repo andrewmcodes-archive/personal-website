@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
-  {% include head.html %}
+  {% render "shared/head", metadata: site.metadata, title: page.title %}
 </head>
 
 {% if bridgetown.environment == "development" %}
-{% assign body_classes = "debug-screens min-h-screen text-gray-100 bg-cool-gray-900" %}
+{% assign body_classes = "debug-screens bg-body text-body font-body flex flex-col min-h-screen" %}
 {% else %}
-{% assign body_classes = "min-h-screen text-gray-100 bg-cool-gray-900" %}
+{% assign body_classes = "bg-body text-body font-body flex flex-col min-h-screen" %}
 {% endif %}
 
 <body class="{{ body_classes }} {{ page.layout }} {{ page.page_class }}">
-  {% include navbar.html %}
-  <main class="main">
-    {{ content }}
-  </main>
-  {% include footer.html %}
+  {% render "shared/navbar", navigation: site.metadata.navigation, primary: site.metadata.actions.primary, secondary: site.metadata.actions.secondary %}
+  <div class="container flex-grow px-4 mx-auto">
+    {{content}}
+  </div>
+  {% render "shared/footer", author: site.metadata.author.name, social: site.metadata.social %}
 </body>
 
 </html>
