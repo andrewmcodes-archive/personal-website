@@ -1,18 +1,26 @@
 ---
-layout: post
 title: 'Build and deploy a static site with Ruby, Bridgetown, TailwindCSS, and Netlify'
-header_img: https://dev-to-uploads.s3.amazonaws.com/i/xctbps1usj2v5ege60hu.jpg
-date: 2020-05-07 21:11:13 -0400
-time_to_read: 6 min
-category: bridgetown
+date: '2020-05-07T03:50:01.208Z'
+excerpt: >-
+  Demo Repository Demo Website            What is Bridgetown   According to
+  their website, Bridgetown...
+thumb_img_path: >-
+  https://res.cloudinary.com/practicaldev/image/fetch/s--ydffrdDx--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--9eQfXSW6--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://dev-to-uploads.s3.amazonaws.com/i/xctbps1usj2v5ege60hu.jpg
+header_img_path: >-
+  https://res.cloudinary.com/practicaldev/image/fetch/s--ydffrdDx--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--9eQfXSW6--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://dev-to-uploads.s3.amazonaws.com/i/xctbps1usj2v5ege60hu.jpg
+comments_count: 2
+positive_reactions_count: 38
 tags:
   - ruby
   - tutorial
-  - javascript
-  - tailwind
-  - bridgetown
   - beginners
+  - javascript
+canonical_url: >-
+  https://dev.to/andrewmcodes/build-and-deploy-a-static-site-with-ruby-bridgetown-tailwindcss-and-netlify-3934
+layout: post
 ---
+- [Demo Repository](https://github.com/andrewmcodes/bridgetown_tailwind)
+- [Demo Website](https://bridgetown-tailwind.netlify.app)
 
 ## What is Bridgetown
 
@@ -182,7 +190,6 @@ main {
 }
 ```
 
-{% raw %}
 
 ```html
 <!-- src/_layouts/default.html -->
@@ -190,27 +197,27 @@ main {
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% include head.html %}
+    {% raw %}{% include head.html %}{% endraw %}
   </head>
-  <body class="min-h-screen {{ page.layout }} {{ page.page_class }}">
-    {% include navbar.html %}
+  {% raw %}<body class="min-h-screen {{ page.layout }} {{ page.page_class }}">{% endraw %}
+    {% raw %}{% include navbar.html %}{% endraw %}
 
     <main class="text-gray-700">
-      {{ content }}
+      {% raw %}{{ content }}{% endraw %}
     </main>
 
-    {% include footer.html %}
+    {% raw %}{% include footer.html %}{% endraw %}
   </body>
 </html>
 ```
 
-{% endraw %}
 
-{% raw %}
 
 ```html
 <!-- src/_layouts/home.html -->
---- layout: default ---
+---
+layout: default
+---
 
 <div class="w-full px-5 py-12 bg-red-500">
   <h1 class="mb-4 text-6xl text-white">Home</h1>
@@ -218,16 +225,17 @@ main {
 
 <div class="mx-auto">
   <div class="px-5 py-12">
-    {{ content }}
+    {% raw %}{{ content }}{% endraw %}
   </div>
 </div>
 ```
 
-{% endraw %}
 
 ```html
 <!-- src/_layouts/page.html & src/_layouts/post.html -->
---- layout: default ---
+---
+layout: default
+---
 
 <div class="w-full px-5 py-12 bg-red-500">
   <h1 class="mb-4 text-6xl text-white">{{ page.title }}</h1>
@@ -235,7 +243,7 @@ main {
 
 <div class="mx-auto">
   <div class="px-5 py-12">
-    {{ content }}
+    {% raw %}{{ content }}{% endraw %}
   </div>
 </div>
 ```
@@ -333,3 +341,5 @@ Even though the library is still pre 1.0, I think it would still be worth your t
 You can find the code for this tutorial [here](https://github.com/andrewmcodes/bridgetown_tailwind) or view [demo](https://bridgetown-tailwind.netlify.app).
 
 Happy coding!
+
+*[This post is also available on DEV.](https://dev.to/andrewmcodes/build-and-deploy-a-static-site-with-ruby-bridgetown-tailwindcss-and-netlify-3934)*

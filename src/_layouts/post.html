@@ -2,19 +2,20 @@
 layout: default
 ---
 
-<article class="px-4 pb-12">
-  {% if post.header_img %}
-  <div class="mb-10">
-    <img src="{{ post.header_img }}" alt="{{ post.title}} - Header Image" />
+<article class="container w-full mx-auto mb-12 bg-white rounded shadow-2xl lg:max-w-5xl">
+  {% if page.header_img_path %}
+  <div class="flex justify-center border-b">
+    <img src="{{ page.header_img_path }}" alt="{{ page.title}} - Header Image" class="object-cover w-full" />
   </div>
   {% endif %}
-
-  <h1 class="text-4xl font-semibold text-center font-heading">
-    {{ post.title }}
-  </h1>
-  <div class="max-w-3xl mx-auto">
-    <section class="markdown">
-      {{ content }}
-    </section>
+  <div class="px-4 py-12 mx-auto lg:px-8">
+    <h1 class="mb-4 text-2xl font-semibold text-left lg:text-center lg:text-4xl lg:mb-8 font-heading">
+      {{ page.title }}
+    </h1>
+    <div class="w-full mx-auto">
+      <section class="markdown">
+        {{ content }}
+      </section>
+    </div>
   </div>
 </article>

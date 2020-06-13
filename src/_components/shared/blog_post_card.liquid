@@ -1,13 +1,11 @@
-<div class="px-4 mb-8 lg:mb-0">
-  <div class="h-full pb-8 bg-white rounded shadow-md">
+<div class="px-4 mb-8">
+  <div class="h-full pb-8 transition-shadow duration-300 ease-in-out bg-white rounded shadow-md hover:shadow-2xl">
     <a href="{{ post.url }}">
-      <img class="mb-4" src="{{ post.header_img }}" alt="{{ post.title }}">
+      <img class="mb-4" src="{{ post.thumb_img_path }}" alt="{{ post.title }}">
       <div class="px-6">
-        <small>{{ post.date }}</small>
-        <h3 class="my-3 text-xl font-heading">{{ post.title }}</h3>
-        <p class="text-gray-500">The wise man once said: "Friend first, boss second, entertainer third". That man was
-          me.
-        </p>
+        <small>{{ post.date | date: "%B %-d, %Y" }}</small>
+        <h3 class="my-3 text-xl text-gray-900 font-heading">{{ post.title }}</h3>
+        <p class="text-gray-500">{{ post.excerpt }}</p>
       </div>
     </a>
   </div>

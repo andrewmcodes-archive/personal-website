@@ -1,17 +1,23 @@
 ---
-layout: post
 title: 'Rails Coverage Tools: CodeFactor'
-header_img: https://dev-to-uploads.s3.amazonaws.com/i/p4417i8qwul797crls6p.jpg
-date: 2020-03-19 21:11:13 -0400
-time_to_read: 6 min
-category: rails
+date: '2020-03-19T02:35:00.170Z'
+excerpt: >-
+  CodeFactor   According to their documentation:   CodeFactor instantly performs
+  Code Review w...
+thumb_img_path: >-
+  https://res.cloudinary.com/practicaldev/image/fetch/s--r3fxyj27--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/p4417i8qwul797crls6p.jpg
+header_img_path: >-
+  https://res.cloudinary.com/practicaldev/image/fetch/s--r3fxyj27--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/p4417i8qwul797crls6p.jpg
+comments_count: 0
+positive_reactions_count: 10
 tags:
-  - ruby
-  - tutorial
   - rails
   - beginners
+  - ruby
+  - tutorial
+canonical_url: 'https://dev.to/andrewmcodes/rails-coverage-tools-codefactor-3ee2'
+layout: post
 ---
-
 # [CodeFactor](https://codefactor.io)
 
 According to their documentation:
@@ -37,25 +43,33 @@ If you'd like to build it together, let's get started!
 
 ### Setup
 
-Let's create a new Rails app and `cd` into it:
+Let's create a new Rails app and
+`cd`
+ into it:
 
-```sh
+
+```bash
 rails new codefactor_demo
 cd codefactor_demo
 ```
 
+
 ### Create Repository
 
-Open GitHub and create a new repository. I named mine `codefactor_demo`.
+Open GitHub and create a new repository. I named mine
+`codefactor_demo`
+.
 
 Open your command line again and let's upstream our code.
 
-```sh
+
+```bash
 git add .
 git commit -m "first commit"
 git remote add origin https://github.com/YOUR_USERNAME/codefactor_demo.git
 git push -u origin master
 ```
+
 
 Your code should now be online in your repo.
 
@@ -69,7 +83,11 @@ Once logged in, you should be taken to your dashboard.
 
 ### Add Repository
 
-Let's add a new repository. From your CodeFactor dashboard, click `Add`, next to `Repositories`:
+Let's add a new repository. From your CodeFactor dashboard, click
+`Add`
+, next to
+`Repositories`
+:
 
 ![codefactor_dashboard_2](https://dev-to-uploads.s3.amazonaws.com/i/sjzxqhdmb7y02xask5n4.jpg)
 
@@ -77,7 +95,9 @@ You will be taken to a screen that will let you search and select your desired r
 
 ![codefactor_add_repository_3](https://dev-to-uploads.s3.amazonaws.com/i/mco0bzqakhopqvknbtng.jpg)
 
-Click the `Import` button to import the repository.
+Click the
+`Import`
+ button to import the repository.
 
 Once your repository has been imported, it will show up on your dashboard:
 
@@ -115,3 +135,5 @@ Overall, I think this is a tool worth checking out. However, since I don't perso
 Happy coding!
 
 P.S. If you aren't sure how to set up ESLint, Rubocop, or the other listed linters, leave a comment or message me on [Twitter](https://twitter.com/andrewmcodes) and let me know if you'd like a post about this!
+
+*[This post is also available on DEV.](https://dev.to/andrewmcodes/rails-coverage-tools-codefactor-3ee2)*
