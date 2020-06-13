@@ -15,10 +15,9 @@
     "name": "Andrew Mason",
     "email": "andrewmcodes@protonmail.com"
   },
-  "sideEffects": false,
-  "main": "index.js",
   "scripts": {
     "build": "bundle exec bridgetown build",
+    "clean": "bundle exec bridgetown clean",
     "serve": "bundle exec bridgetown serve",
     "deploy": "yarn webpack-build && yarn build",
     "prettier-check": "prettier-standard -- --check .",
@@ -30,11 +29,7 @@
     "webpack-dev": "webpack --mode development -w",
     "webpack-analyze": "mkdir -p output && node_modules/.bin/webpack --profile --json > output/stats.json && node_modules/.bin/webpack-bundle-analyzer output/stats.json"
   },
-  "browserslist": [
-    "defaults",
-    "maintained node versions",
-    "> 5%"
-  ],
+  "browserslist": ["defaults", "maintained node versions", "> 5%"],
   "dependencies": {
     "stimulus": "^1.1.1"
   },
