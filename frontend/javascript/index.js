@@ -6,23 +6,37 @@ import Swup from 'swup'
 import SwupBodyClassPlugin from '@swup/body-class-plugin'
 import SwupScrollPlugin from '@swup/scroll-plugin'
 import SwupSlideTheme from '@swup/slide-theme'
+import Typed from 'typed.js'
 
+Prism.highlightAll()
 const application = Application.start()
 const context = require.context('./controllers', true, /\.js$/)
 application.load(definitionsFromContext(context))
-Prism.highlightAll()
 
 // Dropdown
 document.addEventListener('DOMContentLoaded', function () {
   let mainEl = '#swup'
   let containers = [mainEl, '#topnav']
-  new Swup({
+  let swup = new Swup({
     containers: containers,
     plugins: [
       new SwupSlideTheme({ mainElement: mainEl }),
       new SwupBodyClassPlugin(),
       new SwupScrollPlugin({ animateScroll: false })
     ]
+  })
+
+  swup.on('contentReplaced', function () {
+    Prism.highlightAll()
+  })
+
+  var typed = new Typed('#typed', {
+    stringsElement: '#typed-strings',
+    typeSpeed: 50,
+    backSpeed: 20,
+    backDelay: 900,
+    startDelay: 1000,
+    loop: true
   })
 
   const menus = document.querySelectorAll('.navbar-burger')

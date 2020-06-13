@@ -15,14 +15,14 @@
 # https://learnxinyminutes.com/docs/yaml/
 #
 
-url: 'https://andrewmcodes-v2.netlify.app'
+url: "https://andrewmcodes-v2.netlify.app"
 permalink: simple
 timezone: America/New_York
 
 # pagination:
 #   enabled: true
 
-# collections:
+collections:
 #   experience:
 #     output: true
 #     permalink: /:collection/:path
@@ -34,4 +34,11 @@ defaults:
       path: _posts
     values:
       layout: post
-      category: news
+      category: posts
+  - scope:
+      path: "assets/pdf"
+    values:
+      pdf: true
+
+cloudinary:
+  cloud_name: andrewmcodes

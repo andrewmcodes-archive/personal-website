@@ -33,6 +33,24 @@ module.exports = {
       white: '#fff',
 
       gray: {
+        50: '#f9fafb',
+        100: '#f4f5f7',
+        200: '#e5e7eb',
+        // '200': '#ebecf0',
+        300: '#d2d6dc',
+        400: '#9fa6b2',
+        500: '#6b7280',
+        600: '#4b5563',
+        700: '#374151',
+        800: '#252f3f',
+        900: '#161e2e',
+        950: '#141b29',
+        1000: '#0d121c',
+        1100: '#0a0e15',
+        1200: '#07090e'
+      },
+      'cool-gray': {
+        50: '#fbfdfe',
         100: '#f1f5f9',
         200: '#e2e8f0',
         300: '#cfd8e3',
@@ -142,6 +160,10 @@ module.exports = {
         800: '#97266d',
         900: '#702459'
       }
+    },
+    linearGradientColors: {
+      red: '#f56565',
+      'red-shade': ['#f56565', '#e53e3e']
     },
     spacing: {
       px: '1px',
@@ -494,5 +516,34 @@ module.exports = {
     zIndex: ['responsive']
   },
   corePlugins: {},
-  plugins: [require('@tailwindcss/ui'), require('tailwindcss-debug-screens')]
+  plugins: [
+    require('tailwindcss-gradients'),
+    require('@tailwindcss/ui'),
+    require('tailwindcss-debug-screens'),
+    require('tailwind-heropatterns')({
+      // as per tailwind docs you can pass variants
+      variants: [],
+
+      // the list of patterns you want to generate a class for
+      // the names must be in kebab-case
+      // an empty array will generate all 87 patterns
+      patterns: ['polka-dots', 'circuit-board'],
+
+      // The foreground colors of the pattern
+      colors: {
+        default: '#9C92AC',
+        'gray-800': '#27303f',
+        light: '#f1f5f9',
+        lighter: '#F8FAFC'
+      },
+
+      // The foreground opacity
+      opacity: {
+        default: '0.4',
+        '100': '1.0',
+        '10': '0.1',
+        '5': '0.05'
+      }
+    })
+  ]
 }

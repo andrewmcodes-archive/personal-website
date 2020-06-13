@@ -18,6 +18,7 @@ tags:
 canonical_url: 'https://dev.to/andrewmcodes/ruby-on-rails-development-with-vs-code-p1i'
 layout: post
 ---
+
 I tried several editors when I first got into programming, but VS Code quickly stuck. For the past three years, I have been continually updating my VS Code settings, extensions, keybindings, and snippets to help me be as productive as my diehard VIM friends.
 
 Here is a quick article showing my setup for working with Rails that I use when I work on [CodeFund](https://codefund.io) and my Rails side projects.
@@ -66,28 +67,27 @@ These are the ones I think are the most important. For a full list, check out [t
 
 ## Ruby & Rails
 
-- [endwise*](https://marketplace.visualstudio.com/items?itemName=kaiwood.endwise)
+- [endwise\*](https://marketplace.visualstudio.com/items?itemName=kaiwood.endwise)
 - [ERB Formatter/Beautify](https://marketplace.visualstudio.com/items?itemName=aliariff.vscode-erb-beautify)
 - [Gem Lens](https://marketplace.visualstudio.com/items?itemName=ninoseki.vscode-gem-lens)
-- [Rails Fast Nav*](https://marketplace.visualstudio.com/items?itemName=jemmyw.rails-fast-nav)
-- [Rails Flip-Flop*](https://marketplace.visualstudio.com/items?itemName=bweave.rails-flip-flop)
+- [Rails Fast Nav\*](https://marketplace.visualstudio.com/items?itemName=jemmyw.rails-fast-nav)
+- [Rails Flip-Flop\*](https://marketplace.visualstudio.com/items?itemName=bweave.rails-flip-flop)
 - [Rails Routes](https://marketplace.visualstudio.com/items?itemName=aki77.rails-routes)
-- [rails-latest-migration*](https://marketplace.visualstudio.com/items?itemName=tmikoss.rails-latest-migration)
+- [rails-latest-migration\*](https://marketplace.visualstudio.com/items?itemName=tmikoss.rails-latest-migration)
 - [Rails](https://marketplace.visualstudio.com/items?itemName=bung87.rails)
 - [Ruby Haml](https://marketplace.visualstudio.com/items?itemName=vayan.haml)
-- [Ruby Solargraph*](https://marketplace.visualstudio.com/items?itemName=castwide.solargraph)
-- [Ruby*](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby)
+- [Ruby Solargraph\*](https://marketplace.visualstudio.com/items?itemName=castwide.solargraph)
+- [Ruby\*](https://marketplace.visualstudio.com/items?itemName=rebornix.Ruby)
 - [Simple Ruby ERB](https://marketplace.visualstudio.com/items?itemName=vortizhe.simple-ruby-erb)
-- [VSCode Ruby*](https://marketplace.visualstudio.com/items?itemName=wingrunr21.vscode-ruby)
+- [VSCode Ruby\*](https://marketplace.visualstudio.com/items?itemName=wingrunr21.vscode-ruby)
 - [vscode-gemfile](https://marketplace.visualstudio.com/items?itemName=bung87.vscode-gemfile)
 - [YARD Documenter](https://marketplace.visualstudio.com/items?itemName=pavlitsky.yard)
 
-_* must have!_
+_\* must have!_
 
 # Settings
 
 These are my global settings. For a lot of projects, I will override these settings with a workspace settings file which works great.
-
 
 ```json
 {
@@ -352,9 +352,7 @@ false
   }
 ```
 
-
 # Keybindings
-
 
 ```json
 [
@@ -370,11 +368,9 @@ false
 ]
 ```
 
-
 # Snippets
 
 Checkout [hopsoft/model_probe](https://github.com/hopsoft/model_probe) if you are curious about the first snippet!
-
 
 ```json
 {
@@ -408,28 +404,22 @@ Checkout [hopsoft/model_probe](https://github.com/hopsoft/model_probe) if you ar
   },
   "Add pry binding": {
     "prefix": "bp",
-    "body": [
-      "binding.pry"
-    ],
+    "body": ["binding.pry"],
     "description": "Add pry binding"
   },
   "Add erb pry binding": {
     "prefix": "ebp",
-    "body": [
-      "<% binding.pry %>"
-    ],
+    "body": ["<% binding.pry %>"],
     "description": "Add erb pry binding"
   }
 }
 ```
 
-
 Hopefully you can take something from my setup to add to yours!
 
 Happy coding!
 
-*[This post is also available on DEV.](https://dev.to/andrewmcodes/ruby-on-rails-development-with-vs-code-p1i)*
-
+_[This post is also available on DEV.](https://dev.to/andrewmcodes/ruby-on-rails-development-with-vs-code-p1i)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];
