@@ -6,17 +6,17 @@
 </head>
 
 {% if bridgetown.environment == "development" %}
-{% assign body_classes = "debug-screens bg-body text-body font-body" %}
+{% assign body_classes = "debug-screens bg-body text-body font-body flex flex-col min-h-screen" %}
 {% else %}
-{% assign body_classes = "bg-body text-body font-body" %}
+{% assign body_classes = "bg-body text-body font-body flex flex-col min-h-screen" %}
 {% endif %}
 
 <body class="{{ body_classes }} {{ page.layout }} {{ page.page_class }}">
-  <div class="container px-4 mx-auto">
-    {% render "shared/navbar", navigation: site.metadata.navigation, primary: site.metadata.actions.primary, secondary: site.metadata.actions.secondary %}
+  {% render "shared/navbar", navigation: site.metadata.navigation, primary: site.metadata.actions.primary, secondary: site.metadata.actions.secondary %}
+  <div class="container flex-grow px-4 mx-auto">
     {{content}}
-    {% render "shared/footer", author: site.metadata.author.name, social: site.metadata.social %}
   </div>
+  {% render "shared/footer", author: site.metadata.author.name, social: site.metadata.social %}
 </body>
 
 </html>

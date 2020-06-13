@@ -2,15 +2,8 @@
 layout: default
 ---
 
-<section class="px-4 py-12 text-center">
-  <div class="w-full max-w-2xl mx-auto">
-    <span class="text-sm font-semibold">TAGLINE</span>
-    <h2 class="mt-2 mb-6 text-5xl leading-tight font-heading">
-      {{ page.title }}
-    </h2>
-  </div>
-  <div class="markdown">
-    <!-- <img class="rounded shadow-md" src="placeholders/pictures/office.jpg" alt=""> -->
-    {{ content }}
-  </div>
-</section>
+{% rendercontent "shared/section", title: page.title %}
+<div class="markdown">
+  {{ content }}
+</div>
+{% endrendercontent %}

@@ -1,10 +1,14 @@
-<div class="px-4 mb-8 lg:mb-4">
-  <div class="h-full">
-    <img class="mb-4" src="{{ post.header_img }}" alt="{{ post.title }}" />
-    <small>{{ post.date }}</small>
-    <h3 class="mt-2 mb-4 text-2xl font-heading">{{ post.title }}</h3>
-    <a class="text-blue-700 hover:underline" href="{{ post.url }}">
-      Read more
+<div class="px-4 mb-8 lg:mb-0">
+  <div class="h-full pb-8 bg-white rounded shadow-md">
+    <a href="{{ post.url }}">
+      <img class="mb-4" src="{{ post.header_img }}" alt="{{ post.title }}">
+      <div class="px-6">
+        <small>{{ post.date }}</small>
+        <h3 class="my-3 text-xl font-heading">{{ post.title }}</h3>
+        <p class="text-gray-500">The wise man once said: "Friend first, boss second, entertainer third". That man was
+          me.
+        </p>
+      </div>
     </a>
   </div>
 </div>

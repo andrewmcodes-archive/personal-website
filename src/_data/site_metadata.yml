@@ -33,7 +33,9 @@ navigation:
     url: "/blog"
   - name: "Projects"
     url: "/projects"
+  - name: "Contact"
+    url: "/contact"
 actions:
   primary:
     name: "Hire Me!"
-    url: "/"
+    url: "/hire-me"
