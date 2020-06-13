@@ -49,8 +49,8 @@ __University of North Carolina at Wilmington,__ <small>08/2014 – 05/2018</smal
 
 {% endrendercontent %}
 
-<div class="flex items-center justify-center w-full">
-    <a class="btn btn-primary" href="/skills">
+<div class="flex flex-col items-center justify-center w-full text-center md:flex-row">
+    <a class="mb-4 btn btn-primary lg:mb-0" href="/skills">
         Download PDF Version
     </a>
     <a class="btn btn-dark" href="/assets/pdf/Andrew_Mason_Resume.pdf">
