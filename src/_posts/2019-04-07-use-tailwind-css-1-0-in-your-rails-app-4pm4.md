@@ -18,6 +18,7 @@ tags:
 canonical_url: 'https://dev.to/andrewmcodes/use-tailwind-css-1-0-in-your-rails-app-4pm4'
 layout: post
 ---
+
 # NOTICE
 
 This tutorial is out of date and may not work for you. I have written a new post based on my experience using Rails and TailwindCSS over the last few months that you can find [here](https://dev.to/andrewmcodes/ruby-on-rails-and-tailwindcss-1-1-4-mm5). Thanks for reading! 😄
@@ -28,21 +29,18 @@ For the purpose of this tutorial, we will assume you have Ruby and the Rails gem
 
 ## Create a new Rails project
 
-
 ```bash
 rails new rails_tailwind --skip-coffee --webpack -d postgresql
 cd rails_tailwind
 rails db:create
 ```
 
-
 This will create a new Rails project for you with webpack and Postgres configured for you and create our databases. We will not use coffeescript, which is why we add the
 `--skip-coffee`
- flag. You can also omit the
+flag. You can also omit the
 `-d postgresql`
- flag if you like, but if you want to deploy to something like Heroku, I would recommend adding it. If you keep the Postgres flag, make sure you have Postgres installed and it is running. You can install Postgres on macOS by running
+flag if you like, but if you want to deploy to something like Heroku, I would recommend adding it. If you keep the Postgres flag, make sure you have Postgres installed and it is running. You can install Postgres on macOS by running
 `brew install postgresql && brew services start postgresql`
-
 
 ## Running Rails and Webpack
 
@@ -50,23 +48,19 @@ You need to run the Rails server and webpack-dev-server in two terminal tabs/win
 
 For now, we will just create two terminal windows. In one window, run:
 
-
 ```bash
 rails s
 ```
 
-
 and in the other:
-
 
 ```bash
 ./bin/webpack-dev-server
 ```
 
-
 You should see rails welcome page if you navigate to
 `localhost:3000`
- in your browser.
+in your browser.
 
 ![rails default information page](https://guides.rubyonrails.org/images/getting_started/rails_welcome.png)
 
@@ -74,26 +68,21 @@ You should see rails welcome page if you navigate to
 
 In order to see the Tailwind styles that we will integrate later, we at minimum need a controller and view.
 
-
 ```bash
 rails generate controller Home index
 ```
 
-
 You can remove the generated JS, SCSS, and helper file, we won't be needing them.
-
 
 ```bash
 rm app/helpers/home_helper.rb app/assets/javascripts/home.js app/assets/stylesheets/home.scss
 ```
 
-
 ## Configure your routes
 
 Change your
 `config/routes.rb`
- file to:
-
+file to:
 
 ```rb
 # frozen_string_literal: true
@@ -104,10 +93,8 @@ Rails.application.routes.draw do
 end
 ```
 
-
 Restart your Rails server, and now you should see the following on
 `localhost:3000`
-
 
 ![home index](https://i.imgur.com/A47j9dx.png)
 
@@ -115,11 +102,9 @@ Restart your Rails server, and now you should see the following on
 
 Run the following command in your terminal:
 
-
 ```bash
 yarn add tailwindcss --dev
 ```
-
 
 This should add the Tailwind package to your
 `package.json`
@@ -127,31 +112,25 @@ This should add the Tailwind package to your
 
 To create a custom config file, you can run:
 
-
 ```bash
 ./node_modules/.bin/tailwind init
 ```
 
-
 This should create a
 `tailwind.config.js`
- file at the root of your project. This file can be used to customize the Tailwind defaults. Read more [here](https://next.tailwindcss.com/docs/configuration)
+file at the root of your project. This file can be used to customize the Tailwind defaults. Read more [here](https://next.tailwindcss.com/docs/configuration)
 
 Next, add the following two lines to
 `postcss.config.js`
-
-
 
 ```js
 require('tailwindcss'),
 require('autoprefixer'),
 ```
 
-
 Your
 `postcss.config.js`
- file should now look like this:
-
+file should now look like this:
 
 ```js
 module.exports = {
@@ -170,51 +149,43 @@ module.exports = {
 }
 ```
 
-
 ## Configure Tailwind
 
 _There are a few ways you can do this but this is my personal preference._
 
 Remove the assets folder:
 
-
 ```bash
 rm -rf app/assets
 ```
 
-
 Rename the
 `app/javascript`
- directory to
+directory to
 `app/frontend`
 :
-
 
 ```bash
 mv app/javascript app/frontend
 ```
 
-
 Tell webpacker to use this new folder by changing the source_path in
 `config/webpacker.yml`
- from:
+from:
 `source_path: app/javascript`
- to
+to
 `source_path: app/frontend`
 .
 
 Next, we need to setup our stylesheets:
 
-
 ```bash
 touch app/frontend/packs/stylesheets.css
 ```
 
-
 Paste the following into our new
 `stylesheets.css`
- file. _This is straight from the [tailwind docs](https://next.tailwindcss.com/docs/installation# step-2-add-tailwind-to-your-css)_
-
+file. _This is straight from the [tailwind docs](https://next.tailwindcss.com/docs/installation# step-2-add-tailwind-to-your-css)_
 
 ```css
 @tailwind base;
@@ -224,40 +195,32 @@ Paste the following into our new
 @tailwind utilities;
 ```
 
-
 Add the following line in
 `app/frontend/packs/application.js`
 :
-
 
 ```js
 import './stylesheets.css'
 ```
 
-
 The last step is to tell Rails to use our packs. In
 `app/views/layouts/application.html.erb`
 , change:
-
 
 ```erb
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 ```
 
-
 to:
-
 
 ```erb
 <%= stylesheet_pack_tag 'stylesheets', 'data-turbolinks-track': 'reload' %>
 <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 ```
 
-
 Restart the Rails server and webpack-dev-server and you should now see the following on
 `localhost:3000`
-
 
 ![tailwind home index](https://i.imgur.com/C64oFFy.png)
 
@@ -267,8 +230,7 @@ Tailwind should now be working so lets tweak our views to see some Tailwind good
 
 In
 `app/views/layouts/application.html.erb`
- change:
-
+change:
 
 ```erb
 <body>
@@ -276,9 +238,7 @@ In
 </body>
 ```
 
-
 to:
-
 
 ```erb
 <body class="min-h-screen bg-gray-100">
@@ -288,20 +248,16 @@ to:
 </body>
 ```
 
-
 and in
 `app/views/home/index.html.erb`
- change:
-
+change:
 
 ```erb
 <h1>Home# index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
 ```
 
-
 to:
-
 
 ```erb
 <section class="py-8 text-center">
@@ -311,10 +267,8 @@ to:
 </section>
 ```
 
-
 You should now see the following page when you navigate to
 `localhost:3000`
-
 
 ![updated tailwind home index](https://i.imgur.com/okfqCoS.png)
 
@@ -324,5 +278,4 @@ If you are interested in using PurgeCSS to remove unused styles, I recommend che
 
 Happy coding!
 
-
-*[This post is also available on DEV.](https://dev.to/andrewmcodes/use-tailwind-css-1-0-in-your-rails-app-4pm4)*
+_[This post is also available on DEV.](https://dev.to/andrewmcodes/use-tailwind-css-1-0-in-your-rails-app-4pm4)_

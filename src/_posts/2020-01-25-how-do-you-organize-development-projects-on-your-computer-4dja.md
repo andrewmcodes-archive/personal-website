@@ -17,10 +17,10 @@ canonical_url: >-
   https://dev.to/andrewmcodes/how-do-you-organize-development-projects-on-your-computer-4dja
 layout: post
 ---
+
 I have tried different methods to keep development projects on my computer organized but between work projects, open source, side projects, issue reproductions, demos, and little test projects, it gets tough. I did a quick peruse through my computer and counted over 100 repos (some on GitHub, some not). They are all over the place, and I have only had this computer for 3 months! 😱
 
-*[This post is also available on DEV.](https://dev.to/andrewmcodes/how-do-you-organize-development-projects-on-your-computer-4dja)*
-
+_[This post is also available on DEV.](https://dev.to/andrewmcodes/how-do-you-organize-development-projects-on-your-computer-4dja)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];

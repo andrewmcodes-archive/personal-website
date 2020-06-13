@@ -1,6 +1,3 @@
-*.html
-*.liquid
-
 /plugins/
 /node_modules/
 /web_modules/

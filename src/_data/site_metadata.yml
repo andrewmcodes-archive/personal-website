@@ -4,14 +4,21 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.metadata.myvariable }}.
 
-title: Andrew Mason
+title: "Andrew Mason - Ruby on Rails Developer"
 tagline: My personal site
+email: andrewmcodes@protonmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+  Hire Me! I am a full-stack developer, specializing in Ruby on Rails, and I am looking for my next position. My name is Andrew Mason, and this is my website.
 
 author:
   email: andrewmcodes@protonmail.com
   name: Andrew Mason
+  twitter: andrewmcodes
+
+twitter:
+  username: andrewmcodes
+  creator: andrewmcodes
+  card: summary
 
 social:
   - name: "twitter"
@@ -33,6 +40,8 @@ navigation:
     url: "/blog"
   - name: "Projects"
     url: "/projects"
+  - name: "Experience"
+    url: "/experience"
   - name: "Contact"
     url: "/contact"
 actions:

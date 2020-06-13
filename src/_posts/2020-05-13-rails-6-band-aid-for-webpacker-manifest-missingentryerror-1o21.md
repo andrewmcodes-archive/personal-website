@@ -19,8 +19,8 @@ canonical_url: >-
   https://dev.to/andrewmcodes/rails-6-band-aid-for-webpacker-manifest-missingentryerror-1o21
 layout: post
 ---
-At [CodeFund](https://codefund.io), we try to keep our dependencies, including Rails, as up to date as possible. We upgraded to Rails 6 a few months ago, and I've pretty much forgotten any issues we ran into during the upgrade. For what it's worth, the upgrade was very smooth, but there was one issue we ran into that was lost in my memories before a friend showed me a familiar error message today:
 
+At [CodeFund](https://codefund.io), we try to keep our dependencies, including Rails, as up to date as possible. We upgraded to Rails 6 a few months ago, and I've pretty much forgotten any issues we ran into during the upgrade. For what it's worth, the upgrade was very smooth, but there was one issue we ran into that was lost in my memories before a friend showed me a familiar error message today:
 
 ```bash
 # Webpacker::Manifest::MissingEntryError:
@@ -37,12 +37,11 @@ webpack -w
 #   }
 ```
 
-
 The error essentially is letting you know that Webpacker tried to locate the
 `foo/bar`
- asset entry in the
+asset entry in the
 `manifest.json`
- file that gets generated when Webpacker compiles your test assets, but it could not find it. Even more interesting, the manifest is completely empty.
+file that gets generated when Webpacker compiles your test assets, but it could not find it. Even more interesting, the manifest is completely empty.
 
 It is worth noting that I _only ran into this issue in my test environment_, which is exactly what was happening to my buddy. If your Webpacker config is close to the default, assets are precompiled into
 `public/packs-test/*`
@@ -56,7 +55,6 @@ I am still not quite sure the cause, and one of my hopes for posting this articl
 
 If you encounter this type of error in your tests while upgrading to Rails 6, here is one way of solving it:
 
-
 ```ruby
 # test/test_helper.rb
 
@@ -67,14 +65,13 @@ unless Webpacker.compiler.fresh?
 end
 ```
 
-
 Adding this method in your
 `test_helper`
- or
+or
 `spec_helper`
- before the tests run will force Webpacker to make sure the test-packs are present and up to date, and if not it will compile them. If you do some source diving, you will see this comment above the
+before the tests run will force Webpacker to make sure the test-packs are present and up to date, and if not it will compile them. If you do some source diving, you will see this comment above the
 `fresh?`
- method in
+method in
 `Webpacker::Compiler`
 :
 
@@ -86,8 +83,7 @@ You can see the usage of this in [CodeFund's
 `test_helper.rb`
 ](https://github.com/gitcoinco/code_fund_ads/blob/5f9a7165b7a49ed73a81c7987e8a13ba18f9e0a6/test/test_helper.rb# L22). If you try to run the test suite and
 `public/packs-test`
- has not been created or the test packs are not up to date, you will see this in your terminal:
-
+has not been created or the test packs are not up to date, you will see this in your terminal:
 
 ```bash
 ➜ bin/rails test
@@ -99,11 +95,10 @@ You can see the usage of this in [CodeFund's
 ...
 ```
 
-
 As to why this is happening, I am still not sure. I am still leaning towards this being caused from a misconfiguration or some behavior specific to our setup, but after being asked about it today, I figured it was worth sharing in case you run across it in your own app.
 
 If you have run into this before and fixed the underlying cause, please leave a comment below or mention me on [Twitter](https://twitter.com/andrewmcodes)! I will make sure to update this post if we up solving it. In the meantime, the solution above is working great for us.
 
 Happy ~~coding~~ debugging!!
 
-*[This post is also available on DEV.](https://dev.to/andrewmcodes/rails-6-band-aid-for-webpacker-manifest-missingentryerror-1o21)*
+_[This post is also available on DEV.](https://dev.to/andrewmcodes/rails-6-band-aid-for-webpacker-manifest-missingentryerror-1o21)_

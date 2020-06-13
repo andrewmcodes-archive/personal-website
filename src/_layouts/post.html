@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<article class="container w-full mx-auto mb-12 bg-white rounded shadow-2xl lg:max-w-5xl">
+<article class="container w-full mx-auto my-12 bg-white rounded shadow-2xl lg:max-w-5xl">
   {% if page.header_img_path %}
   <div class="flex justify-center border-b">
     <img src="{{ page.header_img_path }}" alt="{{ page.title}} - Header Image" class="object-cover w-full" />
@@ -13,7 +13,7 @@ layout: default
       {{ page.title }}
     </h1>
     <div class="w-full mx-auto">
-      <section class="markdown">
+      <section class="markdown ">
         {{ content }}
       </section>
     </div>

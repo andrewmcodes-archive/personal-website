@@ -5,17 +5,66 @@
 @import 'tailwindcss/utilities';
 
 .swup-transition-main {
-	 transition: opacity .4s, transform .4s;
+  transition: opacity 0.4s, transform 0.4s;
 }
- html.is-animating .swup-transition-main {
-	 transform: translate3d(0, -20px, 0);
+html.is-animating .swup-transition-main {
+  transform: translate3d(0, -20px, 0);
 }
- html.is-animating.is-leaving .swup-transition-main {
-	 transform: translate3d(0, 20px, 0);
+html.is-animating.is-leaving .swup-transition-main {
+  transform: translate3d(0, 20px, 0);
 }
- html.is-animating.is-leaving.swup-theme-reverse .swup-transition-main {
-	 transform: translate3d(0, 20px, 0);
+html.is-animating.is-leaving.swup-theme-reverse .swup-transition-main {
+  transform: translate3d(0, 20px, 0);
 }
- html.is-animating.is-leaving.swup-theme-reverse.is-leaving .swup-transition-main {
-	 transform: translate3d(0, -20px, 0);
+html.is-animating.is-leaving.swup-theme-reverse.is-leaving
+  .swup-transition-main {
+  transform: translate3d(0, -20px, 0);
+}
+
+.btn {
+  @apply inline-block px-8 py-4 mr-6 leading-none;
+}
+
+.btn-primary {
+  @apply text-white bg-red-500 rounded shadow;
+}
+
+.btn-primary:hover {
+  @apply bg-red-600;
+}
+
+.btn-dark {
+  @apply text-white bg-gray-800 rounded shadow;
+}
+
+.btn-dark:hover {
+  @apply bg-gray-900;
+}
+
+.btn-secondary {
+  @apply text-gray-800 bg-transparent rounded border-gray-800 border;
+}
+
+.btn-secondary:hover {
+  @apply border-red-500 text-red-500;
+}
+
+/* inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-gray-600 hover:bg-gray-500 focus:outline-none focus:shadow-outline-gray focus:border-gray-700 active:bg-gray-700 transition duration-150 ease-in-out */
+
+.blue-morals {
+  background: linear-gradient(45deg, #000850 0%, #000320 100%),
+    radial-gradient(100% 225% at 100% 0%, #ff6928 0%, #000000 100%),
+    linear-gradient(225deg, #ff7a00 0%, #000000 100%),
+    linear-gradient(
+      135deg,
+      #cdffeb 10%,
+      #cdffeb 35%,
+      #009f9d 35%,
+      #009f9d 60%,
+      #07456f 60%,
+      #07456f 67%,
+      #0f0a3c 67%,
+      #0f0a3c 100%
+    );
+  background-blend-mode: screen, overlay, hard-light, normal;
 }

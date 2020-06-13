@@ -18,6 +18,7 @@ tags:
 canonical_url: 'https://dev.to/codefund/ci-for-ruby-on-rails-github-actions-3mn1'
 layout: post
 ---
+
 # CI for Ruby on Rails: GitHub Actions vs. CircleCI
 
 _This is part of a three part series where I will walk you through setting up your CI suite with GitHub Actions, CircleCI, and then comparing which you may want to use if you are setting up continuous integration for your Rails app._
@@ -26,14 +27,11 @@ _This is part of a three part series where I will walk you through setting up yo
 
 ### 1. Set the name for your action
 
-
 ```yml
 name: Run Tests & Linters
 ```
 
-
 ### 2. Set what events should trigger the action to run
-
 
 ```yml
 name: Run Tests & Linters
@@ -47,11 +45,9 @@ on:
       - master
 ```
 
-
 What this says is that this action will run anytime a pull_request is updated on any branch, and also on pushes to master.
 
 ### 3. Create your job, and choose what to run the action on
-
 
 ```yml
 jobs:
@@ -59,13 +55,11 @@ jobs:
     runs-on: ubuntu-latest
 ```
 
-
 This tells our action we want to run the action on Ubuntu, and use the latest version GitHub has available, which is Ubuntu 18.04.
 
 ### 4. Define services
 
 For a typical Rails app, you are probably using Redis for caching a tools like Sidekiq, and you also probably have a database. Defining services in your action allows us to use additional containers to run these types of tools.
-
 
 ```yaml
 services:
@@ -76,7 +70,8 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
     ports: ['5432:5432'] # The port that you can access the service on
-    options: >- # Options for the service, in this case we want to make sure that the Postgres container passes a health check
+    options:
+      >- # Options for the service, in this case we want to make sure that the Postgres container passes a health check
       --health-cmd pg_isready
       --health-interval 10s
       --health-timeout 5s
@@ -87,11 +82,9 @@ services:
     options: --entrypoint redis-server # Options for the service
 ```
 
-
 ### 5. Setup dependencies and checkout the branch
 
 Here is where it got tricky for me. If you search for using GitHub actions with Rails, you will probably see something like this:
-
 
 ```yml
 - uses: actions/checkout@v1
@@ -104,17 +97,16 @@ Here is where it got tricky for me. If you search for using GitHub actions with 
     cmd: install
 ```
 
-
 This particular example is from my friend [Chris Oliver](https://gorails.com/episodes/github-actions-continuous-integration-ruby-on-rails), who runs [Go Rails](https://gorails.com) (check it out!!).
 
 This solution would have been great except:
+
 - The latest Ruby version available from GitHub is Ruby 2.6.3
 - The latest Node version available from GitHub is Node 12.13.1
 
 At [CodeFund](https://codefund.io), we are using Ruby 2.6.5 (about to bump to 2.7) and Node 13.0.1. There are a few solutions that have been proposed for this problem, like installing the version of Ruby you want from source with [ruby build](https://github.com/clupprich/ruby-build-action) or using a tool like [nvm](https://github.com/dcodeIO/setup-node-nvm). These may work for you but they can be slow, and they wouldn't work for a problem I would later have. Instead, I wrote my own Docker image that had everything I needed already built in. Ruby 2.6.5, Node 13.0.1, additional packages you would need for Postgres, Chrome for system tests, Bundler 2.0.2, and my generic environment variables.
 
 I am not going to explain all of the details here, and I know I could reduce the size a bit but here is the first iteration of that image:
-
 
 ```Dockerfile
 FROM ruby:2.6.5
@@ -151,22 +143,18 @@ RUN  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
 RUN gem install bundler:2.0.2
 ```
 
-
 ### 6. Use Docker container
-
 
 ```yml
 container:
-      image: andrewmcodes/locomotive:v0.0.1 # my image name
-      env: # additional environment variables I want to have access to
-        DEFAULT_HOST: app.codefund.io
+  image: andrewmcodes/locomotive:v0.0.1 # my image name
+  env: # additional environment variables I want to have access to
+    DEFAULT_HOST: app.codefund.io
 ```
-
 
 Note: If you do not set a container, all steps will run directly on the host specified, which if you remember is Ubuntu 18.04.
 
 As of now, our action looks like:
-
 
 ```yml
 name: Run Tests & Linters
@@ -205,17 +193,14 @@ jobs:
         DEFAULT_HOST: app.codefund.io
 ```
 
-
 ### 7. Add steps
 
 Now it is time to run commands inside of our container. We will start by checking out the code.
-
 
 ```yml
 steps:
   - uses: actions/checkout@v2
 ```
-
 
 ### 8. Caching
 
@@ -227,61 +212,59 @@ Thankfully, GitHub provides some examples for getting started with your tools of
 NOTE: Individual caches are limited to 400MB and a repository can have up to 2GB of caches. Once the 2GB limit is reached, older caches will be evicted based on when the cache was last accessed. Caches that are not accessed within the last week will also be evicted.
 
 {% raw %}
+
 ```yml
- - name: Get Yarn Cache
-   id: yarn-cache
-   run: echo "::set-output name=dir::$(yarn cache dir)"
+- name: Get Yarn Cache
+  id: yarn-cache
+  run: echo "::set-output name=dir::$(yarn cache dir)"
 
- - name: Node Modules Cache
-   id: node-modules-cache
-   uses: actions/cache@v1
-   with:
-     path: ${{ steps.yarn-cache.outputs.dir }}
-     key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-     restore-keys: |
-       ${{ runner.os }}-yarn-
+- name: Node Modules Cache
+  id: node-modules-cache
+  uses: actions/cache@v1
+  with:
+    path: ${{ steps.yarn-cache.outputs.dir }}
+    key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+    restore-keys: |
+      ${{ runner.os }}-yarn-
 
- - name: Gems Cache
-   id: gem-cache
-   uses: actions/cache@v1
-   with:
-     path: vendor/bundle
-     key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
-     restore-keys: |
-       ${{ runner.os }}-gem-
+- name: Gems Cache
+  id: gem-cache
+  uses: actions/cache@v1
+  with:
+    path: vendor/bundle
+    key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+    restore-keys: |
+      ${{ runner.os }}-gem-
 
- - name: Assets Cache
-   id: assets-cache
-   uses: actions/cache@v1
-   with:
-     path: public/packs-test
-     key: ${{ runner.os }}-assets-${{ steps.extract_branch.outputs.branch }}
-     restore-keys: |
-       ${{ runner.os }}-assets-
+- name: Assets Cache
+  id: assets-cache
+  uses: actions/cache@v1
+  with:
+    path: public/packs-test
+    key: ${{ runner.os }}-assets-${{ steps.extract_branch.outputs.branch }}
+    restore-keys: |
+      ${{ runner.os }}-assets-
 ```
-
 
 ### 9. Bundle, Yarn, and Precompile Assets
 
 Next, we will want to run Bundler and Yarn to install our dependencies if they were not restored from the cache, and precompile our assets.
 
-
 ```yml
- - name: Bundle Install
-   run: bundle check || bundle install --path vendor/bundle --jobs 4 --retry 3
+- name: Bundle Install
+  run: bundle check || bundle install --path vendor/bundle --jobs 4 --retry 3
 
- - name: Yarn Install
-   run: yarn check || bin/rails yarn:install
+- name: Yarn Install
+  run: yarn check || bin/rails yarn:install
 
- - name: Compile Assets
-   run: |
-      if [[ ! -d public/packs-test ]]; then
-        bin/rails webpacker:compile
-      else
-        echo "No need to compile assets."
-      fi
+- name: Compile Assets
+  run: |
+    if [[ ! -d public/packs-test ]]; then
+      bin/rails webpacker:compile
+    else
+      echo "No need to compile assets."
+    fi
 ```
-
 
 NOTE: You may be able to skip the asset compilation, that is up to you.
 
@@ -292,12 +275,11 @@ In order to get this to work, I had to make a couple updates to some files in my
 1.
 `config/database.yml`
 
-  Update host for test to be:
+Update host for test to be:
 `host: <%= ENV.fetch("PG_HOST", "localhost") %>`
 
 2. Update
-`test/application_system_test_case.rb`
-
+   `test/application_system_test_case.rb`
 
 ```rb
      require "test_helper"
@@ -308,24 +290,20 @@ In order to get this to work, I had to make a couple updates to some files in my
         driver_options.add_argument("--no-sandbox")
       end
     end
-  ```
-
+```
 
 ### 11. Setup Database
 
 One last item we need to take care of prior to running the tests and linters is setting up our database.
-
 
 ```yml
 - name: Setup DB
       run: bin/rails db:drop db:create db:structure:load --trace
 ```
 
-
 ### 12. Run Tests and Linters
 
 Now we can finally run our tests and linters.
-
 
 ```yml
 - name: Run Rails Tests
@@ -346,11 +324,9 @@ Now we can finally run our tests and linters.
   run: yarn run --ignore-engines prettier-standard --check 'app/**/*.js'
 ```
 
-
 At this point, your action should be complete!
 
 Here is my completed action file:
-
 
 ```yml
 name: Run Tests & Linters
@@ -388,76 +364,77 @@ jobs:
       env:
         DEFAULT_HOST: app.codefund.io
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v1
 
-    - name: Get Yarn Cache
-      id: yarn-cache
-      run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Get Yarn Cache
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
 
-    - name: Cache Node Modules
-      id: node-modules-cache
-      uses: actions/cache@v1
-      with:
-        path: ${{ steps.yarn-cache.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
+      - name: Cache Node Modules
+        id: node-modules-cache
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
-    - name: Cache Gems
-      id: gem-cache
-      uses: actions/cache@v1
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-gem-
+      - name: Cache Gems
+        id: gem-cache
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gem-
 
-    - name: Cache Assets
-      id: assets-cache
-      uses: actions/cache@v1
-      with:
-        path: public/packs-test
-        key: ${{ runner.os }}-assets-${{ steps.extract_branch.outputs.branch }}
-        restore-keys: |
-          ${{ runner.os }}-assets-
+      - name: Cache Assets
+        id: assets-cache
+        uses: actions/cache@v1
+        with:
+          path: public/packs-test
+          key: ${{ runner.os }}-assets-${{ steps.extract_branch.outputs.branch }}
+          restore-keys: |
+            ${{ runner.os }}-assets-
 
-    - name: Bundle Install
-      run: bundle install --path vendor/bundle --jobs 4 --retry 3
+      - name: Bundle Install
+        run: bundle install --path vendor/bundle --jobs 4 --retry 3
 
-    - name: Yarn Install
-      run: bin/rails yarn:install
+      - name: Yarn Install
+        run: bin/rails yarn:install
 
-    - name: Compile Assets
-      shell: bash
-      run: |
-        if [[ ! -d public/packs-test ]]; then
-          bundle exec rails webpacker:compile
-        else
-          echo "No need to compile assets."
-        fi
+      - name: Compile Assets
+        shell: bash
+        run: |
+          if [[ ! -d public/packs-test ]]; then
+            bundle exec rails webpacker:compile
+          else
+            echo "No need to compile assets."
+          fi
 
-    - name: Setup DB
-      run: bin/rails db:drop db:create db:structure:load --trace
+      - name: Setup DB
+        run: bin/rails db:drop db:create db:structure:load --trace
 
-    - name: Run Rails Tests
-      run: |
-        bin/rails test
-        bin/rails test:system
+      - name: Run Rails Tests
+        run: |
+          bin/rails test
+          bin/rails test:system
 
-    - name: Zeitwerk Check
-      run: bundle exec rails zeitwerk:check
+      - name: Zeitwerk Check
+        run: bundle exec rails zeitwerk:check
 
-    - name: StandardRB Check
-      run: bundle exec standardrb --format progress
+      - name: StandardRB Check
+        run: bundle exec standardrb --format progress
 
-    - name: ERB Lint
-      run: bundle exec erblint app/views_redesigned/**/*.html.erb
+      - name: ERB Lint
+        run: bundle exec erblint app/views_redesigned/**/*.html.erb
 
-    - name: Prettier-Standard Check
-      run: yarn run --ignore-engines prettier-standard --check 'app/**/*.js'
+      - name: Prettier-Standard Check
+        run: yarn run --ignore-engines prettier-standard --check 'app/**/*.js'
 ```
+
 {% endraw %}
 
 As you can see, setting up GitHub Actions for your CI can be quite involved and requires a lot of initial setup. Hopefully this post will help you if you are thinking of experimenting with them on your Rails app. Check back later this week for Part 2, setting up CircleCI!
 
-*[This post is also available on DEV.](https://dev.to/codefund/ci-for-ruby-on-rails-github-actions-3mn1)*
+_[This post is also available on DEV.](https://dev.to/codefund/ci-for-ruby-on-rails-github-actions-3mn1)_

@@ -18,6 +18,7 @@ tags:
 canonical_url: 'https://dev.to/andrewmcodes/rails-coverage-tools-codefactor-3ee2'
 layout: post
 ---
+
 # [CodeFactor](https://codefactor.io)
 
 According to their documentation:
@@ -45,14 +46,12 @@ If you'd like to build it together, let's get started!
 
 Let's create a new Rails app and
 `cd`
- into it:
-
+into it:
 
 ```bash
 rails new codefactor_demo
 cd codefactor_demo
 ```
-
 
 ### Create Repository
 
@@ -62,14 +61,12 @@ Open GitHub and create a new repository. I named mine
 
 Open your command line again and let's upstream our code.
 
-
 ```bash
 git add .
 git commit -m "first commit"
 git remote add origin https://github.com/YOUR_USERNAME/codefactor_demo.git
 git push -u origin master
 ```
-
 
 Your code should now be online in your repo.
 
@@ -97,7 +94,7 @@ You will be taken to a screen that will let you search and select your desired r
 
 Click the
 `Import`
- button to import the repository.
+button to import the repository.
 
 Once your repository has been imported, it will show up on your dashboard:
 
@@ -136,4 +133,4 @@ Happy coding!
 
 P.S. If you aren't sure how to set up ESLint, Rubocop, or the other listed linters, leave a comment or message me on [Twitter](https://twitter.com/andrewmcodes) and let me know if you'd like a post about this!
 
-*[This post is also available on DEV.](https://dev.to/andrewmcodes/rails-coverage-tools-codefactor-3ee2)*
+_[This post is also available on DEV.](https://dev.to/andrewmcodes/rails-coverage-tools-codefactor-3ee2)_

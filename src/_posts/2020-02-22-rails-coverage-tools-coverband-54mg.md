@@ -18,11 +18,12 @@ tags:
 canonical_url: 'https://dev.to/andrewmcodes/rails-coverage-tools-coverband-54mg'
 layout: post
 ---
+
 # Coverband
 
 According to their documentation, Coverband is:
 
->A gem to measure production code usage, showing a counter for the number of times each line of code that is executed. Coverband allows easy configuration to collect and report on production code usage. (...) The primary goal of Coverband is giving deep insight into your production runtime usage of your application code, while having the least impact on performance possible
+> A gem to measure production code usage, showing a counter for the number of times each line of code that is executed. Coverband allows easy configuration to collect and report on production code usage. (...) The primary goal of Coverband is giving deep insight into your production runtime usage of your application code, while having the least impact on performance possible
 
 TL;DR
 
@@ -40,7 +41,6 @@ Add the Coverband gem to your
 `Gemfile`
 . I personally decided to keep it in my development group, because I didn't see any value in having the dashboard available in production.
 
-
 ```ruby
 # Gemfile
 
@@ -53,14 +53,11 @@ group :development do
 end
 ```
 
-
 Then run:
-
 
 ```bash
 bundle install
 ```
-
 
 ## Configuration
 
@@ -68,22 +65,19 @@ bundle install
 
 Coverband stores coverage data in Redis. According to the documentation, the Redis endpoint is looked for in this order:
 
-
 ```ruby
 ENV['COVERBAND_REDIS_URL']
 ENV['REDIS_URL']
 localhost
 ```
 
-
 You can also specifically set this in a Coverband initializer file. If you are using the template that I’m using then you should be all set, otherwise make sure you are running Redis locally, bundle the
 `redis`
- gem, and your app can access it.
+gem, and your app can access it.
 
 ### Initializer
 
 Let's configure the gem. Create an initializer file for Coverband, which should look like the following:
-
 
 ```ruby
 # config/coverband.rb
@@ -98,13 +92,11 @@ Coverband.configure do |config|
 end
 ```
 
-
 These settings just tell Coverband to ignore our specified files and paths.
 
 ### Route
 
 Now, lets add a route for coverband so we can view the web dashboard:
-
 
 ```ruby
 # config/routes.rb
@@ -113,7 +105,6 @@ Rails.application.routes.draw do
   mount Coverband::Reporters::Web.new, at: "/coverband" if Rails.env.development?
 end
 ```
-
 
 It is worth noting that if you are running this tool in production, you should protect this route with proper authentication.
 
@@ -124,18 +115,15 @@ We should be all set to see what Coverband can provide us!
 Fire up the Rails server and navigate to
 `localhost:3000/coverband`
 
-
 Alternatively, you can run the following Rake task and static files will be created in
 `coverage/`
 . I would recommend making sure this directory is added to your
 `.gitignore`
 .
 
-
 ```bash
 rake coverband:coverage
 ```
-
 
 You should now be seeing is Coverband's mountable web interface to easily view Coverband reports.
 
@@ -143,7 +131,7 @@ You should now be seeing is Coverband's mountable web interface to easily view C
 
 If we click on a file with 0% coverage, you will see the following message:
 
->This file was never loaded during app runtime or loading (or was loaded before Coverband loaded)!
+> This file was never loaded during app runtime or loading (or was loaded before Coverband loaded)!
 
 Basically this mean the code inside the file has not been loaded, and therefore not used.
 
@@ -155,28 +143,27 @@ This view will highlight the lines that have been used, and those that haven't. 
 
 In the
 `posts_controller`
- file in my example above, the code inside our
+file in my example above, the code inside our
 `new`
- and
+and
 `create`
- methods is not being used. I am going to open up the UI, and create a new post. You will notice that the coverage report looks a little different now:
+methods is not being used. I am going to open up the UI, and create a new post. You will notice that the coverage report looks a little different now:
 
 ![coverband_3](https://dev-to-uploads.s3.amazonaws.com/i/smks7r65kpjlpfan8cxj.jpg)
 
 It is important to exercise some due diligence before removing code that Coverband flags. In the example above, after some investigation I realized I in fact do not need
 `config/spring.rb`
- because I am not using
+because I am not using
 `spring`
- in this project. This is the power of this library, the ability to point you towards areas in your codebase that may be safe to remove; however, if I had removed the flagged code in the
+in this project. This is the power of this library, the ability to point you towards areas in your codebase that may be safe to remove; however, if I had removed the flagged code in the
 `posts_controller`
- then I would be in some trouble.
+then I would be in some trouble.
 
 ### Tracking Gems
 
 It is also possible to use Coverband to track gem usage. This is still in experimental stages and not recommended for production according to the docs.
 
 To see it in action, first let's update our initializer:
-
 
 ```ruby
 # config/initializers/coverband.rb
@@ -193,17 +180,15 @@ end
 
 ```
 
-
 According to the docs:
 
 > When tracking gems, it is important that Coverband# start is called before the gems to be tracked are required. The best way to do this is to require coverband before Bundle.require is called
 
 So lets update
 `application.rb`
- to make sure coverband is loaded before
+to make sure coverband is loaded before
 `Bundler.require`
- is called:
-
+is called:
 
 ```ruby
 # config/application.rb
@@ -211,7 +196,6 @@ So lets update
 require "coverband"
 Bundler.require(*Rails.groups)
 ```
-
 
 Restart the Rails server and you should now have a gem tab if you navigate back to
 `localhost:3000/coverband`
@@ -225,9 +209,9 @@ This can help give you insight into gems that may be safe to remove.
 
 There is a config option to watch your views, but it was not working for me on
 `Rails 6.0.2.1`
- and
+and
 `Ruby 2.7`
- so I won't go into it now.
+so I won't go into it now.
 
 See [the advanced configuration documentation](https://github.com/danmayer/coverband# advanced-config) for more information.
 
@@ -243,5 +227,4 @@ Coverband is a great tool to help you find code in your Rails app that may be sa
 
 Happy Coding!
 
-
-*[This post is also available on DEV.](https://dev.to/andrewmcodes/rails-coverage-tools-coverband-54mg)*
+_[This post is also available on DEV.](https://dev.to/andrewmcodes/rails-coverage-tools-coverband-54mg)_

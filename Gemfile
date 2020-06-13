@@ -22,5 +22,6 @@ group :development, :test do
 end
 
 group :bridgetown_plugins do
-  gem "bridgetown-seo-tag", "~> 3.0"
+  gem "bridgetown-cloudinary", "~> 1.0.2"
+  gem "bridgetown-seo-tag", "~> 3.0.5.beta1"
 end

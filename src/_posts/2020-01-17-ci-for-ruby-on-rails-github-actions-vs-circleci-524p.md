@@ -18,6 +18,7 @@ tags:
 canonical_url: 'https://dev.to/codefund/ci-for-ruby-on-rails-github-actions-vs-circleci-524p'
 layout: post
 ---
+
 # CI for Ruby on Rails: GitHub Actions vs. CircleCI
 
 _This is part of a three part series where I will walk you through setting up your CI suite with GitHub Actions, CircleCI, and then comparing which you may want to use if you are setting up continuous integration for your Rails app._
@@ -28,8 +29,7 @@ You can find the conclusion of this series on the [CodeFund Blog](https://codefu
 
 Thanks for following along!
 
-*[This post is also available on DEV.](https://dev.to/codefund/ci-for-ruby-on-rails-github-actions-vs-circleci-524p)*
-
+_[This post is also available on DEV.](https://dev.to/codefund/ci-for-ruby-on-rails-github-actions-vs-circleci-524p)_
 
 <script>
 const parent = document.getElementsByTagName('head')[0];

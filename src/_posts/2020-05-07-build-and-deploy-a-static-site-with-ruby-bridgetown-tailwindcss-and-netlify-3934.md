@@ -19,6 +19,7 @@ canonical_url: >-
   https://dev.to/andrewmcodes/build-and-deploy-a-static-site-with-ruby-bridgetown-tailwindcss-and-netlify-3934
 layout: post
 ---
+
 - [Demo Repository](https://github.com/andrewmcodes/bridgetown_tailwind)
 - [Demo Website](https://bridgetown-tailwind.netlify.app)
 
@@ -190,7 +191,6 @@ main {
 }
 ```
 
-
 ```html
 <!-- src/_layouts/default.html -->
 
@@ -199,8 +199,9 @@ main {
   <head>
     {% raw %}{% include head.html %}{% endraw %}
   </head>
-  {% raw %}<body class="min-h-screen {{ page.layout }} {{ page.page_class }}">{% endraw %}
-    {% raw %}{% include navbar.html %}{% endraw %}
+  {% raw %}
+  <body class="min-h-screen {{ page.layout }} {{ page.page_class }}">
+    {% endraw %} {% raw %}{% include navbar.html %}{% endraw %}
 
     <main class="text-gray-700">
       {% raw %}{{ content }}{% endraw %}
@@ -211,13 +212,9 @@ main {
 </html>
 ```
 
-
-
 ```html
 <!-- src/_layouts/home.html -->
----
-layout: default
----
+--- layout: default ---
 
 <div class="w-full px-5 py-12 bg-red-500">
   <h1 class="mb-4 text-6xl text-white">Home</h1>
@@ -230,12 +227,9 @@ layout: default
 </div>
 ```
 
-
 ```html
 <!-- src/_layouts/page.html & src/_layouts/post.html -->
----
-layout: default
----
+--- layout: default ---
 
 <div class="w-full px-5 py-12 bg-red-500">
   <h1 class="mb-4 text-6xl text-white">{{ page.title }}</h1>
@@ -342,4 +336,4 @@ You can find the code for this tutorial [here](https://github.com/andrewmcodes/b
 
 Happy coding!
 
-*[This post is also available on DEV.](https://dev.to/andrewmcodes/build-and-deploy-a-static-site-with-ruby-bridgetown-tailwindcss-and-netlify-3934)*
+_[This post is also available on DEV.](https://dev.to/andrewmcodes/build-and-deploy-a-static-site-with-ruby-bridgetown-tailwindcss-and-netlify-3934)_

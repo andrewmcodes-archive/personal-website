@@ -19,13 +19,14 @@ canonical_url: >-
   https://dev.to/andrewmcodes/hiding-ruby-2-7-deprecation-warnings-in-rails-6-2mil
 layout: post
 ---
+
 # Hiding Ruby 2.7 Deprecation Warnings in Rails 6
 
 If you have upgraded your Rails app to Ruby 2.7, you are probably seeing a lot of deprecation messages in your console. You should first make sure that none of these messages are coming from your code, and address them if they are! If the deprecations are coming mostly from Rails, it may be time to disable the messages and save yourself from messy terminal output.
 
 The TL;DR is that you need to use
 `RUBYOPT='-W:no-deprecated -W:no-experimental'`
- to disable the deprecations. This will also disable experimental feature warnings as well.
+to disable the deprecations. This will also disable experimental feature warnings as well.
 
 Here are some options you have to make that happen. But first, lets create a new Rails app to experiment with!
 
@@ -35,35 +36,29 @@ You can either use the CLI or [this template](https://github.com/andrewmcodes/ra
 
 If you use the CLI, I recommend something like:
 
-
 ```bash
 rails new silence_ruby_2_7_deprecations -d postgresql --webpack=stimulus
 ```
 
-
 ## Method # 1: Using
-`dotenv-rails`
 
+`dotenv-rails`
 
 If you are using the [dotenv-rails](https://github.com/bkeepers/dotenv/) gem, or another method of using
 `.env`
- files, simply add the following to your
+files, simply add the following to your
 `.env`
- file:
-
+file:
 
 ```bash
 export RUBYOPT='-W:no-deprecated -W:no-experimental'
 ```
 
-
 Then run the following in the root of the project:
-
 
 ```bash
 source .env
 ```
-
 
 You should no longer be seeing the Ruby 2.7 deprecation warnings coming out of Rails! 🎉
 
@@ -77,12 +72,12 @@ Example:
 
 -
 `rails server`
- would become
+would become
 `RUBYOPT='-W:no-deprecated -W:no-experimental' rails server`
 
 -
 `rails console`
- would become
+would become
 `RUBYOPT='-W:no-deprecated -W:no-experimental' rails console`
 
 - etc.
@@ -93,13 +88,11 @@ This is obviously not ideal but it will work!
 
 If you want to disable these deprecation messages everywhere, you can add the following to your
 `~/.zshrc`
- or
+or
 `~/.bashrc`
 :
 
-
 `export RUBYOPT='-W:no-deprecated -W:no-experimental'`
-
 
 This will disable deprecation and experimental feature warnings for all versions of Ruby, for all projects. I have heard of this creating issues for some so you may want to be careful using this method if you work on multiple apps that aren't on Ruby 2.7.
 
@@ -107,5 +100,4 @@ This will disable deprecation and experimental feature warnings for all versions
 
 Hopefully this helps! Happy coding!
 
-
-*[This post is also available on DEV.](https://dev.to/andrewmcodes/hiding-ruby-2-7-deprecation-warnings-in-rails-6-2mil)*
+_[This post is also available on DEV.](https://dev.to/andrewmcodes/hiding-ruby-2-7-deprecation-warnings-in-rails-6-2mil)_

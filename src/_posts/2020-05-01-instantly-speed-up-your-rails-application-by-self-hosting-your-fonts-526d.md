@@ -19,6 +19,7 @@ canonical_url: >-
   https://dev.to/andrewmcodes/instantly-speed-up-your-rails-application-by-self-hosting-your-fonts-526d
 layout: post
 ---
+
 # Instantly speed up your Rails application by self-hosting your fonts
 
 A font can make or break your design, and as a result many of us are probably not using the default system fonts. [Google Fonts](https://fonts.google.com) makes it really easy to find the perfect font, but it can come with a performance cost. If you are loading a font directly from Google, the following tutorial is guaranteed to speed up your Rails application.
@@ -35,12 +36,10 @@ This is a tutorial, but I will assume you have a basic understanding of Ruby on 
 
 ## Create a new Rails project
 
-
 ```bash
 rails new self_hosted_webfonts_demo --skip-sprockets --skip-spring
 cd self_hosted_webfonts_demo
 ```
-
 
 I am using Rails 6.0.2.2, which comes default with Webpacker 4.2.2, but I want to take advantage of features in v5, so I am going to update the gem and node package to v5.1.1. You are not required to do this in your application, but will need to if you are following along with this tutorial. Make sure you run
 `bundle install && yarn install`
@@ -50,12 +49,9 @@ After we have upgraded webpacker, let's create a basic Welcome controller, and s
 `config/routes.rb`
 :
 
-
 ```bash
 bin/rails generate controller welcome index
 ```
-
-
 
 ```rb
 # config/routes.rb
@@ -66,7 +62,6 @@ Rails.application.routes.draw do
 end
 ```
 
-
 ## Choose a font
 
 Now that we have a landing page, we should snazz it up a bit with a nice font. If you're like me, this is usually when you head over to [Google Fonts](https://fonts.google.com). To keep it simple, I am going to use [Lato](https://fonts.google.com/specimen/Lato). Since I am not too sure all the styles and weights I need right now, I will just go ahead and select all the available styles (sound familiar?) and copy the link that Google provides.
@@ -75,29 +70,27 @@ Now that we have a landing page, we should snazz it up a bit with a nice font. I
 
 Now that we have our fonts, let’s add the link to the head of our application in
 `app/views/layouts/application.html.erb`
- on the line above your
+on the line above your
 `stylesheet_link_tag`
- (line # 7 if you are on a fresh Rails app):
-
+(line # 7 if you are on a fresh Rails app):
 
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet"
+/>
 ```
-
 
 While we are here, let's change
 `stylesheet_link_tag`
- to
+to
 `stylesheet_pack_tag`
- and create our application styles file:
-
+and create our application styles file:
 
 ```diff
 - <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
 + <%= stylesheet_pack_tag "application", media: "all", "data-turbolinks-track": "reload" %>
 ```
-
-
 
 ```bash
 touch `
@@ -105,11 +98,9 @@ app/javascript/packs/application.scss
 `
 ```
 
-
 Inside of
 `application.scss`
 , add the following CSS rules to specify the font family:
-
 
 ```scss
 // app/javascript/packs/application.scss
@@ -118,7 +109,6 @@ html {
   font-family: 'Lato', sans-serif;
 }
 ```
-
 
 Now if we start the Rails server (
 `bin/rails s`
@@ -136,7 +126,6 @@ Introducing a render blocking resource isn't great, but what's worse is we are n
 
 ![Lighthouse Audit: CDN](https://dev-to-uploads.s3.amazonaws.com/i/gwcrkehoye2yprldblz6.png)
 
-
 Not great. Lighthouse isn't happy about it either.
 
 However, there are solutions to this problem. I am going to show you the method I believe is the fastest to implement and easiest to understand, but understand there are several other fixes you could use instead with their own pros and cons.
@@ -149,38 +138,32 @@ Since I am already hosting everything else on my server, it makes perfect sense 
 
 A quick search on NPM for
 `typeface lato`
- will reveal the package we are looking for, which we can easily install:
-
+will reveal the package we are looking for, which we can easily install:
 
 ```bash
 yarn add typeface-lato
 ```
 
-
 Now let's remove the old way we were getting the font:
-
 
 ```diff
 - <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 ```
 
-
 And the last step is requiring the package in our
 `application.js`
- pack:
-
+pack:
 
 ```js
 // app/javascript/packs/application.js
-require("typeface-lato")
+require('typeface-lato')
 ```
-
 
 If we fire the Rails server back up and checkout
 `localhost:3000`
 , the font should still be Lato! A quick look at the
 `webpacker-dev-server`
- logs will reveal that we are now self-hosting the same font styles and weights that we were before:
+logs will reveal that we are now self-hosting the same font styles and weights that we were before:
 
 ![webpack-dev-server logs](https://dev-to-uploads.s3.amazonaws.com/i/mvw1wsa4g015rvv2iabc.png)
 
@@ -204,5 +187,4 @@ Hopefully this was helpful! If you have taken another approach, I would be curio
 
 Happy coding!
 
-
-*[This post is also available on DEV.](https://dev.to/andrewmcodes/instantly-speed-up-your-rails-application-by-self-hosting-your-fonts-526d)*
+_[This post is also available on DEV.](https://dev.to/andrewmcodes/instantly-speed-up-your-rails-application-by-self-hosting-your-fonts-526d)_
