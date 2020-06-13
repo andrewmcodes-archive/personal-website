@@ -13,9 +13,9 @@
 
 <body class="{{ body_classes }} {{ page.layout }} {{ page.page_class }}">
   {% render "shared/navbar", navigation: site.metadata.navigation, primary: site.metadata.actions.primary, secondary: site.metadata.actions.secondary %}
-  <div class="flex-grow">
+  <main class="flex-grow" id="swup">
     {{content}}
-  </div>
+  </main>
   {% render "shared/footer", author: site.metadata.author.name, social: site.metadata.social %}
 </body>
 
