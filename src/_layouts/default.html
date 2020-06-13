@@ -13,7 +13,7 @@
 
 <body class="{{ body_classes }} {{ page.layout }} {{ page.page_class }}">
   {% render "shared/navbar", navigation: site.metadata.navigation, primary: site.metadata.actions.primary, secondary: site.metadata.actions.secondary %}
-  <div class="container flex-grow px-4 mx-auto">
+  <div class="flex-grow">
     {{content}}
   </div>
   {% render "shared/footer", author: site.metadata.author.name, social: site.metadata.social %}
