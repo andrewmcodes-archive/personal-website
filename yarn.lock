@@ -1055,6 +1055,38 @@
     remark "^12.0.0"
     unist-util-find-all-after "^3.0.1"
 
+"@swup/body-class-plugin@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@swup/body-class-plugin/-/body-class-plugin-1.0.2.tgz#40bffaf73e950ee5149267da669457e18fd1c957"
+  integrity sha512-fzK/sY1QeDJje0mNgPuETRmdLOrdJZzoG96GTcTEjBATXAjDbcGvodCCRDE8eNYQMWayHD2Lks4avV9e5cvQ7A==
+  dependencies:
+    "@swup/plugin" "^1.0.0"
+
+"@swup/plugin@^1.0.0":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@swup/plugin/-/plugin-1.0.1.tgz#10606322508724a5beaed6a09326d8c30c7041fa"
+  integrity sha512-QrTGn1DLx+50CNsk6oGzUFnyNyLkDK6iLb032qKImmAXS+0Dd1cwa8cSGvJ+I27J4qR8y6oJNurgHIEc6ZCTrg==
+
+"@swup/scroll-plugin@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@swup/scroll-plugin/-/scroll-plugin-1.0.6.tgz#9a0b28a7f47750c6d5e69e988e42da31264e385e"
+  integrity sha512-uUzgbFYdkLIKCk0DiIrkQwYQYkI2lh4NwJlY28nOhmgivgyYRCRgGHXSHyvJEJwDDVSW7w48myq5b1g9HrVeEg==
+  dependencies:
+    "@swup/plugin" "^1.0.0"
+    scrl "^1.0.0"
+
+"@swup/slide-theme@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@swup/slide-theme/-/slide-theme-1.0.5.tgz#743aab844be68c089e0c9b49b906b2a4c2495738"
+  integrity sha512-0xxqtURSMDScjLMRdNjtxzo8NGCPcmp6VXrQcxIQzQDSAvwNnP8Zw871C+FSL1EMe8OhAzWAP3E3x9vzH+iLHg==
+  dependencies:
+    "@swup/theme" "^1.0.6"
+
+"@swup/theme@^1.0.6":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@swup/theme/-/theme-1.0.7.tgz#e276fa769af0d800a8df16cbaf71efb665bee297"
+  integrity sha512-OINEaf34fYs90l7/YUUKfOf+paY7/FDhOBLwYxrD0w1OjBiItZpw3N+ATA/QklJwmoUu3KkDFOaQG0zT4KxmmA==
+
 "@tailwindcss/custom-forms@^0.2.1":
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/@tailwindcss/custom-forms/-/custom-forms-0.2.1.tgz#40e5ed1fff6d29d8ed1c508a0b2aaf8da96962e0"
@@ -3176,6 +3208,11 @@ delayed-stream@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
   integrity sha1-3zrhmayt+31ECqrgsp4icrJOxhk=
+
+delegate@3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/delegate/-/delegate-3.1.3.tgz#9a8251a777d7025faa55737bc3b071742127a9fd"
+  integrity sha1-moJRp3fXAl+qVXN7w7BxdCEnqf0=
 
 delegates@^1.0.0:
   version "1.0.0"
@@ -6657,6 +6694,11 @@ onetime@^5.1.0:
   dependencies:
     mimic-fn "^2.1.0"
 
+opencollective-postinstall@^2.0.2:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/opencollective-postinstall/-/opencollective-postinstall-2.0.3.tgz#7a0fff978f6dbfa4d006238fbac98ed4198c3259"
+  integrity sha512-8AV/sCtuzUeTo8gQK5qDZzARrulB3egtLzFgteqB2tcT4Mw7B8Kt7JcDHmltjz6FOAHsvTevk70gZEbhM4ZS9Q==
+
 opener@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/opener/-/opener-1.5.1.tgz#6d2f0e77f1a0af0032aca716c2c1fbb8e7e8abed"
@@ -8857,6 +8899,11 @@ schema-utils@^2.6.1, schema-utils@^2.6.5, schema-utils@^2.6.6:
     ajv "^6.12.2"
     ajv-keywords "^3.4.1"
 
+scrl@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/scrl/-/scrl-1.0.0.tgz#b225915f29d72807c48b2e116b12f14b15d14e55"
+  integrity sha512-nTS2W6UyxYfvOOjeXGXM1j140bm2ZUIjt0mEyGUHecFz2zU1CMYJ71dWPdlnSJR2mYOojY1R5qpo4Fi83O7tog==
+
 scss-tokenizer@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/scss-tokenizer/-/scss-tokenizer-0.2.3.tgz#8eb06db9a9723333824d3f5530641149847ce5d1"
@@ -9752,6 +9799,14 @@ svgo@^1.0.0:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+swup@^2.0.10:
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/swup/-/swup-2.0.10.tgz#a02cb282c5c46818227b93d957d8a6d119d89540"
+  integrity sha512-ggI7TrLfMStP7ucBwNP9ACGI5Wa7jyL0X4+OBI2rYH4nk+EtQyGa0nCdVfY5UXJw2/E1jytf8Om5+sth7zOwRg==
+  dependencies:
+    delegate "3.1.3"
+    opencollective-postinstall "^2.0.2"
 
 symbol-observable@1.0.1:
   version "1.0.1"

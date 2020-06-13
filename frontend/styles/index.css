@@ -3,3 +3,19 @@
 @import 'prism.css';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.swup-transition-main {
+	 transition: opacity .4s, transform .4s;
+}
+ html.is-animating .swup-transition-main {
+	 transform: translate3d(0, -20px, 0);
+}
+ html.is-animating.is-leaving .swup-transition-main {
+	 transform: translate3d(0, 20px, 0);
+}
+ html.is-animating.is-leaving.swup-theme-reverse .swup-transition-main {
+	 transform: translate3d(0, 20px, 0);
+}
+ html.is-animating.is-leaving.swup-theme-reverse.is-leaving .swup-transition-main {
+	 transform: translate3d(0, -20px, 0);
+}

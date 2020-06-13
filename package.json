@@ -31,7 +31,11 @@
   },
   "browserslist": ["defaults", "maintained node versions", "> 5%"],
   "dependencies": {
-    "stimulus": "^1.1.1"
+    "@swup/body-class-plugin": "^1.0.2",
+    "@swup/slide-theme": "^1.0.5",
+    "@swup/scroll-plugin": "^1.0.6",
+    "stimulus": "^1.1.1",
+    "swup": "^2.0.10"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
