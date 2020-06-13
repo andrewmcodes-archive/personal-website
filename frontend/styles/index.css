@@ -22,7 +22,7 @@ html.is-animating.is-leaving.swup-theme-reverse.is-leaving
 }
 
 .btn {
-  @apply inline-block px-8 py-4 mr-6 leading-none;
+  @apply w-3/4 inline-block px-8 py-4 mr-6 leading-none;
 }
 
 .btn-primary {
@@ -39,6 +39,15 @@ html.is-animating.is-leaving.swup-theme-reverse.is-leaving
 
 .btn-dark:hover {
   @apply bg-gray-900;
+}
+
+@screen lg {
+  .btn-dark {
+    @apply w-auto;
+  }
+  .btn-primary {
+    @apply w-auto;
+  }
 }
 
 .btn-secondary {
