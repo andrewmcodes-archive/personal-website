@@ -38,6 +38,7 @@
     "@swup/body-class-plugin": "^1.0.2",
     "@swup/scroll-plugin": "^1.0.6",
     "@swup/slide-theme": "^1.0.5",
+    "bridgetown-quick-search": "1.0.3",
     "stimulus": "^1.1.1",
     "swup": "^2.0.10",
     "typed.js": "^2.0.11"
@@ -58,6 +59,8 @@
     "css-loader": "^3.5.3",
     "cssnano": "^4.1.10",
     "file-loader": "^6.0.0",
+    "html-webpack-inline-svg-plugin": "^2.2.6",
+    "html-webpack-plugin": "^4.3.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
     "percy": "^0.26.9",

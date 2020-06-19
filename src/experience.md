@@ -7,11 +7,6 @@ permalink: /experience/
 
 {% rendercontent "shared/content_layout" %}
 
-[View PDF Version](/assets/pdf/Andrew_Mason_Resume.pdf)
-
-## Profile
-Full stack developer with 2.5 years of professional experience with Ruby on Rails in small and medium sized companies. My passion for creating has led to many open source contributions and collaborations with developers across the globe. My passion for community involvement has lead me to blogging and becoming an active podcaster. I am a self-motivated and largely self-taught professional who likes to dig deep into problems and architect elegant solutions.
-
 ## Professional Experience
 
 ### CodeFund

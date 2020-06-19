@@ -14,14 +14,21 @@ source "https://rubygems.org"
 #
 # Happy Bridgetowning!
 
-gem "bridgetown", "~> 0.15.0.beta3"
+gem "bridgetown", "~> 0.15.0"
+
+group :development do
+  gem "httparty"
+  gem "feedjira"
+end
 
 group :development, :test do
   gem "pry"
   gem "standard"
+  # gem "dotenv"
 end
 
 group :bridgetown_plugins do
   gem "bridgetown-cloudinary", "~> 1.0.2"
-  gem "bridgetown-seo-tag", "~> 3.0.5.beta1"
+  gem "bridgetown-quick-search", "~> 1.0"
+  gem "bridgetown-seo-tag", "~> 3.0.5"
 end

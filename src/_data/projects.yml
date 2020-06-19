@@ -1,13 +1,33 @@
-- name: Rubocop Linter Action
-  url: https://rubocop-linter-action.readthedocs.io
-  repo: https://github.com/andrewmcodes/rubocop-linter-action
-  role: author
-  category: ci
-  tags:
-    - ruby_on_rails
-- name: RailsBytes
-  url: https://railsbytes.com
-  role: contributor
-  category: rails
-  tags:
-    - ruby_on_rails
+maintain:
+  - name: Rubocop Linter Action
+    url: https://gh-card.dev/repos/andrewmcodes/rubocop-linter-action.svg?link_target=_blank
+  - name: StandardRB Action
+    url: https://gh-card.dev/repos/andrewmcodes/standardrb-action.svg?link_target=_blank
+  - name: dishwasher
+    url: https://gh-card.dev/repos/andrewmcodes/dishwasher.svg?link_target=_blank
+  - name: pruner
+    url: https://gh-card.dev/repos/andrewmcodes/pruner.svg?link_target=_blank
+
+contributor:
+  - name: CodeFund
+    url: https://gh-card.dev/repos/gitcoinco/code_fund_ads.svg?link_target=_blank
+  - name: StimulusReflex
+    url: https://gh-card.dev/repos/hopsoft/stimulus_reflex.svg?link_target=_blank
+  - name: BridgetownRB
+    url: https://gh-card.dev/repos/bridgetownrb/bridgetown.svg?link_target=_blank
+  - name: ViewComponent
+    url: https://gh-card.dev/repos/github/view_component.svg?link_target=_blank
+
+production:
+  - name: RailsBytes
+    url: https://railsbytes.com
+    description: Ruby on Rails templates allow you to add features to both old and new apps.
+  - name: Dev.to
+    url: https://dev.to
+    description: DEV is a community of software developers getting together to help one another out.
+  - name: Rails.fm
+    url: https://rails.fm
+    description: A collection of audio news, interviews, and discussions about Ruby & Rails.
+  - name: "Ruby Meetup: Online"
+    url: https://rubymeetup.online
+    description: Experience a Ruby Meetup from the comfort of your couch.

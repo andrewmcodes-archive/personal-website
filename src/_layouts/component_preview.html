@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{% rendercontent "shared/section", type: "white" %}
+  {% with title %}
+    {{ page.component.metadata.name }}
+  {% endwith %}
+
+  {% with content %}
+    {% render "component_preview/metadata", component: page.component %}
+    {% render "component_preview/variables", component: page.component %}
+    {% render "component_preview/preview_area", page: page %}
+  {% endwith %}
+{% endrendercontent %}
