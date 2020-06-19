@@ -30,7 +30,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)/,
+        test: /\.(js|jsx|md)/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -42,6 +42,33 @@ module.exports = {
                 '@babel/plugin-transform-runtime',
                 {
                   helpers: false
+                }
+              ],
+              [
+                'prismjs',
+                {
+                  languages: [
+                    'markup',
+                    'css',
+                    'clike',
+                    'javascript',
+                    'bash',
+                    'crystal',
+                    'docker',
+                    'erb',
+                    'git',
+                    'graphql',
+                    'haml',
+                    'liquid',
+                    'markdown',
+                    'markup-templating',
+                    'ruby',
+                    'scss',
+                    'yaml'
+                  ],
+                  plugins: ['line-numbers'],
+                  theme: 'okaidia',
+                  css: true
                 }
               ]
             ]
