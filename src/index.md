@@ -5,32 +5,14 @@ layout: home
 <!-- Hero Section -->
 {% render "home/hero" %}
 
-<!-- {% rendercontent "shared/section", type: "white" %}
-  {% with subtitle %}
-    A subtitle
-  {% endwith %}
-
-  {% with title %}
-    A title
-  {% endwith %}
-
-  {% with content %}
-    {% rendercontent "shared/grid" %}
-      {% for tile in site.data.home.tiles %}
-      {% render "shared/tile", icon: tile.icon, title: tile.title, details: tile.details, url: tile.url %}
-      {% endfor %}
-    {% endrendercontent %}
-  {% endwith %}
-{% endrendercontent %} -->
 
 
 <!-- CTA Section -->
 
-{% render "home/cta" %}
 
-
-<!-- Tiles Section -->
 {% render "home/tiles" %}
+{% render "home/cta" %}
+<!-- Tiles Section -->
 <!-- Blog Section -->
 {% rendercontent "shared/section" %}
   {% with subtitle %}

@@ -1,50 +1,93 @@
-<div class="relative overflow-hidden bg-gray-50">
-  <div class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full">
-    <div class="relative h-full max-w-screen-xl mx-auto">
-      <svg class="absolute transform right-full translate-y-1/4 translate-x-1/4 lg:translate-x-1/2" width="404" height="784" fill="none" viewBox="0 0 404 784">
-        <defs>
-          <pattern id="f210dbf6-a58d-4871-961e-36d5016a0f49" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
-          </pattern>
-        </defs>
-        <rect width="404" height="784" fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)" />
-      </svg>
-      <svg class="absolute transform left-full -translate-y-3/4 -translate-x-1/4 md:-translate-y-1/2 lg:-translate-x-1/2" width="404" height="784" fill="none" viewBox="0 0 404 784">
-        <defs>
-          <pattern id="5d0dd344-b041-4d26-bec4-8d33ea57ec9b" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
-          </pattern>
-        </defs>
-        <rect width="404" height="784" fill="url(#5d0dd344-b041-4d26-bec4-8d33ea57ec9b)" />
-      </svg>
-    </div>
-  </div>
+<div class="pb-64">
+  <div class="bg-gray-800 md:overflow-hidden">
+    <div class="px-4 py-20 md:py-4">
+      <div class="md:max-w-6xl md:mx-auto">
+        <div class="md:flex md:flex-wrap">
+          <div class="pb-8 text-center md:w-1/2 md:text-left md:pt-16">
+            <h1 class="mb-4 text-3xl font-bold leading-tight text-white md:text-5xl">
+              👋 Hi, I'm Andrew!
+            </h1>
 
-  <div class="relative pt-6 pb-12 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32">
-    <main class="max-w-screen-xl px-4 mx-auto mt-10 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
-      <div class="text-center">
-        <h2 class="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
-          👋 Hi, I'm
-          <br class="xl:hidden" />
-          <span class="text-indigo-600">Andrew
-          </span>
-        </h2>
-        <p class="max-w-md mx-auto mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-          I am a Full Stack Ruby on Rails Developer. I am actively searching for a new role and would love to chat with you to see if I am the right fit for your team!
-        </p>
-        <div class="max-w-md mx-auto mt-5 sm:flex sm:justify-center md:mt-8">
-          <div class="rounded-md shadow">
-            <a href="#" class="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo md:py-4 md:text-lg md:px-10">
-              Hire me
-            </a>
+            <p class="mb-8 text-gray-200 md:text-xl">
+              I am a Full Stack Ruby on Rails Developer. I am actively searching for a new role and would love to chat with you to see if I am the right fit for your team!
+            </p>
+
+            {% rendercontent "shared/button", url: "/blog", size: "xl" %}
+              View More
+            {% endrendercontent %}
           </div>
-          <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-            <a href="#" class="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-indigo-600 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-indigo-500 focus:outline-none focus:border-indigo-300 focus:shadow-outline-indigo md:py-4 md:text-lg md:px-10">
-              View Blog
-            </a>
+          <div class="relative md:w-1/2">
+            <div class="hidden md:block">
+              <div class="absolute bottom-0 left-0 w-40 px-6 py-8 -mb-40 -ml-24 bg-yellow-200 rounded-lg shadow-lg" style="transform: rotate(-8deg);">
+                <div class="relative w-12 mx-auto text-gray-900">
+                  {% insert_svg svgs/javascript.svg %}
+                </div>
+              </div>
+
+              <div class="absolute bottom-0 left-0 w-48 px-10 py-8 ml-24 bg-red-500 rounded-lg shadow-lg" style="transform: rotate(-8deg); z-index: 2;">
+                <div class="relative w-12 mx-auto text-white">
+                  {% insert_svg svgs/ruby.svg %}
+                </div>
+              </div>
+
+              <div class="absolute bottom-0 left-0 w-48 px-10 py-8 ml-32 bg-red-600 rounded-lg shadow-lg" style="margin-bottom: -220px;transform: rotate(-8deg); z-index: 2;">
+                <div class="relative w-20 mx-auto text-white">
+                  {% insert_svg svgs/rails.svg %}
+                </div>
+              </div>
+
+              <div class="absolute top-0 right-0 flex w-full mt-10 overflow-hidden bg-gray-900 rounded-lg shadow-lg" style=" margin-right: -250px;transform: rotate(-8deg); z-index: 1;">
+                <div class="w-8 bg-gray-800" style="min-height: 560px;"></div>
+                <div class="items-stretch flex-1" >
+                  {% insert_svg svgs/updated_faux_code.svg %}
+                </div>
+              </div>
+
+              <div class="absolute bottom-0 left-0 w-full ml-1" style=" margin-bottom: -360px;transform: rotate(-8deg); z-index: 1;">
+                <div class="w-48 h-48 grid--gray"></div>
+              </div>
+            </div>
+
+            <div class="absolute top-0 right-0 flex w-full overflow-hidden bg-gray-900 rounded-lg shadow md:hidden">
+              <div class="absolute top-0 left-0 right-0 flex items-center h-4 bg-gray-900 rounded-t-lg">
+                <span class="inline-block w-2 h-2 ml-2 mr-1 bg-red-500 rounded-full"></span>
+                <span class="inline-block w-2 h-2 mr-1 bg-orange-400 rounded-full"></span>
+                <span class="inline-block w-2 h-2 mr-1 bg-green-500 rounded-full"></span>
+              </div>
+              <div class="w-32 px-2 py-8 bg-gray-900" style="height: 340px;">
+                <div class="w-16 h-2 mb-4 bg-gray-600 rounded-full"></div>
+                <div class="flex items-center mb-4">
+                  <div class="flex-shrink-0 w-5 h-5 mr-3 bg-gray-600 rounded-full"></div>
+                  <div>
+                    <div class="w-10 h-2 bg-gray-600 rounded-full"></div>
+                  </div>
+                </div>
+
+                <div class="w-16 h-2 mb-2 bg-gray-600 rounded-full"></div>
+                <div class="w-10 h-2 mb-2 bg-gray-600 rounded-full"></div>
+                <div class="w-20 h-2 mb-2 bg-gray-600 rounded-full"></div>
+                <div class="w-6 h-2 mb-2 bg-gray-600 rounded-full"></div>
+                <div class="w-16 h-2 mb-2 bg-gray-600 rounded-full"></div>
+                <div class="w-10 h-2 mb-2 bg-gray-600 rounded-full"></div>
+                <div class="w-20 h-2 mb-2 bg-gray-600 rounded-full"></div>
+                <div class="w-6 h-2 mb-2 bg-gray-600 rounded-full"></div>
+              </div>
+              <div class="flex-1" style="max-height: 340px;">
+                {% insert_svg svgs/updated_faux_code.svg %}
+              </div>
+            </div>
+            <!-- Small Rails Tile -->
+            <div class="absolute bottom-0 right-0 w-auto px-10 py-6 mr-3 text-white bg-red-600 rounded-lg shadow-lg md:hidden" style=" margin-bottom: -380px;z-index: 2;">
+              <div class="relative w-20 mx-auto ">
+                {% insert_svg svgs/rails.svg %}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+    <svg class="hidden fill-current text-gray-50 md:block" viewbox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,224L1440,32L1440,320L0,320Z" fill-opacity="1"></path>
+    </svg>
   </div>
 </div>
