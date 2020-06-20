@@ -7,6 +7,7 @@ import SwupBodyClassPlugin from '@swup/body-class-plugin'
 import SwupScrollPlugin from '@swup/scroll-plugin'
 import SwupSlideTheme from '@swup/slide-theme'
 import Typed from 'typed.js'
+import 'bridgetown-quick-search'
 
 Prism.highlightAll()
 const application = Application.start()

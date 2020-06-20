@@ -1,5 +1,5 @@
 ---
-title: 'Rails 6 Band-Aid for Webpacker MissingEntryError'
+title: 'Rails 6 Band-Aid for Webpacker::MissingEntryError'
 date: '2020-05-13T23:47:04.114Z'
 excerpt: >-
   At CodeFund, we try to keep our dependencies, including Rails, as up to date
@@ -26,9 +26,7 @@ At [CodeFund](https://codefund.io), we try to keep our dependencies, including R
 # Webpacker::Manifest::MissingEntryError:
 #   Webpacker can't find foo/bar in /app/public/packs-test/manifest.json. Possible causes:
 #   1. You want to set webpacker.yml value of compile to true for your environment
-#      unless you are using the `
-webpack -w
-` or the webpack-dev-server.
+#      unless you are using the `webpack -w` or the webpack-dev-server.
 #   2. webpack has not yet re-run to reflect updates.
 #   3. You have misconfigured Webpacker's config/webpacker.yml file.
 #   4. Your webpack configuration is not creating a manifest.

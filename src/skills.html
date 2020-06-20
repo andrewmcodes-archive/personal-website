@@ -1,0 +1,19 @@
+---
+layout: page
+title: Skills
+subtitle: Skills index
+permalink: /skills/
+---
+
+<section class="py-12">
+  <div class="mt-6 bg-white grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
+    {% for skill in site.data.skills %}
+      <div class="flex flex-col items-center justify-center col-span-1 p-4 text-center bg-gray-50">
+        <img inline src="{{ skill.icon_path }}" alt="{{ skill.name}}" class="w-8" />
+        <p class="text-sm leading-7 text-gray-500">
+          {{ skill.name }}
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+</section>

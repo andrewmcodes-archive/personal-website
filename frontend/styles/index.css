@@ -22,58 +22,64 @@ html.is-animating.is-leaving.swup-theme-reverse.is-leaving
 }
 
 .btn {
-  @apply w-3/4 inline-block px-8 py-4 mr-6 leading-none;
+  @apply inline-flex px-6 py-2 text-lg border-0 rounded;
 }
 
 .btn-primary {
-  @apply text-white bg-red-500 rounded shadow;
+  @apply text-white bg-red-500;
 }
 
 .btn-primary:hover {
   @apply bg-red-600;
 }
 
-.btn-dark {
-  @apply text-white bg-gray-800 rounded shadow;
-}
-
-.btn-dark:hover {
-  @apply bg-gray-900;
-}
-
-@screen lg {
-  .btn-dark {
-    @apply w-auto;
-  }
-  .btn-primary {
-    @apply w-auto;
-  }
+.btn-primary:focus {
+  @apply outline-none;
 }
 
 .btn-secondary {
-  @apply text-gray-800 bg-transparent rounded border-gray-800 border;
+  @apply text-gray-700 bg-gray-200;
 }
 
 .btn-secondary:hover {
-  @apply border-red-500 text-red-500;
+  @apply bg-gray-300;
 }
 
-/* inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-gray-600 hover:bg-gray-500 focus:outline-none focus:shadow-outline-gray focus:border-gray-700 active:bg-gray-700 transition duration-150 ease-in-out */
+.btn-secondary:focus {
+  @apply outline-none;
+}
 
-.blue-morals {
-  background: linear-gradient(45deg, #000850 0%, #000320 100%),
-    radial-gradient(100% 225% at 100% 0%, #ff6928 0%, #000000 100%),
-    linear-gradient(225deg, #ff7a00 0%, #000000 100%),
-    linear-gradient(
-      135deg,
-      #cdffeb 10%,
-      #cdffeb 35%,
-      #009f9d 35%,
-      #009f9d 60%,
-      #07456f 60%,
-      #07456f 67%,
-      #0f0a3c 67%,
-      #0f0a3c 100%
-    );
-  background-blend-mode: screen, overlay, hard-light, normal;
+h1 {
+  @apply text-2xl font-medium mb-4 text-gray-900;
+}
+
+@screen sm {
+  h1 {
+    @apply text-3xl;
+  }
+}
+
+h2 {
+  @apply text-lg font-medium text-gray-900;
+}
+
+.subtitle {
+  @apply mb-1 text-sm font-medium tracking-widest text-red-500;
+}
+
+th {
+  @apply px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50;
+}
+
+td {
+  @apply px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200;
+}
+
+td:first-child {
+  @apply px-6 py-4 text-sm font-medium leading-5 text-gray-900 whitespace-no-wrap border-b border-gray-200;
+}
+
+.h-full-screen {
+  height: 90%; /* fallback if needed */
+  height: calc(100% - 4rem);
 }

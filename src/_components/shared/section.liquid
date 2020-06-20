@@ -1,14 +1,22 @@
-<section class="z-0">
-  <div class="bg-gray-900">
-    <div class="container px-4 py-12 mx-auto lg:px-0">
-      <h1 class="text-6xl font-bold tracking-wide text-gray-100">
-        {{ title }}
-      </h1>
-    </div>
+{%- assign bgcolor = "bg-gray-50" %}
+{%- if type == "white" %}
+{%- assign bgcolor = "bg-white" %}
+{%- endif %}
+
+
+<section class="relative {{ bgcolor }} mt-16 mb-20 mx-4 sm:mx-6 lg:mt-24 lg:mb-28 lg:mx-8">
+  <div class="absolute inset-0">
+    <div class="{{ bgcolor }} h-1/3 sm:h-2/3"></div>
   </div>
-  <div class="container py-12 mx-auto mb-8 bg-gray-100">
-    <div class="markdown">
-      {{ content }}
+  <div class="relative mx-auto max-w-7xl">
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+        {{ title }}
+      </h2>
+      <p class="max-w-2xl mx-auto mt-3 text-xl leading-7 text-gray-500 sm:mt-4">
+        {{ subtitle }}
+      </p>
     </div>
+    {{ content }}
   </div>
 </section>

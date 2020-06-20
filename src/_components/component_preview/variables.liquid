@@ -1,0 +1,33 @@
+<div class="mb-8 lg:mb-12">
+  <div>
+    <h3 class="text-lg font-medium leading-6 text-gray-900">
+      Varaibles
+    </h3>
+  </div>
+  <div class="pt-5 mt-5 border-t border-gray-200">
+    {% if component.metadata.variables.size > 0 %}
+      {% rendercontent "table/table", container: true %}
+        {% with header %}
+          <th>Variable</th>
+          <th>Type</th>
+          <th>Description</th>
+        {% endwith %}
+        {% with rows %}
+          {% for variable in component.metadata.variables %}
+            {% assign optional = "" %}
+            {% unless variable.required %}
+              {% assign optional = ", optional" %}
+            {% endunless %}
+            <tr>
+              <td><p><code>{{ variable.name }}</code></p></td>
+              <td><p>{{ variable.type }}{{ optional }}</p></td>
+              <td>{{ variable.description | markdownify }}</td>
+            </tr>
+          {% endfor %}
+        {% endwith %}
+      {% endrendercontent %}
+    {% else %}
+      <p><em>No variables defined.</em></p>
+    {% endif %}
+  </div>
+</div>
