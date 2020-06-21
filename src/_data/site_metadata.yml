@@ -32,6 +32,15 @@ social:
   # - name: "linkedin"
   #   username: "andrew-mason"
   #   url: "https://www.linkedin.com/in/andrew-mason/"
+dev_portfolios:
+  - name: Sourcerer
+    url: https://sourcerer.io/andrewmcodes
+  - name: CodeTrace
+    url: https://codetrace.com/users/andrewmcodes
+  - name: stackshare
+    url: https://stackshare.io/andrewmcodes
+  - name: GitHub
+    url: https://github.com/andrewmcodes
 
 navigation:
   - name: "About"

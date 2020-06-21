@@ -3,17 +3,17 @@ layout: page
 title: Skills
 subtitle: Skills index
 permalink: /skills/
+tabs:
+  - Ask Me Anything About
+  - Used Professionally
+  - Used Personally
+  - Written or Podcasted About
 ---
 
-<section class="py-12">
-  <div class="mt-6 bg-white grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
-    {% for skill in site.data.skills %}
-      <div class="flex flex-col items-center justify-center col-span-1 p-4 text-center bg-gray-50">
-        <img inline src="{{ skill.icon_path }}" alt="{{ skill.name}}" class="w-8" />
-        <p class="text-sm leading-7 text-gray-500">
-          {{ skill.name }}
-        </p>
-      </div>
-    {% endfor %}
-  </div>
+{% render "tabs/nav", tabs: page.tabs %}
+
+<section class="mb-12">
+  <a frameborder="0" data-theme="light" data-layers="2,3,4,1" data-stack-embed="true" class="h-full" href="https://embed.stackshare.io/stacks/embed/7b47b0fe824ac709ebd7fdaf3b98c1"/></a>
 </section>
+
+<script async src="https://cdn1.stackshare.io/javascripts/client-code.js" charset="utf-8"></script>

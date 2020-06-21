@@ -53,7 +53,9 @@ __University of North Carolina at Wilmington,__ <small>08/2014 – 05/2018</smal
   </h2>
   <div class="flex justify-center mt-8">
     <span class="sm:mr-4">
-      {% rendercontent "shared/button", url: "/assets/pdf/Andrew_Mason_Resume.pdf", variant: "secondary", size: "xl" %}Download Resume PDF{% endrendercontent %}
+      {% rendercontent "shared/button", url: "/assets/pdf/Andrew_Mason_Resume.pdf", variant: "secondary", size: "xl" %}
+        Download Resume PDF
+      {% endrendercontent %}
     </span>
     {% rendercontent "shared/button", url: "/contact", size: "xl" %}Contact{% endrendercontent %}
   </div>
