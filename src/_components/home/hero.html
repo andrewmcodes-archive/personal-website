@@ -1,5 +1,5 @@
-<div class="pb-64">
-  <div class="bg-gray-800 md:overflow-hidden">
+<div class="z-0 pb-64 md:pb-0">
+  <div class="bg-gray-800">
     <div class="px-4 py-20 md:py-4">
       <div class="md:max-w-6xl md:mx-auto">
         <div class="md:flex md:flex-wrap">
@@ -17,7 +17,7 @@
             {% endrendercontent %}
           </div>
           <div class="relative md:w-1/2">
-            <div class="hidden md:block">
+            <div class="z-10 hidden md:block">
               <div class="absolute bottom-0 left-0 w-40 px-6 py-8 -mb-40 -ml-24 bg-yellow-200 rounded-lg shadow-lg" style="transform: rotate(-8deg);">
                 <div class="relative w-12 mx-auto text-gray-900">
                   {% insert_svg svgs/javascript.svg %}
@@ -36,9 +36,9 @@
                 </div>
               </div>
 
-              <div class="absolute top-0 right-0 flex w-full mt-10 overflow-hidden bg-gray-900 rounded-lg shadow-lg" style=" margin-right: -250px;transform: rotate(-8deg); z-index: 1;">
+              <div class="absolute top-0 right-0 z-10 flex w-full overflow-hidden bg-gray-900 rounded-lg shadow-lg" style=" margin-right: -250px;transform: rotate(-8deg); z-index: 1;">
                 <div class="w-8 bg-gray-800" style="min-height: 560px;"></div>
-                <div class="items-stretch flex-1" >
+                <div class="z-50 items-stretch flex-1" >
                   {% insert_svg svgs/updated_faux_code.svg %}
                 </div>
               </div>
@@ -76,8 +76,9 @@
                 {% insert_svg svgs/updated_faux_code.svg %}
               </div>
             </div>
+
             <!-- Small Rails Tile -->
-            <div class="absolute bottom-0 right-0 w-auto px-10 py-6 mr-3 text-white bg-red-600 rounded-lg shadow-lg md:hidden" style=" margin-bottom: -380px;z-index: 2;">
+            <div class="absolute w-auto px-10 py-6 text-white bg-red-600 rounded-lg shadow-lg md:hidden left-1/4 top-32" style=" margin-bottom: -380px;z-index: 2;">
               <div class="relative w-20 mx-auto ">
                 {% insert_svg svgs/rails.svg %}
               </div>

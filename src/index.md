@@ -7,12 +7,13 @@ layout: home
 
 
 
-<!-- CTA Section -->
 
 
-{% render "home/tiles" %}
-{% render "home/cta" %}
 <!-- Tiles Section -->
+{% render "home/tiles" %}
+<!-- CTA Section -->
+{%- assign pc = site.posts | size %}
+{% render "home/cta", post_count: pc %}
 <!-- Blog Section -->
 {% rendercontent "shared/section" %}
   {% with subtitle %}
