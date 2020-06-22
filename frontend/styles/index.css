@@ -1,5 +1,85 @@
 @import 'tailwindcss/base';
 @import 'markdown.css';
-@import 'prism.css';
+/* @import 'prism.css'; */
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.swup-transition-main {
+  transition: opacity 0.4s, transform 0.4s;
+}
+html.is-animating .swup-transition-main {
+  transform: translate3d(0, -20px, 0);
+}
+html.is-animating.is-leaving .swup-transition-main {
+  transform: translate3d(0, 20px, 0);
+}
+html.is-animating.is-leaving.swup-theme-reverse .swup-transition-main {
+  transform: translate3d(0, 20px, 0);
+}
+html.is-animating.is-leaving.swup-theme-reverse.is-leaving
+  .swup-transition-main {
+  transform: translate3d(0, -20px, 0);
+}
+
+.btn {
+  @apply inline-flex px-6 py-2 text-lg border-0 rounded;
+}
+
+.btn-primary {
+  @apply text-white bg-red-500;
+}
+
+.btn-primary:hover {
+  @apply bg-red-600;
+}
+
+.btn-primary:focus {
+  @apply outline-none;
+}
+
+.btn-secondary {
+  @apply text-gray-700 bg-gray-200;
+}
+
+.btn-secondary:hover {
+  @apply bg-gray-300;
+}
+
+.btn-secondary:focus {
+  @apply outline-none;
+}
+
+h1 {
+  @apply text-2xl font-medium mb-4 text-gray-900;
+}
+
+@screen sm {
+  h1 {
+    @apply text-3xl;
+  }
+}
+
+h2 {
+  @apply text-lg font-medium text-gray-900;
+}
+
+.subtitle {
+  @apply mb-1 text-sm font-medium tracking-widest text-red-500;
+}
+
+th {
+  @apply px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50;
+}
+
+td {
+  @apply px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200;
+}
+
+td:first-child {
+  @apply px-6 py-4 text-sm font-medium leading-5 text-gray-900 whitespace-no-wrap border-b border-gray-200;
+}
+
+.h-full-screen {
+  height: 90%; /* fallback if needed */
+  height: calc(100% - 4rem);
+}

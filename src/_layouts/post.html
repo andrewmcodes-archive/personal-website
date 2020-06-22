@@ -2,19 +2,8 @@
 layout: default
 ---
 
-<article class="px-4 pb-12">
-  {% if post.header_img %}
-  <div class="mb-10">
-    <img src="{{ post.header_img }}" alt="{{ post.title}} - Header Image" />
-  </div>
-  {% endif %}
-
-  <h1 class="text-4xl font-semibold text-center font-heading">
-    {{ post.title }}
-  </h1>
-  <div class="max-w-3xl mx-auto">
-    <section class="markdown">
-      {{ content }}
-    </section>
-  </div>
-</article>
+{% rendercontent "shared/post", title: page.title, image: page.header_img_path %}
+  {% rendercontent "shared/content_layout" %}
+    {{ content }}
+  {% endrendercontent %}
+{% endrendercontent %}

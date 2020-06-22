@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require 'yaml'
+require 'httparty'
+require "feedjira"
+
+podcasts = Hash.new
+url = "https://www.therubyblend.com/rss"
+xml = HTTParty.get(url).body
+feed = Feedjira.parse(xml)
+
+podcasts["title"] = feed.title
+podcasts["subtitle"] = feed.itunes_subtitle
+podcasts["image_url"] = feed.itunes_image
+podcasts["url"] = feed.url
+podcasts["description"] = feed.description
+podcasts["episodes"] = []
+feed.entries.each do |entry|
+  episode = {
+    id: entry.id,
+    title: entry.title,
+    url: entry.url,
+    date: entry.published
+  }.transform_keys(&:to_s)
+  podcasts["episodes"] << episode
+end
+
+open('src/_data/podcasts/the_ruby_blend.yml', 'w') do |f|
+  f << podcasts.to_yaml
+end

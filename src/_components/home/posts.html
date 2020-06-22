@@ -1,0 +1,27 @@
+<div class="overflow-hidden bg-gray-50">
+  <div class="relative max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
+        <svg class="absolute hidden transform -translate-x-3/4 lg:block left-full translate-y-1/4" width="404" height="784" fill="none" viewBox="0 0 404 784">
+      <defs>
+        <pattern id="b1e6e422-73f8-40a6-b5d9-c8586e37e0e7" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+        </pattern>
+      </defs>
+      <rect width="404" height="784" fill="url(#b1e6e422-73f8-40a6-b5d9-c8586e37e0e7)" />
+    </svg>
+
+    <div class="relative lg:grid lg:grid-cols-3 lg:col-gap-8">
+
+      <div class="mt-10 sm:grid sm:grid-cols-2 sm:col-gap-8 sm:row-gap-10 lg:col-span-2 lg:mt-0">
+
+        {% for post in posts limit:2 %}
+          {% render "shared/blog_post_card", post: post %}
+        {% endfor %}
+      </div>
+      <div class="lg:col-span-1">
+        <h3 class="text-3xl font-extrabold leading-9 tracking-tight text-right text-gray-900 sm:text-4xl sm:leading-10">
+          Blog posts
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,25 +1,31 @@
 import { Application } from 'stimulus'
 import { definitionsFromContext } from 'stimulus/webpack-helpers'
-import Prism from './prism.js'
 import '../styles/index.css'
+import Swup from 'swup'
+import Prism from 'prismjs'
+import SwupBodyClassPlugin from '@swup/body-class-plugin'
+import SwupScrollPlugin from '@swup/scroll-plugin'
+import SwupSlideTheme from '@swup/slide-theme'
+import 'bridgetown-quick-search'
 
+Prism.highlightAll()
 const application = Application.start()
 const context = require.context('./controllers', true, /\.js$/)
 application.load(definitionsFromContext(context))
-Prism.highlightAll()
 
-// Dropdown
 document.addEventListener('DOMContentLoaded', function () {
-  const menus = document.querySelectorAll('.navbar-burger')
-  const dropdowns = document.querySelectorAll('.navbar-menu')
+  let mainEl = '#swup'
+  let containers = [mainEl, '#topnav']
+  let swup = new Swup({
+    containers: containers,
+    plugins: [
+      new SwupSlideTheme({ mainElement: mainEl }),
+      new SwupBodyClassPlugin(),
+      new SwupScrollPlugin({ animateScroll: false })
+    ]
+  })
 
-  if (menus.length && dropdowns.length) {
-    for (var i = 0; i < menus.length; i++) {
-      menus[i].addEventListener('click', function () {
-        for (var j = 0; j < dropdowns.length; j++) {
-          dropdowns[j].classList.toggle('hidden')
-        }
-      })
-    }
-  }
+  swup.on('contentReplaced', function () {
+    Prism.highlightAll()
+  })
 })

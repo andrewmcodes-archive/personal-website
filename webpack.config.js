@@ -1,6 +1,8 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin')
 
 module.exports = {
   entry: './frontend/javascript/index.js',
@@ -25,12 +27,14 @@ module.exports = {
     }),
     new ManifestPlugin({
       fileName: path.resolve(__dirname, '.bridgetown-webpack', 'manifest.json')
-    })
+    }),
+    new HtmlWebpackPlugin(),
+    new HtmlWebpackInlineSVGPlugin()
   ],
   module: {
     rules: [
       {
-        test: /\.(js|jsx)/,
+        test: /\.(js|jsx|md)/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -42,6 +46,33 @@ module.exports = {
                 '@babel/plugin-transform-runtime',
                 {
                   helpers: false
+                }
+              ],
+              [
+                'prismjs',
+                {
+                  languages: [
+                    'markup',
+                    'css',
+                    'clike',
+                    'javascript',
+                    'bash',
+                    'crystal',
+                    'docker',
+                    'erb',
+                    'git',
+                    'graphql',
+                    'haml',
+                    'liquid',
+                    'markdown',
+                    'markup-templating',
+                    'ruby',
+                    'scss',
+                    'yaml'
+                  ],
+                  plugins: ['line-numbers'],
+                  theme: 'okaidia',
+                  css: true
                 }
               ]
             ]

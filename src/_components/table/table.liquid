@@ -1,0 +1,25 @@
+{%- if container == false %}
+  <table class="min-w-full">
+    <thead>
+      <tr>
+        {{ header }}
+      </tr>
+    </thead>
+    <tbody class="bg-white">
+      {{ rows }}
+    </tbody>
+  </table>
+{%- else %}
+  {% rendercontent "table/table_container" %}
+    <table class="min-w-full">
+      <thead>
+        <tr>
+          {{ header }}
+        </tr>
+      </thead>
+      <tbody class="bg-white">
+        {{ rows }}
+      </tbody>
+    </table>
+  {% endrendercontent %}
+{%- endif %}

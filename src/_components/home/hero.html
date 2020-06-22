@@ -1,22 +1,94 @@
-<section class="px-4 py-12 text-center">
-  <div class="w-full max-w-2xl mx-auto">
-    <h1 class="text-5xl font-bold leading-tight font-heading">
-      Andrew Mason
-    </h1>
-    <h2 class="mt-1 mb-6 text-5xl font-bold leading-tight text-red-500 font-heading">Ruby on Rails Developer</h2>
-    <p class="mb-8 leading-relaxed text-gray-500">
-      Hello! &#x1F44B; My name is Andrew Mason, and I am a full-stack developer specializing in Ruby on Rails. I am
-      passionate about open source and I also enjoy podcasting. When I am not at the keyboard, you will likely find me
-      surfing or digging into a good book. I am currently looking for my next role!
-    </p>
-    <div>
-      <a class="inline-block px-8 py-4 mr-6 leading-none text-white bg-red-500 rounded shadow hover:bg-red-600"
-        href="#">
-        Hire Me!
-      </a>
-      <a class="text-blue-700 hover:underline" href="#">
-        View Projects
-      </a>
+<div class="z-0 pb-64 md:pb-0">
+  <div class="bg-gray-800">
+    <div class="px-4 py-20 md:py-4">
+      <div class="md:max-w-6xl md:mx-auto">
+        <div class="md:flex md:flex-wrap">
+          <div class="pb-8 text-center md:w-1/2 md:text-left md:pt-16">
+            <h1 class="mb-4 text-3xl font-bold leading-tight text-white md:text-5xl">
+              👋 Hi, I'm Andrew!
+            </h1>
+
+            <p class="mb-8 text-gray-200 md:text-xl">
+              I am a Full Stack Ruby on Rails Developer. I am actively searching for a new role and would love to chat with you to see if I am the right fit for your team!
+            </p>
+
+            {% rendercontent "shared/button", url: "/blog", size: "xl" %}
+              View More
+            {% endrendercontent %}
+          </div>
+          <div class="relative md:w-1/2">
+            <div class="z-10 hidden md:block">
+              <div class="absolute bottom-0 left-0 w-40 px-6 py-8 -mb-40 -ml-24 bg-yellow-200 rounded-lg shadow-lg" style="transform: rotate(-8deg);">
+                <div class="relative w-12 mx-auto text-gray-900">
+                  {% insert_svg svgs/javascript.svg %}
+                </div>
+              </div>
+
+              <div class="absolute bottom-0 left-0 w-48 px-10 py-8 ml-24 bg-red-500 rounded-lg shadow-lg" style="transform: rotate(-8deg); z-index: 2;">
+                <div class="relative w-12 mx-auto text-white">
+                  {% insert_svg svgs/ruby.svg %}
+                </div>
+              </div>
+
+              <div class="absolute bottom-0 left-0 w-48 px-10 py-8 ml-32 bg-red-600 rounded-lg shadow-lg" style="margin-bottom: -220px;transform: rotate(-8deg); z-index: 2;">
+                <div class="relative w-20 mx-auto text-white">
+                  {% insert_svg svgs/rails.svg %}
+                </div>
+              </div>
+
+              <div class="absolute top-0 right-0 z-10 flex w-full overflow-hidden bg-gray-900 rounded-lg shadow-lg" style=" margin-right: -250px;transform: rotate(-8deg); z-index: 1;">
+                <div class="w-8 bg-gray-800" style="min-height: 560px;"></div>
+                <div class="z-50 items-stretch flex-1" >
+                  {% insert_svg svgs/updated_faux_code.svg %}
+                </div>
+              </div>
+
+              <div class="absolute bottom-0 left-0 w-full ml-1" style=" margin-bottom: -360px;transform: rotate(-8deg); z-index: 1;">
+                <div class="w-48 h-48 grid--gray"></div>
+              </div>
+            </div>
+
+            <div class="absolute top-0 right-0 flex w-full overflow-hidden bg-gray-900 rounded-lg shadow md:hidden">
+              <div class="absolute top-0 left-0 right-0 flex items-center h-4 bg-gray-900 rounded-t-lg">
+                <span class="inline-block w-2 h-2 ml-2 mr-1 bg-red-500 rounded-full"></span>
+                <span class="inline-block w-2 h-2 mr-1 bg-orange-400 rounded-full"></span>
+                <span class="inline-block w-2 h-2 mr-1 bg-green-500 rounded-full"></span>
+              </div>
+              <div class="w-32 px-2 py-8 bg-gray-900" style="height: 340px;">
+                <div class="w-16 h-2 mb-4 bg-gray-600 rounded-full"></div>
+                <div class="flex items-center mb-4">
+                  <div class="flex-shrink-0 w-5 h-5 mr-3 bg-gray-600 rounded-full"></div>
+                  <div>
+                    <div class="w-10 h-2 bg-gray-600 rounded-full"></div>
+                  </div>
+                </div>
+
+                <div class="w-16 h-2 mb-2 bg-gray-600 rounded-full"></div>
+                <div class="w-10 h-2 mb-2 bg-gray-600 rounded-full"></div>
+                <div class="w-20 h-2 mb-2 bg-gray-600 rounded-full"></div>
+                <div class="w-6 h-2 mb-2 bg-gray-600 rounded-full"></div>
+                <div class="w-16 h-2 mb-2 bg-gray-600 rounded-full"></div>
+                <div class="w-10 h-2 mb-2 bg-gray-600 rounded-full"></div>
+                <div class="w-20 h-2 mb-2 bg-gray-600 rounded-full"></div>
+                <div class="w-6 h-2 mb-2 bg-gray-600 rounded-full"></div>
+              </div>
+              <div class="flex-1" style="max-height: 340px;">
+                {% insert_svg svgs/updated_faux_code.svg %}
+              </div>
+            </div>
+
+            <!-- Small Rails Tile -->
+            <div class="absolute w-auto px-10 py-6 text-white bg-red-600 rounded-lg shadow-lg md:hidden left-1/4 top-32" style=" margin-bottom: -380px;z-index: 2;">
+              <div class="relative w-20 mx-auto ">
+                {% insert_svg svgs/rails.svg %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <svg class="hidden fill-current text-gray-50 md:block" viewbox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,224L1440,32L1440,320L0,320Z" fill-opacity="1"></path>
+    </svg>
   </div>
-</section>
+</div>

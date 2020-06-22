@@ -1,0 +1,21 @@
+<div class="w-full">
+  <div class="sm:hidden">
+    <select aria-label="Selected tab" class="block w-full form-select">
+      {% for tab in tabs %}
+        <option selected>{{tab}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="hidden sm:block">
+    <div class="border-b border-gray-200">
+      <nav class="flex -mb-px">
+        {% for tab in tabs %}
+          <a href="#"
+            class="w-1/4 px-1 py-4 text-sm font-medium leading-5 text-center text-gray-300 border-b-2 border-transparent hover:text-gray-400 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">
+            {{ tab }}
+          </a>
+        {% endfor %}
+      </nav>
+    </div>
+  </div>
+</div>

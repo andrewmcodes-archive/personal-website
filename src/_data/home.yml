@@ -1,0 +1,13 @@
+tiles:
+  - title: "Experience"
+    icon: "fas fa-tasks"
+    details: "View a breakdown of my experience to help determine if I will be a good fit for your team!"
+    url: "/experience"
+  - title: "Projects"
+    icon: "fas fa-project-diagram"
+    details: "I am an active Open Source maintainer and contributor as well as other cool projects."
+    url: "/experience"
+  - title: "Resume"
+    icon: "fas fa-file-pdf"
+    details: "Would you like to view my resume? (40kb)"
+    url: "/assets/pdf/Andrew_Mason_Resume.pdf"
