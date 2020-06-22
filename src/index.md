@@ -2,18 +2,13 @@
 layout: home
 ---
 
-<!-- Hero Section -->
+<div class="bg-white-50">
 {% render "home/hero" %}
-
-
-
-
-
-<!-- Tiles Section -->
 {% render "home/tiles" %}
-<!-- CTA Section -->
+</div>
 {%- assign pc = site.posts | size %}
 {% render "home/cta", post_count: pc %}
+
 <!-- Blog Section -->
 {% rendercontent "shared/section" %}
   {% with subtitle %}

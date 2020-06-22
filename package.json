@@ -1,14 +1,14 @@
 {
-  "name": "new-bridgetown-site",
+  "name": "andrewm-codes",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://andrewmcodes-v2.netlify.app",
+  "homepage": "https://andrewm.codes",
   "bugs": {
-    "url": "https://github.com/andrewmcodes/site-v2/issues"
+    "url": "https://github.com/andrewmcodes/personal-website/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:andrewmcodes/site-v2.git"
+    "url": "git@github.com:andrewmcodes/personal-website.git"
   },
   "license": "MIT",
   "author": {

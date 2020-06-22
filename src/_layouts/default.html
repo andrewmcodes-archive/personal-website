@@ -11,8 +11,8 @@
   {% endif %}
 
   <body class="{{ body_classes }} {{ page.layout }} {{ page.page_class }}">
+    {% render "shared/banner" %}
     {% render "shared/navbar", navigation: site.metadata.navigation, primary: site.metadata.actions.primary, secondary: site.metadata.actions.secondary %}
-
     <main class="flex-grow bg-gray-50" id="swup">
       {{content}}
     </main>

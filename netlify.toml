@@ -4,6 +4,9 @@
 
 [build.environment]
   NODE_VERSION = "13"
+  BRIDGETOWN_ENV = "production"
+  NODE_ENV = "production"
 
 [context.production.environment]
   BRIDGETOWN_ENV = "production"
+  NODE_ENV = "production"
