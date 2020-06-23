@@ -10,10 +10,17 @@ email: andrewmcodes@protonmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Hire Me! I am a full-stack developer, specializing in Ruby on Rails, and I am looking for my next position. My name is Andrew Mason, and this is my website.
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: https://res.cloudinary.com/andrewmcodes/image/upload/c_scale,e_progressbar,w_240/v1592107148/personal/headshot.png
+
 author:
   email: andrewmcodes@protonmail.com
   name: Andrew Mason
   twitter: andrewmcodes
+  picture: https://res.cloudinary.com/andrewmcodes/image/upload/c_scale,e_progressbar,w_240/v1592107148/personal/headshot.png
 
 twitter:
   username: andrewmcodes
