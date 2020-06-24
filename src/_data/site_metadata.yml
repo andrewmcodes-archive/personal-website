@@ -28,17 +28,19 @@ twitter:
   card: summary
 
 social:
-  - name: "twitter"
-    username: "@andrewmcodes"
+  twitter:
+    sr: "Twitter"
     url: "https://twitter.com/andrewmcodes"
-    icon_url: "icons/twitter.svg"
-  - name: "github"
-    username: "andrewmcodes"
+  github:
+    sr: "GitHub"
     url: "https://github.com/andrewmcodes"
-    icon_url: "icons/twitter.svg"
-  # - name: "linkedin"
-  #   username: "andrew-mason"
-  #   url: "https://www.linkedin.com/in/andrew-mason/"
+  linkedin:
+    sr: "LinkedIn"
+    url: "https://www.linkedin.com/in/andrew-mason/"
+  devto:
+    sr: "Dev.to"
+    url: "https://dev.to/andrewmcodes"
+
 dev_portfolios:
   - name: Sourcerer
     url: https://sourcerer.io/andrewmcodes
@@ -56,6 +58,8 @@ navigation:
     url: "/about"
   - name: "Blog"
     url: "/blog"
+  - name: "Skills"
+    url: "/skills"
   - name: "Projects"
     url: "/projects"
   - name: "Experience"

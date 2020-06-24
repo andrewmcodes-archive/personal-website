@@ -1,51 +1,30 @@
 ---
-layout: home
+layout: page
 title: Projects
+permalink: /projects/
+
 ---
 
- {% rendercontent "shared/section" %}
-  {% with subtitle %}A small sample of some of the projects I maintain.{% endwith %}
-  {% with title %}Maintainer{% endwith %}
-  {% with content %}
-    <div class="grid grid-cols-1 gap-4 mt-8 md:grid-cols-2 xl:grid-cols-3">
-    {% for repo in site.data.projects.maintain %}
-    <object type="image/svg+xml" data="{{ repo.url }}"></object>
-    {% endfor %}
-  </div>
-  {% endwith %}
-{% endrendercontent %}
+{% rendercontent "shared/content_layout" %}
 
-{% rendercontent "shared/section" %}
-  {% with subtitle %}A small sample of some of the projects I have contributed to.{% endwith %}
-  {% with title %}Contributor{% endwith %}
-  {% with content %}
-    <div class="grid grid-cols-1 gap-4 mt-8 md:grid-cols-2 xl:grid-cols-3">
-    {% for repo in site.data.projects.contributor %}
-    <object type="image/svg+xml" data="{{ repo.url }}"></object>
-    {% endfor %}
-  </div>
-  {% endwith %}
-{% endrendercontent %}
+## Maintainer
+  - [Ruby Meetup: Online](https://rubymeetup.online?link_target=_blank)
+  - [dishwasher](https://github.com/andrewmcodes/dishwasher?link_target=_blank)
+  - [pruner](https://github.com/andrewmcodes/pruner?link_target=_blank)
+  - [Rails.fm](https://rails.fm)
+  - [Rubocop Linter Action](https://github.com/andrewmcodes/rubocop-linter-action?link_target=_blank)
+  - [StandardRB Action](https://github.com/andrewmcodes/standardrb-action?link_target=_blank)
 
-{% rendercontent "shared/section" %}
-  {% with subtitle %}A sample of some live projects I have contributed to.{% endwith %}
-  {% with title %}Live{% endwith %}
-  {% with content %}
-    <div class="grid grid-cols-1 gap-4 mt-8 md:grid-cols-2 xl:grid-cols-3">
-    {% for project in site.data.projects.production %}
-      <div class="overflow-hidden bg-white shadow-md">
-        <a class="block px-4 py-5 sm:p-6" href="{{ project.url }}" target="_blank">
-          <dl>
-            <dt class="mb-1 text-3xl font-semibold leading-9 text-gray-900">
-              {{ project.name }}
-            </dt>
-            <dd class="text-sm font-medium leading-5 text-gray-500 truncate">
-              {{ project.description }}
-            </dd>
-          </dl>
-        </a>
-      </div>
-    {% endfor %}
-    </div>
-  {% endwith %}
+## Contributor
+  - [BridgetownRB](https://github.com/bridgetownrb/bridgetown?link_target=_blank)
+  - [CodeFund](https://github.com/gitcoinco/code_fund_ads?link_target=_blank)
+  - [Dev.to](https://dev.to?link_target=_blank)
+  - [RailsBytes](https://railsbytes.com?link_target=_blank)
+  - [StimulusReflex](https://github.com/hopsoft/stimulus_reflex?link_target=_blank)
+  - [ViewComponent](https://github.com/github/view_component?link_target=_blank)
+
+----
+
+[See more on GitHub!]({{site.data.social.github.url}})
+
 {% endrendercontent %}

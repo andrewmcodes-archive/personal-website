@@ -1,0 +1,12 @@
+twitter:
+  sr: "Twitter"
+  url: "https://twitter.com/andrewmcodes?link_target=_blank"
+github:
+  sr: "GitHub"
+  url: "https://github.com/andrewmcodes?link_target=_blank"
+linkedin:
+  sr: "LinkedIn"
+  url: "https://www.linkedin.com/in/andrew-mason?link_target=_blank"
+devto:
+  sr: "Dev.to"
+  url: "https://dev.to/andrewmcodes?link_target=_blank"

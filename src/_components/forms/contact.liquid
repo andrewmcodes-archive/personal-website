@@ -2,31 +2,44 @@
 name: Contact Form
 description: Displays a contact form
 ---
-<form action="#" method="POST" class="grid grid-cols-1 row-gap-6">
+<form name="contactForm" method="POST" netlifyHoneypot="bot-field" data-netlify="true" id="contact-form"
+  class="grid grid-cols-1 row-gap-6">
+  <p className="sr-only">
+    <label class="hidden">
+      Don't fill this out if you're human:{" "}
+      <input name="bot-field" />
+    </label>
+  </p>
   <div>
-    <label for="full_name" class="sr-only">Full name
+    <label for="name" class="sr-only">Name
     </label>
     <div class="relative rounded-md shadow-sm">
-      <input id="full_name" class="block w-full px-4 py-3 placeholder-gray-500 transition duration-150 ease-in-out form-input" placeholder="Full name" />
+      <input type="text" name="name" placeholder="Your name..."
+        class="block w-full px-4 py-3 placeholder-gray-500 transition duration-150 ease-in-out form-input" />
     </div>
   </div>
   <div>
     <label for="email" class="sr-only">Email
     </label>
     <div class="relative rounded-md shadow-sm">
-      <input id="email" type="email" class="block w-full px-4 py-3 placeholder-gray-500 transition duration-150 ease-in-out form-input" placeholder="Email" />
+      <input id="email" type="email" name="email" placeholder="Your email address..." class="block w-full px-4 py-3 placeholder-gray-500 transition duration-150 ease-in-out form-input" />
     </div>
   </div>
   <div>
     <label for="message" class="sr-only">Message
     </label>
     <div class="relative rounded-md shadow-sm">
-      <textarea id="message" rows="4" class="block w-full px-4 py-3 placeholder-gray-500 transition duration-150 ease-in-out form-input" placeholder="Message"></textarea>
+      <textarea id="message" rows="4"
+        name="message"
+        class="block w-full px-4 py-3 placeholder-gray-500 transition duration-150 ease-in-out form-input"
+        placeholder="Your message..."></textarea>
     </div>
   </div>
   <div class="">
+    <input type="hidden" name="form-name" value="contactForm" />
     <span class="inline-flex rounded-md shadow-sm">
-      <button type="submit" class="inline-flex justify-center px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">
+      <button type="submit"
+        class="inline-flex justify-center px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700">
         Submit
       </button>
     </span>

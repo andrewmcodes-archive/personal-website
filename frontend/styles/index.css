@@ -49,20 +49,6 @@ html.is-animating.is-leaving.swup-theme-reverse.is-leaving
   @apply outline-none;
 }
 
-h1 {
-  @apply text-2xl font-medium mb-4 text-gray-900;
-}
-
-@screen sm {
-  h1 {
-    @apply text-3xl;
-  }
-}
-
-h2 {
-  @apply text-lg font-medium text-gray-900;
-}
-
 .subtitle {
   @apply mb-1 text-sm font-medium tracking-widest text-red-500;
 }
@@ -82,4 +68,58 @@ td:first-child {
 .h-full-screen {
   height: 90%; /* fallback if needed */
   height: calc(100% - 4rem);
+}
+
+h1 {
+  @apply text-4xl font-extrabold leading-tight tracking-tight;
+}
+
+@screen sm {
+  h1 {
+    @apply text-5xl;
+  }
+}
+
+h2 {
+  @apply text-3xl font-extrabold leading-9 tracking-tight;
+}
+
+@screen sm {
+  h2 {
+    @apply leading-10 text-4xl;
+  }
+}
+
+h3 {
+  @apply text-2xl font-extrabold leading-8;
+}
+
+@screen sm {
+  h3 {
+    @apply text-3xl;
+  }
+}
+
+@screen sm {
+  h3 {
+    @apply leading-9;
+  }
+}
+
+h4 {
+  @apply text-2xl font-medium leading-8 tracking-tight;
+}
+
+@screen sm {
+  h4 {
+    @apply leading-9 text-3xl;
+  }
+}
+
+h5 {
+  @apply text-xl font-medium leading-6;
+}
+
+h6 {
+  @apply text-lg leading-4;
 }
