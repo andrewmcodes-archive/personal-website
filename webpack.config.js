@@ -1,13 +1,15 @@
 const path = require('path')
+const devMode = process.env.NODE_ENV !== 'production'
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin')
 
 module.exports = {
-  entry: './frontend/javascript/index.js',
+  entry: {
+    main: './frontend/javascript/index.js'
+  },
   devtool: 'source-map',
-  // Set some or all of these to true if you want more verbose logging:
   stats: {
     modules: true,
     builtAt: false,
@@ -23,7 +25,8 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '../css/all.[contenthash].css'
+      filename: devMode ? '../css/[name].css' : '../css/[name].[hash].css'
+      // chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
     }),
     new ManifestPlugin({
       fileName: path.resolve(__dirname, '.bridgetown-webpack', 'manifest.json')
@@ -34,7 +37,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx|md)/,
+        test: /\.(js|md)/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -80,21 +83,17 @@ module.exports = {
         }
       },
       {
-        test: /\.(s[ac]|c)ss$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
           {
-            loader: 'sass-loader',
+            loader: MiniCssExtractPlugin.loader,
             options: {
-              sassOptions: {
-                includePaths: [path.resolve(__dirname, 'src/_components')]
-              }
+              hmr: process.env.NODE_ENV === 'development'
             }
           },
-          {
-            loader: 'postcss-loader'
-          }
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
         ]
       },
       {

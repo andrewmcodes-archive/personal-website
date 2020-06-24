@@ -15,19 +15,9 @@
 # https://learnxinyminutes.com/docs/yaml/
 #
 
-url: "https://andrewmcodes-v2.netlify.app"
+url: "https://www.andrewm.codes"
 permalink: simple
 timezone: America/New_York
-
-# pagination:
-#   enabled: true
-
-collections:
-#   experience:
-#     output: true
-#     permalink: /:collection/:path
-#     sort_by: order
-#     name: Work Experience
 
 defaults:
   - scope:
@@ -42,3 +32,6 @@ defaults:
 
 cloudinary:
   cloud_name: andrewmcodes
+
+pagination:
+  enabled: true

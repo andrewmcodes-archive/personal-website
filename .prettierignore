@@ -8,4 +8,4 @@ build/
 .build/
 .bridgetown-cache/
 .bridgetown-webpack/
-frontend/styles/prism.css
+/src/_posts/

@@ -156,7 +156,7 @@ PLATFORMS
 DEPENDENCIES
   bridgetown (~> 0.15.0)
   bridgetown-cloudinary (~> 1.0.2)
-  bridgetown-quick-search (~> 1.0)
+  bridgetown-quick-search (~> 1.0.3)
   bridgetown-seo-tag (~> 3.0.5)
   feedjira
   httparty
