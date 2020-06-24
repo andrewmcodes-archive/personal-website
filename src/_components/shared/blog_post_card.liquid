@@ -4,9 +4,6 @@
   </div>
   <div class="flex flex-col justify-between flex-1 p-6 bg-white">
     <div class="flex-1">
-      <p class="text-sm font-medium leading-5 text-indigo-600">
-        <a href="#" class="hover:underline">CATEGORY</a>
-      </p>
       <a href="{{ post.url }}" class="block">
         <h3 class="mt-2 text-xl font-semibold leading-7 text-gray-900">
           {{ post.title }}
@@ -21,12 +18,6 @@
         <time datetime="{{ post.date | date: "%Y-%B-%D" }}">
           {{ post.date | date: "%B %-d, %Y" }}
         </time>
-        <span class="mx-1">
-          &middot;
-        </span>
-        <span>
-          6 min read
-        </span>
       </div>
     </div>
   </div>

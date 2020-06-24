@@ -1,28 +1,42 @@
-{% rendercontent "shared/section" %}
-  {% with title %}
-    Want to learn more about Rails?
-    <br class="hidden sm:inline"/>
-    <span class="text-red-600" id="newsletter-headline">Sign up for my newsletter.</span>
-  {% endwith %}
+<section class="relative px-4 pt-16 pb-20 bg-gray-800 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+  <div class="absolute inset-0">
+    <div class=" h-1/3 sm:h-2/3"></div>
+  </div>
+  <div class="relative mx-auto max-w-7xl">
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-200 sm:text-4xl sm:leading-10">
+        Want to learn more about Rails?
+        <br class="hidden sm:inline" />
+        <span class="text-green-400" id="newsletter-headline">Sign up for my newsletter.</span>
+      </h2>
 
-  {% with content %}
-    <form action="https://app.convertkit.com/forms/1483423/subscriptions" aria-labelledby="newsletter-headline" class="mt-8 sm:flex" data-format="inline" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;action&quot;:&quot;redirect&quot;,&quot;redirect_url&quot;:&quot;https://andrewm.codes&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://convertkit.com?utm_source=dynamic&amp;utm_medium=referral&amp;utm_campaign=poweredby&amp;utm_content=form&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" data-sv-form="1483423" data-uid="7f856ce512" data-version="5" method="post" min-width="400 500 600 700 800">
+    </div>
+    <form action="https://app.convertkit.com/forms/1483423/subscriptions" aria-labelledby="newsletter-headline"
+      class="mt-8 sm:flex" data-format="inline"
+      data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;action&quot;:&quot;redirect&quot;,&quot;redirect_url&quot;:&quot;https://andrewm.codes&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://convertkit.com?utm_source=dynamic&amp;utm_medium=referral&amp;utm_campaign=poweredby&amp;utm_content=form&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}"
+      data-sv-form="1483423" data-uid="7f856ce512" data-version="5" method="post" min-width="400 500 600 700 800">
       <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
       <div class="flex flex-col justify-center w-full sm:flex-row" data-element="fields" data-stacked="false">
-        <input aria-label="Email address" class="w-full px-5 py-3 text-base leading-6 text-gray-900 placeholder-gray-500 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md appearance-none focus:outline-none focus:shadow-outline focus:border-blue-300 sm:max-w-xs" name="email_address" placeholder="Enter your email" required type="email"/>
+        <input aria-label="Email address"
+          class="w-full px-5 py-3 text-base leading-6 text-gray-900 placeholder-gray-500 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md appearance-none focus:outline-none focus:shadow-outline focus:border-blue-300 sm:max-w-xs"
+          name="email_address" placeholder="Enter your email" required type="email" />
         <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-          <button class="flex items-center justify-center w-full px-5 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-red-600 border border-transparent rounded-md hover:bg-red-500 focus:outline-none focus:shadow-outline" data-element="submit">
+          <button
+            class="flex items-center justify-center w-full px-5 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-green-500 border border-transparent rounded-md hover:bg-green-400 focus:outline-none focus:shadow-outline"
+            data-element="submit">
             Subscribe
           </button>
         </div>
       </div>
     </form>
     <p class="mt-3 text-sm leading-5 text-center text-gray-300">
-      <a class="font-medium text-gray-500 underline" data-element="powered-by" href="https://convertkit.com?utm_source=dynamic&amp;utm_medium=referral&amp;utm_campaign=poweredby&amp;utm_content=form" rel="noopener noreferrer" target="_blank">
+      <a class="font-medium text-gray-500 underline" data-element="powered-by"
+        href="https://convertkit.com?utm_source=dynamic&amp;utm_medium=referral&amp;utm_campaign=poweredby&amp;utm_content=form"
+        rel="noopener noreferrer" target="_blank">
         Powered By ConvertKit
       </a>
     </p>
-  {% endwith %}
-{% endrendercontent %}
+  </div>
+</section>
 
 <script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>
