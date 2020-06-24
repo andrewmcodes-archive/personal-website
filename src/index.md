@@ -37,6 +37,3 @@ layout: home
     </div>
   {% endwith %}
 {% endrendercontent %}
-
-<!-- CTA Section -->
-{% render "shared/subscribe" %}

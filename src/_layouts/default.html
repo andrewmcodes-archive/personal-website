@@ -13,8 +13,11 @@
   <body class="{{ body_classes }} {{ page.layout }} {{ page.page_class }}">
     {% render "shared/navbar", navigation: site.metadata.navigation, primary: site.metadata.actions.primary, secondary: site.metadata.actions.secondary %}
 
-    <main class="flex-grow bg-gray-50" id="swup">
-      {{content}}
+    <main class="flex-grow bg-gray-50">
+      <section id="swup">
+        {{content}}
+      </section>
+      {% render "shared/subscribe" %}
     </main>
 
     {% render "shared/footer", author: site.metadata.author.name, social: site.metadata.social %}
