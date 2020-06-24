@@ -13,9 +13,16 @@ const application = Application.start()
 const context = require.context('./controllers', true, /\.js$/)
 application.load(definitionsFromContext(context))
 
-const addHighlighting = () => {
+const init = () => {
   if (document.querySelectorAll('.markdown').length !== 0) {
     Prism.highlightAll()
+  }
+  const ssd = document.getElementById('stackshare')
+  if (ssd) {
+    const script = document.createElement('script')
+    script.src = 'https://cdn1.stackshare.io/javascripts/client-code.js'
+    script.async = 'async'
+    ssd.appendChild(script)
   }
 }
 
@@ -32,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   swup.on('contentReplaced', function () {
-    addHighlighting()
+    init()
   })
 
-  addHighlighting()
+  init()
 })

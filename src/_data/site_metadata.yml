@@ -58,6 +58,8 @@ navigation:
     url: "/about"
   - name: "Blog"
     url: "/blog"
+  - name: "Skills"
+    url: "/skills"
   - name: "Projects"
     url: "/projects"
   - name: "Experience"
