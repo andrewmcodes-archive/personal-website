@@ -2,3 +2,4 @@
 
 bin/checks/standardrb
 bin/checks/prettier
+bin/checks/liquid_linter
