@@ -51,7 +51,7 @@
     "@babel/preset-env": "^7.9.0",
     "@fullhuman/postcss-purgecss": "^2.3.0",
     "@tailwindcss/ui": "^0.3.0",
-    "autoprefixer": "^9.8.0",
+    "autoprefixer": "^9.8.4",
     "babel-loader": "^8.1.0",
     "babel-plugin-prismjs": "^2.0.1",
     "browser-sync": "^2.26.7",
