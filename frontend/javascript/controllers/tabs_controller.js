@@ -1,10 +1,10 @@
-import { Controller } from 'stimulus'
+import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ['tab', 'panel']
+  static targets = ["tab", "panel"]
 
   connect() {
-    this.activeTabClasses = (this.data.get('activeTab') || 'active').split(' ')
+    this.activeTabClasses = (this.data.get("activeTab") || "active").split(" ")
     this.index = this.tabTargets.findIndex(tab => tab.id == this.anchor)
     this.showTab()
   }
@@ -19,7 +19,7 @@ export default class extends Controller {
       const panel = this.panelTargets[index]
 
       if (index === this.index) {
-        panel.classList.remove('hidden')
+        panel.classList.remove("hidden")
         tab.classList.add(...this.activeTabClasses)
 
         // Update URL with the tab ID if it has one
@@ -29,24 +29,22 @@ export default class extends Controller {
           location.hash = tab.id
         }
       } else {
-        panel.classList.add('hidden')
+        panel.classList.add("hidden")
         tab.classList.remove(...this.activeTabClasses)
       }
     })
   }
 
   get index() {
-    return parseInt(this.data.get('index') || 0)
+    return parseInt(this.data.get("index") || 0)
   }
 
   set index(value) {
-    this.data.set('index', value >= 0 ? value : 0)
+    this.data.set("index", value >= 0 ? value : 0)
     this.showTab()
   }
 
   get anchor() {
-    return document.URL.split('#').length > 1
-      ? document.URL.split('#')[1]
-      : null
+    return document.URL.split("#").length > 1 ? document.URL.split("#")[1] : null
   }
 }

@@ -3,7 +3,7 @@
 </h1>
 <p>
   <img src="https://img.shields.io/badge/node-13.x.x-blue.svg" />
-  <img src="https://img.shields.io/badge/npm-6.x.x-blue.svg" />
+  <img src="https://img.shields.io/badge/yarn-1.22.4-blue.svg" />
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
@@ -16,7 +16,11 @@
   <a href="https://percy.io/Andrew-Mason/andrewmcodes" target="_blank">
     <img alt="This project is using Percy.io for visual regression testing." src="https://percy.io/static/images/percy-badge.svg" />
   </a>
+  <a href="https://github.com/prettier/prettier" target="_blank">
+    <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat" />
+  </a>
 </p>
+
 
 > My personal website, created with BridgetownRB and TailwindCSS
 
@@ -25,7 +29,7 @@
 ## Prerequisites
 
 - node 13.x.x
-- npm 6.x.x
+- yarn 1.22.4
 
 ## Install
 
@@ -45,6 +49,12 @@ yarn start
 yarn prettier-check
 ```
 
+## Format
+
+```sh
+yarn prettier-format
+```
+
 ## Author
 
 👤 **Andrew Mason**
@@ -61,6 +71,3 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
