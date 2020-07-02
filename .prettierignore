@@ -9,3 +9,4 @@ build/
 .bridgetown-cache/
 .bridgetown-webpack/
 /src/_posts/
+bin/

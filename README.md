@@ -19,6 +19,8 @@
   <a href="https://github.com/prettier/prettier" target="_blank">
     <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat" />
   </a>
+  <img alt="Linters" src="https://github.com/andrewmcodes/personal-website/workflows/Linters/badge.svg" />
+  <img alt="Broken Link Check" src="https://github.com/andrewmcodes/personal-website/workflows/Links/badge.svg" />
 </p>
 
 
