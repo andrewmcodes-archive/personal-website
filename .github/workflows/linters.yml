@@ -13,6 +13,7 @@ jobs:
   prettier:
     name: Prettier Check Action
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'ci skip')"
     steps:
       - uses: actions/checkout@master
       - name: Setup Node
@@ -36,6 +37,7 @@ jobs:
   liquid_linter:
     name: Liquid Linter Check Action
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'ci skip')"
     steps:
       - uses: actions/checkout@master
       - name: Setup Node
@@ -59,6 +61,7 @@ jobs:
   standardrb:
     name: StandardRB Check Action
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'ci skip')"
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby 2.7

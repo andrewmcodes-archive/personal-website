@@ -10,9 +10,10 @@ on:
       - main
 
 jobs:
-  prettier:
+  html_proofer:
     name: Check Links
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'ci skip')"
     steps:
       - uses: actions/checkout@master
       - name: Setup Node
@@ -45,5 +46,5 @@ jobs:
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
           yarn install
-      - name: Run htmlproofer
+      - name: Check for broken links
         run: bin/checks/links

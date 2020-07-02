@@ -48,13 +48,13 @@ yarn start
 ## Run tests
 
 ```sh
-yarn prettier:check
+bin/check
 ```
 
 ## Format
 
 ```sh
-yarn prettier-format
+bin/format
 ```
 
 ## Author
