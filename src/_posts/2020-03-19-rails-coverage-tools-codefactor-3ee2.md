@@ -72,7 +72,7 @@ Your code should now be online in your repo.
 
 ### Configuration
 
-Navigate to [codefactor.io](codefactor.io) and log in with your preferred method. I chose to use my GitHub account.
+Navigate to [codefactor.io](https://codefactor.io) and log in with your preferred method. I chose to use my GitHub account.
 
 ![codefactor_landing_page_1](https://dev-to-uploads.s3.amazonaws.com/i/kpmyaynxl27u2wj7m0c8.jpg)
 

@@ -118,7 +118,7 @@ To create a custom config file, you can run:
 
 This should create a
 `tailwind.config.js`
-file at the root of your project. This file can be used to customize the Tailwind defaults. Read more [here](https://next.tailwindcss.com/docs/configuration)
+file at the root of your project. This file can be used to customize the Tailwind defaults. Read more [here](https://tailwindcss.com/docs/configuration)
 
 Next, add the following two lines to
 `postcss.config.js`
@@ -185,7 +185,7 @@ touch app/frontend/packs/stylesheets.css
 
 Paste the following into our new
 `stylesheets.css`
-file. _This is straight from the [tailwind docs](https://next.tailwindcss.com/docs/installation# step-2-add-tailwind-to-your-css)_
+file. _This is straight from the [tailwind docs](https://tailwindcss.com/docs/installation# step-2-add-tailwind-to-your-css)_
 
 ```css
 @tailwind base;
@@ -263,7 +263,7 @@ to:
 <section class="py-8 text-center">
   <h1 class="mb-2 text-5xl">Ruby on Rails + TailwindCSS</h1>
   <p class="mb-8 text-xl">❤️ A match made in heaven️️ ❤️</p>
-  <a href="https://next.tailwindcss.com" class="px-8 py-4 font-bold text-white bg-teal-500 rounded hover:bg-teal-700" target="_blank">Tailwind Docs</a>
+  <a href="https://tailwindcss.com" class="px-8 py-4 font-bold text-white bg-teal-500 rounded hover:bg-teal-700" target="_blank">Tailwind Docs</a>
 </section>
 ```
 

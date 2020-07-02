@@ -13,35 +13,35 @@ variables:
     - "The variant of the button. Options: secondary, white."
   content: markdown
 ---
-{%- assign base_classes = "inline-flex items-center border border-transparent font-medium border" %}
-{%- assign transition_classes = "transition ease-in-out duration-150" %}
-{%- assign size_classes = "" %}
-{%- assign variant_classes = "" %}
+{% assign base_classes = "inline-flex items-center border border-transparent font-medium border" %}
+{% assign transition_classes = "transition ease-in-out duration-150" %}
+{% assign size_classes = "" %}
+{% assign variant_classes = "" %}
 
-{%- if size == "xs" %}
-  {%- assign size_classes = "px-2.5 py-1.5 text-xs leading-4 rounded" %}
-{%- elsif size=="sm" %}
-  {%- assign size_classes = "px-3 py-2 text-sm leading-4 rounded-md" %}
-{%- elsif size=="lg" %}
-  {%- assign size_classes = "px-4 py-2 text-base leading-6 rounded-md" %}
-{%- elsif size=="xl" %}
-  {%- assign size_classes = "px-4 py-2 text-base leading-6 rounded-md" %}
-{%- else %}
-  {%- assign size_classes = "px-4 py-2 text-sm leading-5 rounded-md" %}
-{%- endif %}
+{% if size == "xs" %}
+  {% assign size_classes = "px-2.5 py-1.5 text-xs leading-4 rounded" %}
+{% elsif size=="sm" %}
+  {% assign size_classes = "px-3 py-2 text-sm leading-4 rounded-md" %}
+{% elsif size=="lg" %}
+  {% assign size_classes = "px-4 py-2 text-base leading-6 rounded-md" %}
+{% elsif size=="xl" %}
+  {% assign size_classes = "px-4 py-2 text-base leading-6 rounded-md" %}
+{% else %}
+  {% assign size_classes = "px-4 py-2 text-sm leading-5 rounded-md" %}
+{% endif %}
 
-{%- if variant == "secondary" %}
-  {%- assign variant_classes = "border-transparent text-red-700 bg-red-100 hover:bg-red-50 focus:outline-none focus:border-red-300 focus:shadow-outline-red active:bg-red-200" %}
-{%- elsif variant=="white" %}
-  {%- assign variant_classes = "border-gray-300 text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50" %}
-{%- else %}
-  {%- assign variant_classes = "border-transparent text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-700" %}
-{%- endif %}
+{% if variant == "secondary" %}
+  {% assign variant_classes = "border-transparent text-red-700 bg-red-100 hover:bg-red-50 focus:outline-none focus:border-red-300 focus:shadow-outline-red active:bg-red-200" %}
+{% elsif variant=="white" %}
+  {% assign variant_classes = "border-gray-300 text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50" %}
+{% else %}
+  {% assign variant_classes = "border-transparent text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-700" %}
+{% endif %}
 
-{%- if variant == "secondary" %}
+{% if variant == "secondary" %}
   <a href="{{ url }}" class="{{ base_classes }} {{ size_classes }} {{ variant_classes }} {{ transition_classes }}">{{ content }}</a>
-{%- else %}
+{% else %}
   <span class="inline-flex rounded-md shadow-sm">
     <a href="{{ url }}" class="{{ base_classes }} {{ size_classes }} {{ variant_classes }} {{ transition_classes }}">{{ content }}</a>
   </span>
-{%- endif %}
+{% endif %}

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "== Building webpack assets =="
+NODE_ENV=production yarn webpack-build
+echo "== Building bridgetown =="
+bundle exec bridgetown build

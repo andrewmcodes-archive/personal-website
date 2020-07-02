@@ -1,4 +1,4 @@
-{%- if container == false %}
+{% if container == false %}
   <table class="min-w-full">
     <thead>
       <tr>
@@ -9,7 +9,7 @@
       {{ rows }}
     </tbody>
   </table>
-{%- else %}
+{% else %}
   {% rendercontent "table/table_container" %}
     <table class="min-w-full">
       <thead>
@@ -22,4 +22,4 @@
       </tbody>
     </table>
   {% endrendercontent %}
-{%- endif %}
+{% endif %}

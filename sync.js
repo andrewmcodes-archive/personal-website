@@ -1,7 +1,7 @@
-const browserSync = require('browser-sync').create()
+const browserSync = require("browser-sync").create()
 
 // You can change these configuration values:
-const proxy = 'http://localhost:4001'
+const proxy = "http://localhost:4001"
 const port = 4000
 const uiPort = 4002
 
@@ -13,7 +13,7 @@ browserSync.init({
   notify: false,
   proxy: proxy,
   port: port,
-  files: 'output/index.html',
+  files: "output/index.html",
   ghostMode: {
     clicks: false,
     forms: false,

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo "== Building =="
+bin/build
+echo "== Checking for broken links =="
+bin/htmlproofer --http-status-ignore "999" ./output

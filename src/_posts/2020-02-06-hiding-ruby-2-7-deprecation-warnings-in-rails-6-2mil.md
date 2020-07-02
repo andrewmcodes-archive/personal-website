@@ -32,7 +32,7 @@ Here are some options you have to make that happen. But first, lets create a new
 
 ## Generate a new Rails app with Ruby 2.7
 
-You can either use the CLI or [this template](https://github.com/andrewmcodes/rails_template/generate).
+You can either use the CLI or [this template](https://github.com/andrewmcodes/rails_template).
 
 If you use the CLI, I recommend something like:
 

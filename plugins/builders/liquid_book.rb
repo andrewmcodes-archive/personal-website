@@ -26,9 +26,9 @@ class LiquidBook < SiteBuilder
 
     return unless File.directory?(dir) && !@entry_filter.symlink?(dir)
 
-    entries = Dir.chdir(dir) do
+    entries = Dir.chdir(dir) {
       Dir["*.{liquid,html}"] + Dir["*"].select { |fn| File.directory?(fn) }
-    end
+    }
 
     entries.each do |entry|
       path = File.join(dir, entry)
@@ -44,7 +44,7 @@ class LiquidBook < SiteBuilder
           key = sanitize_filename(File.basename(path, ".*"))
           key = File.join(Pathname.new(File.dirname(path)).relative_path_from(@current_root), key)
           @components[key] = component.to_h.deep_stringify_keys.merge({
-            "relative_path" => key,
+            "relative_path" => key
           })
         end
       end
@@ -60,10 +60,10 @@ class LiquidBook < SiteBuilder
       registers: {
         site: site,
         page: tag.context.registers[:page],
-        cached_partials: Bridgetown::Renderer.cached_partials,
+        cached_partials: Bridgetown::Renderer.cached_partials
       },
       strict_filters: liquid_options["strict_filters"],
-      strict_variables: liquid_options["strict_variables"],
+      strict_variables: liquid_options["strict_variables"]
     }
 
     template = site.liquid_renderer.file(preview_path).parse(
@@ -71,10 +71,10 @@ class LiquidBook < SiteBuilder
     )
     template.warnings.each do |e|
       Bridgetown.logger.warn "Liquid Warning:",
-                             LiquidRenderer.format_error(e, preview_path)
+        LiquidRenderer.format_error(e, preview_path)
     end
     template.render!(
-      site.site_payload.merge({ page: tag.context.registers[:page] }),
+      site.site_payload.merge({page: tag.context.registers[:page]}),
       info
     )
   end
@@ -82,7 +82,7 @@ class LiquidBook < SiteBuilder
   private
 
   def sanitize_filename(name)
-    name.gsub(%r![^\w\s-]+|(?<=^|\b\s)\s+(?=$|\s?\b)!, "")
-      .gsub(%r!\s+!, "_")
+    name.gsub(%r{[^\w\s-]+|(?<=^|\b\s)\s+(?=$|\s?\b)}, "")
+      .gsub(%r{\s+}, "_")
   end
 end

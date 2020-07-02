@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "== Checking liquid-linter =="
+yarn liquid-linter --custom-block rendercontent  --custom-tag render  --custom-block with --custom-tag component_previews --custom-tag insert_svg --custom-tag webpack_path --custom-tag seo src/

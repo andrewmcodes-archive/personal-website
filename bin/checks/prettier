@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "== Checking Prettier =="
+yarn run prettier:check

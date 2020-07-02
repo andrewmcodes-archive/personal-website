@@ -12,8 +12,8 @@ cloudinary_id: personal/headshot
 
 - Name: Andrew Mason
 - Title: Full Stack Ruby on Rails Developer
-- GitHub: [andrewmcodes]({{site.data.social.github.url}})
-- Twitter: [@andrewmcodes]({{site.data.social.twitter.url}})
+- GitHub: [andrewmcodes]({{site.data.social.github.url}}){:target="_blank"}
+- Twitter: [@andrewmcodes]({{site.data.social.twitter.url}}){:target="_blank"}
 
 I am a full stack developer with 2.5 years of professional experience with Ruby on Rails in small and medium sized companies. I am very curious and love tackling new problems, which has has led to many open source contributions and collaborations with developers across the globe. My passion for community involvement has lead me to writing blog posts and becoming an active podcaster.
 

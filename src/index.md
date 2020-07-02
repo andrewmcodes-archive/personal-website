@@ -6,7 +6,7 @@ layout: home
 {% render "home/hero" %}
 {% render "home/tiles" %}
 </div>
-{%- assign pc = site.posts | size %}
+{% assign pc = site.posts | size %}
 {% render "home/cta", post_count: pc %}
 
 <!-- Blog Section -->
