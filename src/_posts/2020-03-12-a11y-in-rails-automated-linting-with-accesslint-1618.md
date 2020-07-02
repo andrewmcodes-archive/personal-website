@@ -215,7 +215,7 @@ If all is well, the AccessLint check should now pass!
 
 AccessLint is a helpful tool if you want to automated web accessibility testing in your Rails app. Unfortunately, the tool is a bit limited currently.
 
-From the [documentation](https://help.accesslint.com/en/articles/1162270-what-file-types-are-supported):
+From the documentation:
 
 > Note that server-side code (e.g. image_tag and label_tag in Rails) is not evaluated. Only fully formed HTML tags will be tested.
 

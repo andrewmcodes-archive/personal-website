@@ -25,6 +25,6 @@ permalink: /projects/
 
 ----
 
-[See more on GitHub!]({{site.data.social.github.url}})
+[See more on GitHub!]({{site.data.social.github.url}}){:target="_blank"}
 
 {% endrendercontent %}

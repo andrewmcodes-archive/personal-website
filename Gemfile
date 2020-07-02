@@ -19,12 +19,13 @@ gem "bridgetown", "~> 0.15.0"
 group :development do
   gem "httparty"
   gem "feedjira"
+  gem "solargraph"
 end
 
 group :development, :test do
   gem "pry"
   gem "standard"
-  # gem "dotenv"
+  gem "html-proofer"
 end
 
 group :bridgetown_plugins do

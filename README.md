@@ -46,7 +46,7 @@ yarn start
 ## Run tests
 
 ```sh
-yarn prettier-check
+yarn prettier:check
 ```
 
 ## Format

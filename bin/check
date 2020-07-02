@@ -1,0 +1,4 @@
+#!/bin/bash
+
+bin/checks/standardrb
+bin/checks/prettier
