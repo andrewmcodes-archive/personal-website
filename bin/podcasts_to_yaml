@@ -1,0 +1,64 @@
+#!/usr/bin/env ruby
+
+require "json"
+require "yaml"
+require "httparty"
+require "feedjira"
+
+podcasts = {}
+url = "https://feeds.transistor.fm/remote-ruby"
+xml = HTTParty.get(url).body
+feed = Feedjira.parse(xml)
+
+podcasts["title"] = feed.title
+podcasts["subtitle"] = feed.itunes_subtitle
+podcasts["image_url"] = feed.itunes_image
+podcasts["url"] = feed.url
+podcasts["description"] = feed.description
+podcasts["episodes"] = []
+feed.entries.each do |entry|
+  episode = {
+    title: entry.title,
+    url: entry.url,
+    date: entry.published
+  }.transform_keys(&:to_s)
+  podcasts["episodes"] << episode
+end
+
+open("src/_data/podcasts/remote_ruby.yml", "w") do |f|
+  f << podcasts.to_yaml
+end
+
+# require "json"
+# require "yaml"
+# require "httparty"
+# require "feedjira"
+
+# podcasts = {}
+# # url = "https://feeds.feedwrench.com/RubyRoguesOnly.rss"
+# url = "https://feeds.feedwrench.com/my-ruby-story.rss"
+# xml = HTTParty.get(url).body
+# feed = Feedjira.parse(xml)
+
+# podcasts["title"] = feed.title
+# podcasts["subtitle"] = feed.itunes_subtitle
+# podcasts["image_url"] = feed.itunes_image
+# podcasts["url"] = feed.url
+# podcasts["description"] = feed.description
+# podcasts["episodes"] = []
+# feed.entries.each do |entry|
+#   puts entry.methods
+#   if entry.summary&.downcase&.include?("andrew mason")
+#     episode = {
+#       # id: entry.id,
+#       title: entry.title,
+#       url: entry.url,
+#       date: entry.published
+#     }.transform_keys(&:to_s)
+#     podcasts["episodes"] << episode
+#   end
+# end
+
+# open("src/_data/podcasts/ruby_rogues.yml", "w") do |f|
+#   f << podcasts.to_yaml
+# end

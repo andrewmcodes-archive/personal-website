@@ -35,3 +35,9 @@ cloudinary:
 
 pagination:
   enabled: true
+
+collections:
+  podcasts:
+    output: true
+    sort_by: priority
+    name: Podcasts

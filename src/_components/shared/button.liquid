@@ -21,7 +21,7 @@ variables:
 ---
 {% assign base_classes = "inline-flex items-center border border-transparent font-medium border no-underline" %}
 {% assign transition_classes = "transition ease-in-out duration-150" %}
-{% assign size_classes = "" %}
+{% assign size_classes = "px-4 py-2 text-sm leading-5 rounded-md" %}
 {% assign variant_classes = "" %}
 {% assign target_value = "_self" %}
 
@@ -36,9 +36,7 @@ variables:
 {% elsif size=="lg" %}
   {% assign size_classes = "px-4 py-2 text-base leading-6 rounded-md" %}
 {% elsif size=="xl" %}
-  {% assign size_classes = "px-4 py-2 text-base leading-6 rounded-md" %}
-{% else %}
-  {% assign size_classes = "px-4 py-2 text-sm leading-5 rounded-md" %}
+  {% assign size_classes = "px-5 py-3 text-base leading-6 rounded-md" %}
 {% endif %}
 
 {% if variant == "secondary" %}

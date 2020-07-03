@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+{% rendercontent "shared/episode", title: page.title %}
+  <div class="overflow-hidden bg-white shadow sm:rounded-md">
+    <ul class="list-none">
+      {{ content }}
+    </ul>
+  </div>
+{% endrendercontent %}
