@@ -26,9 +26,7 @@ layout: home
       {% endfor %}
     {% endrendercontent %}
     <div class="w-full mt-8 text-center">
-      {% rendercontent "shared/button", url: "/blog", size: "xl" %}
-        View More
-      {% endrendercontent %}
+      {% render "shared/button", text: "View More", variant: "dark", url: "/blog", size: "xl" %}
     </div>
   {% endwith %}
 {% endrendercontent %}

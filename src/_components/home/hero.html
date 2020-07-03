@@ -7,14 +7,10 @@
             <h1 class="mb-4 text-3xl font-bold leading-tight text-white md:text-5xl">
               👋 Hi, I'm Andrew!
             </h1>
-
             <p class="mb-8 text-gray-200 md:text-xl">
               I am a Full Stack Ruby on Rails Developer. I am actively searching for a new role and would love to chat with you to see if I am the right fit for your team!
             </p>
-
-            {% rendercontent "shared/button", variant: "secondary", url: "/blog", size: "xl" %}
-            View More
-            {% endrendercontent %}
+            {% render "shared/button", text: "View More", variant: "secondary", url: "/blog", size: "xl" %}
           </div>
           <div class="relative md:w-1/2">
             <div class="z-10 hidden md:block">
