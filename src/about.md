@@ -8,7 +8,7 @@ cloudinary_id: personal/headshot
 {% rendercontent "shared/content_layout" %}
 
 
-<img alt="Andrew Mason Headshot" class="w-48 h-48 mx-auto rounded-full" src="{{ page.cloudinary_id | cloudinary_url: "medium" }}" />
+<img alt="Andrew Mason Headshot" class="w-48 h-48 mx-auto mb-4 rounded-full" src="{{ page.cloudinary_id | cloudinary_url: "medium" }}" />
 
 - Name: Andrew Mason
 - Title: Full Stack Ruby on Rails Developer
