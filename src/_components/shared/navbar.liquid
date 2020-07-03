@@ -3,12 +3,12 @@
     <div class="relative flex items-center justify-between h-16">
       <div class="hidden px-2 lg:items-center lg:flex lg:px-0">
         <div class="flex-shrink-0">
-          <a href="/" class="hidden text-xl text-white lg:inline-block">Andrew Mason</a>
+          <a href="/" class="hidden text-xl text-white no-underline lg:inline-block">Andrew Mason</a>
         </div>
         <div class="hidden lg:block lg:ml-6">
           <div class="flex">
             {% for item in navigation %}
-              <a href="{{ item.url }}" class="px-3 py-2 ml-4 text-sm font-medium leading-5 text-gray-300 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
+              <a href="{{ item.url }}" class="px-3 py-2 ml-4 text-sm font-medium leading-5 text-gray-300 no-underline transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
                 {{ item.name }}
               </a>
             {% endfor %}
@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="flex lg:hidden">
-        <a href="/" class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white">
+        <a href="/" class="inline-flex items-center justify-center p-2 text-gray-400 no-underline transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white">
           <span class="text-lg text-gray-400">
             AM
           </span>
@@ -60,7 +60,7 @@
   <div data-target='toggle.toggleable' class="hidden block lg:hidden">
     <div class="px-2 pt-2 pb-3">
       {% for item in navigation %}
-        <a href="{{ item.url }}" class="block px-3 py-2 mt-1 text-base font-medium text-gray-300 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
+        <a href="{{ item.url }}" class="block px-3 py-2 mt-1 text-base font-medium text-gray-300 no-underline transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">
           {{ item.name }}
         </a>
       {% endfor %}

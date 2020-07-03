@@ -9,5 +9,5 @@ module.exports = {
       }
     }
   },
-  plugins: [require("@tailwindcss/ui"), require("tailwindcss-debug-screens"), require("tailwindcss-markdown")]
+  plugins: [require("@tailwindcss/ui"), require("tailwindcss-debug-screens")]
 }

@@ -1,23 +1,31 @@
 <div class="mb-8">
-  {% rendercontent "shared/button", url: "/components", size: "xs" %}primary xs{% endrendercontent %}
-  {% rendercontent "shared/button", url: "/components", size: "sm" %}primary sm{% endrendercontent %}
-  {% rendercontent "shared/button", url: "/components" %}primary base{% endrendercontent %}
-  {% rendercontent "shared/button", url: "/components", size: "lg" %}primary lg{% endrendercontent %}
-  {% rendercontent "shared/button", url: "/components", size: "xl" %}primary xl{% endrendercontent %}
+  {% render "shared/button", text: "primary xs", url: "#", size: "xs" %}
+  {% render "shared/button", text: "primary sm", url: "#", size: "sm" %}
+  {% render "shared/button", text: "primary", url: "#" %}
+  {% render "shared/button", text: "primary lg", url: "#", size: "lg" %}
+  {% render "shared/button", text: "primary xl", url: "#", size: "xl" %}
 </div>
 
 <div class="mb-8">
-  {% rendercontent "shared/button", url: "/components", variant: "secondary", size: "xs" %}secondary xs{% endrendercontent %}
-  {% rendercontent "shared/button", url: "/components", variant: "secondary", size: "sm" %}secondary sm{% endrendercontent %}
-  {% rendercontent "shared/button", url: "/components", variant: "secondary" %}secondary base{% endrendercontent %}
-  {% rendercontent "shared/button", url: "/components", variant: "secondary", size: "lg" %}secondary lg{% endrendercontent %}
-  {% rendercontent "shared/button", url: "/components", variant: "secondary", size: "xl" %}secondary xl{% endrendercontent %}
+  {% render "shared/button", text: "secondary xs", url: "#", variant: "secondary", size: "xs" %}
+  {% render "shared/button", text: "secondary sm", url: "#", variant: "secondary", size: "sm" %}
+  {% render "shared/button", text: "secondary", url: "#", variant: "secondary" %}
+  {% render "shared/button", text: "secondary lg", url: "#", variant: "secondary", size: "lg" %}
+  {% render "shared/button", text: "secondary xl", url: "#", variant: "secondary", size: "xl" %}
 </div>
 
 <div class="mb-8">
-  {% rendercontent "shared/button", url: "/components", variant: "white", size: "xs" %}white xs{% endrendercontent %}
-  {% rendercontent "shared/button", url: "/components", variant: "white", size: "sm" %}white sm{% endrendercontent %}
-  {% rendercontent "shared/button", url: "/components", variant: "white" %}white base{% endrendercontent %}
-  {% rendercontent "shared/button", url: "/components", variant: "white", size: "lg" %}white lg{% endrendercontent %}
-  {% rendercontent "shared/button", url: "/components", variant: "white", size: "xl" %}white xl{% endrendercontent %}
+  {% render "shared/button", text: "white xs", url: "#", variant: "white", size: "xs" %}
+  {% render "shared/button", text: "white sm", url: "#", variant: "white", size: "sm" %}
+  {% render "shared/button", text: "white", url: "#", variant: "white" %}
+  {% render "shared/button", text: "white lg", url: "#", variant: "white", size: "lg" %}
+  {% render "shared/button", text: "white xl", url: "#", variant: "white", size: "xl" %}
+</div>
+
+<div class="mb-8">
+  {% render "shared/button", text: "dark xs", url: "#", variant: "dark", size: "xs" %}
+  {% render "shared/button", text: "dark sm", url: "#", variant: "dark", size: "sm" %}
+  {% render "shared/button", text: "dark", url: "#", variant: "dark" %}
+  {% render "shared/button", text: "dark lg", url: "#", variant: "dark", size: "lg" %}
+  {% render "shared/button", text: "dark xl", url: "#", variant: "dark", size: "xl" %}
 </div>

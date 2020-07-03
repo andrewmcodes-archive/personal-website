@@ -14,7 +14,7 @@ const context = require.context("./controllers", true, /\.js$/)
 application.load(definitionsFromContext(context))
 
 const init = () => {
-  if (document.querySelectorAll(".markdown").length !== 0) {
+  if (document.querySelectorAll(".highlighter-rouge").length !== 0) {
     Prism.highlightAll()
   }
   const ssd = document.getElementById("stackshare")
