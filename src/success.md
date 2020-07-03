@@ -1,5 +1,6 @@
 ---
 layout: default
+permalink: /success/
 ---
 
 {% rendercontent "shared/section" %}
