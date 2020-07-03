@@ -11,7 +11,16 @@
   {% endif %}
 
   <body class="{{ body_classes }} {{ page.layout }} {{ page.page_class }}">
-    {% render "shared/banner" %}
+    {% if site.metadata.banner %}
+      {% rendercontent "shared/banner", message: site.metadata.banner.message, full_message: site.metadata.banner.full_message %}
+        {% with action %}
+          <div class="rounded-md shadow-sm">
+            {% render "shared/button", text: "GitHub Repo", url: "https://github.com/andrewmcodes/personal-website", local: false, variant: "white" %}
+          </div>
+        {% endwith %}
+      {% endrendercontent %}
+    {% endif %}
+
     {% render "shared/navbar", navigation: site.metadata.navigation, primary: site.metadata.actions.primary, secondary: site.metadata.actions.secondary %}
     <main class="flex-grow bg-gray-50">
       <section id="swup">

@@ -27,20 +27,6 @@ twitter:
   creator: andrewmcodes
   card: summary
 
-social:
-  twitter:
-    sr: "Twitter"
-    url: "https://twitter.com/andrewmcodes"
-  github:
-    sr: "GitHub"
-    url: "https://github.com/andrewmcodes"
-  linkedin:
-    sr: "LinkedIn"
-    url: "https://www.linkedin.com/in/andrew-mason/"
-  devto:
-    sr: "Dev.to"
-    url: "https://dev.to/andrewmcodes"
-
 dev_portfolios:
   - name: Sourcerer
     url: https://sourcerer.io/andrewmcodes
@@ -70,3 +56,8 @@ actions:
   primary:
     name: "Hire Me!"
     url: "/hire-me"
+
+banner:
+  visible: true
+  message: Site is under construction!
+  full_message: Site is under construction! If you encounter a bug, opening an issue would be very appreciated!
