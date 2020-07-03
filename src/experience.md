@@ -2,7 +2,7 @@
 layout: page
 title: Experience
 subtitle: Experience index
-permalink: /experience
+permalink: /experience/
 ---
 
 {% rendercontent "shared/content_layout" %}
