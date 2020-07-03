@@ -50,6 +50,8 @@ navigation:
     url: "/projects"
   - name: "Experience"
     url: "/experience"
+  - name: "Podcasts"
+    url: "/podcasts"
   - name: "Contact"
     url: "/contact"
 actions:

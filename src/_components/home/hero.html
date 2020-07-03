@@ -1,83 +1,27 @@
-<div class="z-0 pb-64 md:pb-0">
-  <div class="bg-cool-gray-800">
-    <div class="px-4 py-20 md:px-8 md:py-4">
-      <div class="md:max-w-6xl md:mx-auto">
-        <div class="md:flex md:flex-wrap">
-          <div class="pb-8 text-center md:w-1/2 md:text-left md:pt-16">
-            <h1 class="mb-4 text-3xl font-bold leading-tight text-white md:text-5xl">
-              👋 Hi, I'm Andrew!
-            </h1>
-            <p class="mb-8 text-gray-200 md:text-xl">
-              I am a Full Stack Ruby on Rails Developer. I am actively searching for a new role and would love to chat with you to see if I am the right fit for your team!
-            </p>
-            {% render "shared/button", text: "View More", variant: "secondary", url: "/blog", size: "xl" %}
-          </div>
-          <div class="relative md:w-1/2">
-            <div class="z-10 hidden md:block">
-              <div class="absolute bottom-0 left-0 w-40 px-6 py-8 -mb-40 -ml-24 bg-yellow-200 rounded-lg shadow-lg" style="transform: rotate(-8deg);">
-                <div class="relative w-12 mx-auto text-gray-900">
-                  {% insert_svg svgs/javascript.svg %}
-                </div>
-              </div>
-
-              <div class="absolute bottom-0 left-0 w-48 px-10 py-8 ml-24 bg-red-500 rounded-lg shadow-lg" style="transform: rotate(-8deg); z-index: 2;">
-                <div class="relative w-12 mx-auto text-white">
-                  {% insert_svg svgs/ruby.svg %}
-                </div>
-              </div>
-
-              <div class="absolute bottom-0 left-0 w-48 px-10 py-8 ml-32 bg-red-600 rounded-lg shadow-lg" style="margin-bottom: -220px;transform: rotate(-8deg); z-index: 2;">
-                <div class="relative w-20 mx-auto text-white">
-                  {% insert_svg svgs/rails.svg %}
-                </div>
-              </div>
-
-              <div class="absolute top-0 right-0 z-10 flex w-full overflow-hidden bg-gray-900 rounded-lg shadow-lg" style=" margin-right: -250px;transform: rotate(-8deg); z-index: 1;">
-                <div class="w-8 bg-gray-900" style="min-height: 560px;"></div>
-                <div class="z-50 items-stretch flex-1">
-                  {% insert_svg svgs/updated_faux_code.svg %}
-                </div>
-              </div>
-
-              <div class="absolute bottom-0 left-0 w-full ml-1" style=" margin-bottom: -360px;transform: rotate(-8deg); z-index: 1;">
-                <div class="w-48 h-48 grid--gray"></div>
-              </div>
-            </div>
-
-            <div class="absolute top-0 right-0 flex w-full overflow-hidden bg-gray-900 rounded-lg shadow md:hidden">
-              <div class="absolute top-0 left-0 right-0 flex items-center h-4 bg-gray-900 rounded-t-lg">
-                <span class="inline-block w-2 h-2 ml-2 mr-1 bg-red-500 rounded-full"></span>
-                <span class="inline-block w-2 h-2 mr-1 bg-orange-400 rounded-full"></span>
-                <span class="inline-block w-2 h-2 mr-1 bg-green-500 rounded-full"></span>
-              </div>
-              <div class="w-32 px-2 py-8 bg-gray-900" style="height: 340px;">
-                <div class="w-16 h-2 mb-4 bg-gray-600 rounded-full"></div>
-                <div class="flex items-center mb-4">
-                  <div class="flex-shrink-0 w-5 h-5 mr-3 bg-gray-600 rounded-full"></div>
-                  <div>
-                    <div class="w-10 h-2 bg-gray-600 rounded-full"></div>
-                  </div>
-                </div>
-
-                <div class="w-16 h-2 mb-2 bg-gray-600 rounded-full"></div>
-                <div class="w-10 h-2 mb-2 bg-gray-600 rounded-full"></div>
-                <div class="w-20 h-2 mb-2 bg-gray-600 rounded-full"></div>
-                <div class="w-6 h-2 mb-2 bg-gray-600 rounded-full"></div>
-                <div class="w-16 h-2 mb-2 bg-gray-600 rounded-full"></div>
-                <div class="w-10 h-2 mb-2 bg-gray-600 rounded-full"></div>
-                <div class="w-20 h-2 mb-2 bg-gray-600 rounded-full"></div>
-                <div class="w-6 h-2 mb-2 bg-gray-600 rounded-full"></div>
-              </div>
-              <div class="flex-1" style="max-height: 340px;">
-                {% insert_svg svgs/updated_faux_code.svg %}
-              </div>
+<section class="relative overflow-hidden bg-white lg:py-24">
+  <div class="max-w-screen-xl mx-auto ">
+    <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+      <div class="max-w-screen-xl px-4 mx-auto mt-10 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+        <div class="sm:text-center lg:text-left">
+          <h2 class="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
+            👋 Hi, I'm
+            <span class="text-blue-600">Andrew!
+            </span>
+          </h2>
+          <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+            A full stack <a href="https://rubyonrails.org/" target="_blank">Ruby on Rails</a> and <a>OSS</a> developer, content creator, and problem solver who is <a href="#">searching for a new team.</a>
+          </p>
+          <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+            <a href="/blog" class="block-btn-secondary">View Blog</a>
+            <div class="mt-3 sm:mt-0 sm:ml-3">
+              <a href="/contact" class="block-btn">Contact Me</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <svg class="hidden -mb-1 fill-current text-gray-50 md:block" viewbox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,224L1440,32L1440,320L0,320Z" fill-opacity="1"></path>
-    </svg>
   </div>
-</div>
+  <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+    <img class="object-cover w-full h-56 sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://res.cloudinary.com/andrewmcodes/image/upload/c_scale,q_auto:best,w_1024/v1593789976/andrewm.codes/hero.png" alt="Person doing a kickflip on a skateboard" />
+  </div>
+</section>

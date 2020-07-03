@@ -1,0 +1,9 @@
+title: Rails with Jason
+subtitle: On Rails with Jason I talk with Rails developers about how they work with Rails.
+image_url: https://media.simplecast.com/podcast/image/10758/1555288279-artwork.jpg
+url: https://www.codewithjason.com/rails-with-jason-podcast
+description: "On Rails with Jason I talk with Rails developers about how they work with Rails. Guests include people like Ben Orenstein and Noel Rappin."
+episodes:
+  - title: "Two Docker Noobs Talk About Docker - with Andrew Mason"
+    url: https://www.codewithjason.com/rails-with-jason-podcast/andrew-mason-docker/
+    date: 2019-08-21 10:00:00.000000000 Z

@@ -1,0 +1,17 @@
+<div class="flex flex-col overflow-hidden rounded-lg shadow-lg">
+  <div class="flex-shrink-0">
+    <img class="object-cover w-full" src="{{ podcast.image_url }}" alt="{{ podcast.title }}" />
+  </div>
+  <div class="flex flex-col justify-between flex-1 p-6 bg-white">
+    <div class="flex-1">
+      <a href="{{ podcast.url }}" class="block no-underline">
+        <h3 class="mt-2 font-semibold">
+          {{ podcast.title }}
+        </h3>
+        <p>
+          {{ podcast.subtitle }}
+        </p>
+      </a>
+    </div>
+  </div>
+</div>

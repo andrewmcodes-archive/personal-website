@@ -333,3 +333,26 @@ td:first-child {
 
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+.block-btn {
+  @apply flex items-center justify-center px-5 py-3 text-base font-medium leading-6 text-white no-underline transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md;
+}
+
+.block-btn-secondary {
+  @apply flex items-center justify-center px-5 py-3 text-base font-medium leading-6 text-blue-600 no-underline transition duration-150 ease-in-out bg-blue-100 border border-transparent rounded-md;
+}
+
+.block-btn:focus {
+  @apply shadow-outline outline-none;
+}
+
+.block-btn-secondary:focus {
+  @apply shadow-outline-blue border-blue-300;
+}
+
+.block-btn:hover {
+  @apply bg-gray-800 text-white;
+}
+.block-btn-secondary:hover {
+  @apply text-blue-800 bg-blue-200;
+}

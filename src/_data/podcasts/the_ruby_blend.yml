@@ -1,11 +1,8 @@
----
 title: The Ruby Blend
 subtitle: A Ruby Focused Podcast for Developers
 image_url: https://assets.fireside.fm/file/fireside-images/podcasts/images/9/9d234c4f-f9dd-4358-83a0-c1d4663ae442/cover.jpg?v=3
 url: https://www.therubyblend.com
-description: |
-  The Ruby Blend is a new Ruby focused podcast bringing you panel discussions, guest interviews, and much more to keep you up to date on what’s happening in the Ruby development community mixed with sprinkles from other developer communities.
-  <h4>Part of the <a href="https://codefund.io/podcasts" rel="nofollow">CodeFund Podcast Network</a></h4>
+description: The Ruby Blend is a new Ruby focused podcast bringing you panel discussions, guest interviews, and much more to keep you up to date on what’s happening in the Ruby development community mixed with sprinkles from other developer communities.
 episodes:
   - id: bac95df4-d786-4206-bd8e-99889ccdea8d
     title: "Episode 16: Playbook Thirty-nine with Nick Haskins"
