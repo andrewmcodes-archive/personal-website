@@ -17,11 +17,11 @@ variables:
   <div class="px-2 mx-auto max-w-7xl sm:px-4 lg:px-8">
     <div class="flex justify-between h-16">
       <div class="flex px-2 lg:px-0">
-        <div class="flex items-center flex-shrink-0">
+        <a class="flex items-center flex-shrink-0" href="/">
           {% svg "assets/images/branding/logo_iso_thick.svg" width="auto" height="36" %}
           <!-- <img class="block w-auto h-8 lg:hidden" src="/assets/images/branding/logo.svg" alt="Workflow logo" />
           <img class="hidden w-auto h-8 lg:block" src="/assets/images/branding/logo.svg" alt="Workflow logo" /> -->
-        </div>
+        </a>
         <div class="hidden space-x-6 lg:ml-6 lg:flex">
           {% for item in navigation.navbar %}
             {% render "shared/nav_link", mobile: false, url: item.link, text: item.name, page_url: page.url %}
