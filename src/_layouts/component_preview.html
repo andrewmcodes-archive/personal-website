@@ -5,12 +5,12 @@ layout: default
 <section class="py-10">
   {% render "shared/header", text: page.title %}
   <article>
-    {% rendercontent 'shared/container', variation: 3 %}
-      <div class="prose">
+    {% rendercontent 'shared/container', variation: "wrapper" %}
+      <div class="mb-8 prose">
         {% render "component_preview/metadata", component: page.component %}
         {% render "component_preview/variables", component: page.component %}
-        {% render "component_preview/preview_area", page: page %}
       </div>
+      {% render "component_preview/preview_area", page: page %}
     {% endrendercontent %}
   </article>
 </section>

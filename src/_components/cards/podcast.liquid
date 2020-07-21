@@ -1,0 +1,44 @@
+---
+name: "Podcast: Show Card"
+description: The content for your podcast show card
+variables:
+  show:
+    - object
+    - a podcast show object
+mocks:
+  show:
+    title: The Ruby Blend
+    subtitle: A Ruby Focused Podcast for Developers
+    image_url: https://res.cloudinary.com/andrewmcodes/image/upload/v1593758052/podcasts/the-ruby-blend.jpg
+    url: https://www.therubyblend.com
+    description: The Ruby Blend is a new Ruby focused podcast bringing you panel
+      discussions, guest interviews, and much more to keep you up to date on
+      what’s happening in the Ruby development community mixed with sprinkles
+      from other developer communities.
+---
+
+<article>
+  <a href="{{ show.url }}" target="_blank" class="flex flex-col overflow-hidden transition-transform duration-300 ease-in-out transform rounded-lg shadow sm:shadow-md md:shadow-lg hover:-translate-y-2 hover:shadow-xl">
+    <div class="flex-shrink-0">
+      <img class="object-cover w-full h-64" src="{{ show.image_url }}" alt="{{ show.title }}" />
+    </div>
+    <div class="flex flex-col justify-between flex-1 p-6 bg-white">
+      <div class="flex-1">
+        <div class="block prose">
+          <h3 class="overflow-hidden break-words">
+            {{ show.title }}
+          </h3>
+          <p class="truncate-2-lines">
+            {{ show.description }}
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center mt-6">
+        <div class="flex text-sm leading-5 text-gray-500">
+          {% svg "assets/images/icons/episodes.svg" %}
+          <span class="pl-2">{{ show.episodes | size }}</span>
+        </div>
+      </div>
+    </div>
+  </a>
+</article>

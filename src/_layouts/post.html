@@ -14,7 +14,7 @@ layout: default
     {% render "shared/header", text: page.title, color: "text-gray-100" %}
   </div>
   <article class="py-8">
-    {% rendercontent 'shared/container', variation: 1 %}
+    {% rendercontent 'shared/container', variation: "content" %}
       {% rendercontent 'shared/section', bg_color: "bg-white", shadow: "shadow-lg", rounded: "rounded" %}
         {{ content }}
       {% endrendercontent %}

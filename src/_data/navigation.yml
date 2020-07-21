@@ -6,7 +6,7 @@ navbar:
     link: /about/
     target: _self
   - name: Blog
-    link: /blog/
+    link: /posts/
     target: _self
   - name: Experience
     link: /experience/
@@ -28,7 +28,7 @@ main:
     link: /about/
     target: _self
   - name: Blog
-    link: /blog/
+    link: /posts/
     target: _self
   - name: Contact
     link: /contact/
