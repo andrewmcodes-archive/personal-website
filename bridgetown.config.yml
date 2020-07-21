@@ -25,3 +25,6 @@ defaults:
       path: "assets/images"
     values:
       image: true
+
+svg:
+  optimize: true
