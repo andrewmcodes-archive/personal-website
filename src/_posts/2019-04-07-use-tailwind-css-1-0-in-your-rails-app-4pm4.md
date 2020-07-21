@@ -17,6 +17,7 @@ tags:
   - tutorial
 canonical_url: 'https://dev.to/andrewmcodes/use-tailwind-css-1-0-in-your-rails-app-4pm4'
 layout: post
+category: tutorial
 ---
 
 # NOTICE

@@ -1,0 +1,62 @@
+socials:
+  - name: "devto"
+    sr: "Dev.to"
+    url: "https://dev.to/andrewmcodes"
+    username: andrewmcodes
+    brand_color: "bg-pink-600"
+  - name: "github"
+    sr: "GitHub"
+    url: "https://github.com/andrewmcodes"
+    username: "andrewmcodes"
+    brand_color: "bg-gray-900"
+  - name: "linkedin"
+    sr: "LinkedIn"
+    url: "https://www.linkedin.com/in/andrew-mason/"
+    username: "andrew-mason"
+    brand_color: "bg-blue-800"
+  - name: "twitter"
+    sr: "Twitter"
+    url: "https://twitter.com/andrewmcodes"
+    username: "@andrewmcodes"
+    brand_color: "bg-blue-400"
+
+media:
+  - name: "youtube"
+    sr: "YouTube"
+    url: "https://dev.to/andrewmcodes"
+    username: andrewmcodes
+    brand_color: "bg-red-600"
+  - name: "twitch"
+    sr: "twitch"
+    url: "https://dev.to/andrewmcodes"
+    username: andrewmcodes
+    brand_color: "bg-indigo-700"
+
+contact:
+  - name: "email"
+    sr: "Email"
+    url: "mailto:andrew@andrewm@@codes"
+    username: "andrew@andrewm.codes"
+    brand_color: "bg-indigo-700"
+
+developer:
+  - name: "codersrank"
+    sr: "CodersRank"
+    url: "https://profile.codersrank.io/user/andrewmcodes"
+    username: "andrewmcodes"
+    brand_color: "bg-teal-500"
+  - name: "stackshare"
+    sr: "stackshare"
+    url: "https://stackshare.io/andrewmcodes"
+    username: "andrewmcodes"
+    brand_color: "bg-blue-500"
+  - name: sourcerer
+    sr: Sourcerer
+    url: https://sourcerer.io/andrewmcodes
+    username: andrewmcodes
+    brand_color: "bg-gray-900"
+  - name: codetrace
+    sr: CodeTrace
+    url: https://codetrace.com/users/andrewmcodes
+    username: andrewmcodes
+    brand_color: "bg-purple-500"

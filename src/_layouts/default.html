@@ -1,35 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     {% render "shared/head", metadata: site.metadata, title: page.title %}
   </head>
+  {% if bridgetown.environment == "development" %}{% assign debug_class = "debug-screens" %}{% endif %}
 
-  {% if bridgetown.environment == "development" %}
-    {% assign body_classes = "debug-screens font-body min-h-screen bg-gray-100 flex flex-col" %}
-  {% else %}
-    {% assign body_classes = "font-body min-h-screen bg-gray-100 flex flex-col" %}
-  {% endif %}
+  <body class="{{ page.layout }} {{ page.page_class }} {{ debug_class }}">
+    <header>
+      {% render "shared/navbar", metadata: site.metadata, page: page, navigation: site.data.navigation %}
+    </header>
 
-  <body class="{{ body_classes }} {{ page.layout }} {{ page.page_class }}">
-    {% if site.metadata.banner %}
-      {% rendercontent "shared/banner", message: site.metadata.banner.message, full_message: site.metadata.banner.full_message %}
-        {% with action %}
-          <div class="rounded-md shadow-sm">
-            {% render "shared/button", text: "GitHub Repo", url: "https://github.com/andrewmcodes/personal-website", local: false, variant: "white" %}
-          </div>
-        {% endwith %}
-      {% endrendercontent %}
-    {% endif %}
-
-    {% render "shared/navbar", navigation: site.metadata.navigation, primary: site.metadata.actions.primary, secondary: site.metadata.actions.secondary %}
-    <main class="flex-grow bg-gray-50">
-      <section id="swup">
-        {{content}}
-      </section>
-
-      {% render "shared/subscribe" %}
+    <main class="bg-gray-50">
+      {{ content }}
     </main>
-    {% render "shared/footer", author: site.metadata.author.name, social: site.data.social %}
-    <script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+
+    {% render "shared/footer", metadata: site.metadata, site: site %}
+    {% if page.url == "/contact/" %}
+      <script src="https://cdn.jsdelivr.net/npm/mailtoui@1.0.3/dist/mailtoui-min.js"></script>
+    {% endif %}
   </body>
 </html>

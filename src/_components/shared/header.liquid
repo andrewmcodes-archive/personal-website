@@ -1,0 +1,22 @@
+---
+name: Header
+description: A page header
+variables:
+  text:
+    - string
+    - text for the header (aka the title)
+  color:
+    - string
+    - the color of the header text
+---
+
+{% assign text_class_names = "text-gray-900" %}
+{% if color %}{% assign text_class_names = color %}{% endif %}
+
+<div class="mb-8">
+  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <h1 class="text-3xl font-bold leading-tight text-center {{ text_class_names }}">
+      {{ text }}
+    </h1>
+  </div>
+</div>

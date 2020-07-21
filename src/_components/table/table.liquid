@@ -1,25 +1,18 @@
-{% if container == false %}
-  <table class="min-w-full">
-    <thead>
-      <tr>
-        {{ header }}
-      </tr>
-    </thead>
-    <tbody class="bg-white">
-      {{ rows }}
-    </tbody>
-  </table>
-{% else %}
-  {% rendercontent "table/table_container" %}
-    <table class="min-w-full">
-      <thead>
-        <tr>
-          {{ header }}
-        </tr>
-      </thead>
-      <tbody class="bg-white">
-        {{ rows }}
-      </tbody>
-    </table>
-  {% endrendercontent %}
-{% endif %}
+---
+name: Table
+description: Display content inside of a table
+variables:
+  header: Content for the header
+  rows: Content for the rows
+---
+
+<table class="min-w-full">
+  <thead>
+    <tr>
+      {{ header }}
+    </tr>
+  </thead>
+  <tbody class="bg-white">
+    {{ rows }}
+  </tbody>
+</table>

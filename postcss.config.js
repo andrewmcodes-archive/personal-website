@@ -1,4 +1,3 @@
-const cssnano = require("cssnano")
 const purgecss = require("@fullhuman/postcss-purgecss")({
   content: ["./src/**/*.html", "./src/**/*.md", "./src/**/*.liquid", "./frontend/**/*.js"],
 
@@ -14,7 +13,6 @@ module.exports = {
     }),
     require("tailwindcss"),
     require("autoprefixer"),
-    ...(process.env.NODE_ENV == "production" ? [purgecss] : []),
-    ...(process.env.NODE_ENV == "production" ? [cssnano] : [])
+    ...(process.env.NODE_ENV == "production" ? [purgecss] : [])
   ]
 }

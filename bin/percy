@@ -1,6 +1,0 @@
-#!/bin/bash
-
-echo "== Building =="
-bin/build
-echo "== Checking for broken links =="
-yarn percy snapshot output/
