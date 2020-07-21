@@ -1,0 +1,4 @@
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+  <path d="M21,3H3V2A1,1,0,0,1,4,1H20a1,1,0,0,1,1,1Z" fill="currentColor" />
+  <path d="M23,5H1A1,1,0,0,0,0,6V22a1,1,0,0,0,1,1H23a1,1,0,0,0,1-1V6A1,1,0,0,0,23,5ZM10,18V10l6,4Z" fill="currentColor" />
+</svg>

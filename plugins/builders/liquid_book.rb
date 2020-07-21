@@ -16,6 +16,7 @@ class LiquidBook < SiteBuilder
       end
     end
 
+    # Create `component_previews` liquid tag
     liquid_tag "component_previews", :preview_tag
   end
 

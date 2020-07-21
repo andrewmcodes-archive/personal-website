@@ -1,0 +1,230 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: "feat({{collection}}): :sparkles: Create {{slug}}"
+    update: "chore({{collection}}): :recycle: Update {{slug}}"
+    delete: "chore({{collection}}): :recycle: Delete {{slug}}"
+    uploadMedia: "feat(assets): :bento: Upload {{path}}"
+    deleteMedia: "chore(assets): :wastebasket: Delete {{path}}"
+
+local_backend: true
+
+media_folder: src/assets/images/uploads
+
+collections:
+  # BLOG
+  - name: blog
+    label: Blog
+    folder: src/_posts/
+    extension: .md
+    format: frontmatter
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{title}}"
+    editor:
+      preview: false
+    fields:
+      - { label: Layout, name: layout, widget: hidden, default: post }
+      - { label: Body, name: body, widget: markdown }
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Excerpt, name: excerpt, widget: markdown }
+      - { label: Thumbnail Image Path, name: thumb_img_path, widget: string }
+      - { label: Header Image Path, name: header_img_path, widget: string }
+      - { label: Canonical Url, name: canonical_url, widget: string }
+      - { label: Tags, name: tags, widget: list }
+
+  # PAGES
+  - name: pages
+    label: Pages
+    editor:
+      preview: false
+    files:
+      # INDEX
+      - label: Index Page
+        name: index
+        file: src/index.md
+        fields:
+          - { label: Layout, name: title, widget: string, default: home }
+          - { label: Body, name: body, widget: markdown }
+      # ABOUT
+      - label: About Page
+        name: about
+        file: src/about.md
+        fields:
+          - { label: Title, name: title, widget: string, default: About }
+          - { label: Layout, name: layout, widget: hidden, default: page }
+          - {
+              label: Permalink,
+              name: permalink,
+              widget: string,
+              default: "/about/",
+            }
+          - { label: Cloudinary ID, name: cloudinary_id, widget: string }
+          - { label: Cloudinary Alt, name: cloudinary_alt, widget: string }
+          - { label: Body, name: body, widget: markdown }
+      # USES
+      - label: Uses Page
+        name: uses
+        file: src/uses.md
+        fields:
+          - { label: Title, name: title, widget: string, default: Uses }
+          - { label: Layout, name: layout, widget: hidden, default: content }
+          - {
+              label: Permalink,
+              name: permalink,
+              widget: string,
+              default: "/uses/",
+            }
+          - { label: Body, name: body, widget: markdown }
+  ######
+  - name: "config"
+    label: "Config"
+    editor:
+      preview: false
+    files:
+      - label: "Podcasts"
+        name: "podcasts"
+        file: "src/_data/podcasts.yml"
+        create: true
+        editor:
+          preview: false
+        fields:
+          - label: "Shows"
+            name: "shows"
+            widget: "list"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Description, name: description, widget: string }
+              - { label: Url, name: url, widget: string }
+              - { label: Image Url, name: image_url, widget: string }
+              - { label: Priority, name: priority, widget: number }
+              - label: "Shows"
+                name: "episodes"
+                widget: "list"
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Url, name: url, widget: string }
+                  - { label: Date, name: date, widget: datetime }
+
+      - label: "Navigation"
+        name: "navigation"
+        file: "src/_data/navigation.yml"
+        fields:
+          - label: "Navigation Items: Navbar"
+            name: "navbar"
+            widget: "list"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Link, name: link, widget: string }
+              - label: "Target"
+                name: "target"
+                widget: "select"
+                options: ["_self", "_blank"]
+                default: "_self"
+          - label: "Navigation Items: Main"
+            name: "main"
+            widget: "list"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Link, name: link, widget: string }
+              - label: "Target"
+                name: "target"
+                widget: "select"
+                options: ["_self", "_blank"]
+                default: "_self"
+          - label: "Navigation Items: Community"
+            name: "community"
+            widget: "list"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Link, name: link, widget: string }
+              - label: "Target"
+                name: "target"
+                widget: "select"
+                options: ["_self", "_blank"]
+                default: "_self"
+          - label: "Navigation Items: Professional"
+            name: "professional"
+            widget: "list"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Link, name: link, widget: string }
+              - label: "Target"
+                name: "target"
+                widget: "select"
+                options: ["_self", "_blank"]
+                default: "_self"
+          - label: "Navigation Items: Site"
+            name: "site"
+            widget: "list"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Link, name: link, widget: string }
+              - label: "Target"
+                name: "target"
+                widget: "select"
+                options: ["_self", "_blank"]
+                default: "_self"
+      - label: "Projects"
+        name: "projects"
+        file: "src/_data/projects.yml"
+        fields:
+          - label: "Open Source"
+            name: "oss"
+            widget: "list"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - {
+                  label: Active,
+                  name: active,
+                  widget: boolean,
+                  default: true,
+                  required: false,
+                }
+              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Url, name: url, widget: string }
+              - { label: Icon, name: icon, widget: string }
+              - label: "Involvement"
+                name: "involvement"
+                widget: "select"
+                options: ["creator", "maintainer", "contributor"]
+
+      - label: "Categories"
+        name: "categories"
+        file: "src/_data/categories.yml"
+        fields:
+          - label: "Category"
+            name: "categories"
+            widget: "list"
+            fields:
+              - { label: Name, name: name, widget: string }
+      - label: "Links"
+        name: "links"
+        file: "src/_data/links.yml"
+        fields:
+          - label: "Social Media Accounts"
+            name: "socials"
+            widget: "list"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Screen Reader, name: sr, widget: string }
+              - { label: URL, name: url, widget: string }
+              - { label: Icon Path, name: icon, widget: string }
+          - label: "Contact"
+            name: "contact"
+            widget: "list"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Screen Reader, name: sr, widget: string }
+              - { label: URL, name: url, widget: string }
+              - { label: Icon Path, name: icon, widget: string }
+          - label: "Media"
+            name: "media"
+            widget: "list"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Screen Reader, name: sr, widget: string }
+              - { label: URL, name: url, widget: string }
+              - { label: Icon Path, name: icon, widget: string }

@@ -1,11 +1,18 @@
 ---
-layout: page
+layout: content
 title: Experience
-subtitle: Experience index
 permalink: /experience/
 ---
 
-{% rendercontent "shared/content_layout" %}
+<div class="bg-white border-b border-gray-200">
+  <div class="flex flex-wrap items-center justify-between mb-4 sm:flex-no-wrap">
+      <strong>I am available to hire!</strong>
+      <div>
+        <a href="/contact/">Contact Me</a>
+        <a class="ml-4" href="/assets/pdf/Andrew_Mason_Resume.pdf" target="_blank">Download Resume</a>
+      </div>
+  </div>
+</div>
 
 ## Professional Experience
 
@@ -42,17 +49,9 @@ permalink: /experience/
 - Became a member of Upsilon Pi Epsilon: International Honor Society for the Computing and Information Disciplines: 2017
 - Dean's list: 2014 - 2017
 
-{% endrendercontent %}
-
-<div class="max-w-screen-xl px-4 py-12 mx-auto mt-4 text-center bg-orange-500 rounded sm:px-6 lg:py-16 lg:px-8">
-  <h2 class="mt-4 text-3xl font-extrabold leading-9 text-white lg:mt-0 sm:text-4xl sm:leading-10 ">
-    Do you need an experienced Ruby on Rails developer?
-    <a href="/contact" class="inline-block mt-2 font-extrabold text-white no-underline border-b-8 border-blue-600 hover:text-blue-600">Let's talk!</a>
-  </h2>
-  <div class="mt-5 sm:mt-8 sm:flex sm:justify-center">
-    <a href="/assets/pdf/Andrew_Mason_Resume.pdf" class="block-btn-secondary">View Resume</a>
-    <div class="mt-3 sm:mt-0 sm:ml-3">
-      <a href="/contact" class="block-btn">Contact Me</a>
-    </div>
+<div class="bg-white border-t border-gray-200">
+  <div class="flex flex-wrap items-center justify-center mt-4 sm:flex-no-wrap">
+    <a href="/projects/">My Projects</a>
+    <a class="ml-4" href="/stack/">Tooling Experience</a>
   </div>
 </div>

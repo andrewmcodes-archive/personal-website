@@ -1,14 +1,16 @@
 ---
 layout: default
 ---
-{% rendercontent "shared/section", type: "white" %}
-  {% with title %}
-    {{ page.component.metadata.name }}
-  {% endwith %}
 
-  {% with content %}
-    {% render "component_preview/metadata", component: page.component %}
-    {% render "component_preview/variables", component: page.component %}
-    {% render "component_preview/preview_area", page: page %}
-  {% endwith %}
-{% endrendercontent %}
+<section class="py-10">
+  {% render "shared/header", text: page.title %}
+  <article>
+    {% rendercontent 'shared/container', variation: "wrapper" %}
+      <div class="mb-8 prose">
+        {% render "component_preview/metadata", component: page.component %}
+        {% render "component_preview/variables", component: page.component %}
+      </div>
+      {% render "component_preview/preview_area", page: page %}
+    {% endrendercontent %}
+  </article>
+</section>

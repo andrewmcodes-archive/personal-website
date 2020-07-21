@@ -1,17 +1,13 @@
 const path = require("path")
-const devMode = process.env.NODE_ENV !== "production"
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const ManifestPlugin = require("webpack-manifest-plugin")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const HtmlWebpackInlineSVGPlugin = require("html-webpack-inline-svg-plugin")
 
 module.exports = {
-  entry: {
-    main: "./frontend/javascript/index.js"
-  },
+  entry: "./frontend/javascript/index.js",
   devtool: "source-map",
+  // Set some or all of these to true if you want more verbose logging:
   stats: {
-    modules: true,
+    modules: false,
     builtAt: false,
     timings: false,
     children: false
@@ -25,19 +21,16 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: devMode ? "../css/[name].css" : "../css/[name].[hash].css"
-      // chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
+      filename: "../css/all.[contenthash].css"
     }),
     new ManifestPlugin({
       fileName: path.resolve(__dirname, ".bridgetown-webpack", "manifest.json")
-    }),
-    new HtmlWebpackPlugin(),
-    new HtmlWebpackInlineSVGPlugin()
+    })
   ],
   module: {
     rules: [
       {
-        test: /\.(js|md)/,
+        test: /\.(js|jsx)/,
         use: {
           loader: "babel-loader",
           options: {
@@ -83,17 +76,19 @@ module.exports = {
         }
       },
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.(s[ac]|c)ss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === "development"
-            }
-          },
+          MiniCssExtractPlugin.loader,
           "css-loader",
           "postcss-loader",
-          "sass-loader"
+          {
+            loader: "sass-loader",
+            options: {
+              sassOptions: {
+                includePaths: [path.resolve(__dirname, "src/_components")]
+              }
+            }
+          }
         ]
       },
       {

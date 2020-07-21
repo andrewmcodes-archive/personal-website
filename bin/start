@@ -1,6 +1,0 @@
-#!/bin/bash
-
-echo "== NVM =="
-nvm use
-echo "== Starting =="
-node start.js

@@ -1,5 +1,5 @@
 ---
-title: 'Rails 6 Band-Aid for Webpacker::MissingEntryError'
+title: 'Rails 6 Band-Aid for Webpacker MissingEntryError'
 date: '2020-05-13T23:47:04.114Z'
 excerpt: >-
   At CodeFund, we try to keep our dependencies, including Rails, as up to date

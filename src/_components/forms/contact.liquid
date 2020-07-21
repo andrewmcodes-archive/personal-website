@@ -1,46 +1,48 @@
 ---
-name: Contact Form
-description: Displays a contact form
+name: "Form: Contact"
+description: A contact form
+variables:
+  name:
+    - string
+    - "[optional] The name of the form. Defaults to 'contactForm'"
+  id:
+    - string
+    - "[optional] The HTML id of the form. Defaults to 'contact-form'"
+  btn_text:
+    - string
+    - "[optional] The submit button text. Defaults to 'Lets Talk'"
 ---
+{% assign form_name = "contactForm" %}
+{% if name %}{% assign form_name = name %}{% endif %}
+{% assign form_id = "contact-form" %}
+{% if id %}{% assign form_id = id %}{% endif %}
+{% assign button_text = "Let's Talk" %}
+{% if btn_text %}{% assign button_text = btn_text %}{% endif %}
 
-<form name="contactForm" method="POST" netlifyHoneypot="bot-field" data-netlify="true" id="contact-form"
-  class="grid grid-cols-1 row-gap-6 sm:grid-cols-2 sm:col-gap-8">
-  <p className="sr-only mt-0">
-    <label class="hidden">
-      Don't fill this out if you're human:
-      <input name="bot-field" />
-    </label>
-  </p>
+<form name="{{ form_name }}" method="POST" netlifyHoneypot="bot-field" data-netlify="true" id="{{ id }}" class="grid grid-cols-1 row-gap-6 sm:grid-cols-2 sm:col-gap-8">
   <div class="sm:col-span-2">
-    <label for="name" class="block text-sm font-medium leading-5 text-gray-700">Full Name
-    </label>
+    <label for="name" class="block text-sm font-medium leading-5 text-gray-700">Name</label>
     <div class="relative mt-1 rounded-md shadow-sm">
-      <input name="name" id="name" type="text"
-        class="block w-full px-4 py-3 transition duration-150 ease-in-out form-input" />
+      <input id="name" name="name" type="text" id="name" class="block w-full px-4 py-3 transition duration-150 ease-in-out form-input" />
     </div>
   </div>
   <div class="sm:col-span-2">
-    <label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email
-    </label>
+    <label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email</label>
     <div class="relative mt-1 rounded-md shadow-sm">
-      <input id="email" type="email" name="email"
-        class="block w-full px-4 py-3 transition duration-150 ease-in-out form-input" />
+      <input id="email" type="email" name="email" class="block w-full px-4 py-3 transition duration-150 ease-in-out form-input" />
     </div>
   </div>
   <div class="sm:col-span-2">
-    <label for="message" class="block text-sm font-medium leading-5 text-gray-700">Message
-    </label>
+    <label for="message" class="block text-sm font-medium leading-5 text-gray-700">Message</label>
     <div class="relative mt-1 rounded-md shadow-sm">
-      <textarea id="message" rows="4" name="message"
-        class="block w-full px-4 py-3 transition duration-150 ease-in-out form-textarea"></textarea>
+      <textarea id="message" name="message" rows="4" class="block w-full px-4 py-3 transition duration-150 ease-in-out form-textarea"></textarea>
     </div>
   </div>
   <div class="sm:col-span-2">
-    <input type="hidden" name="form-name" value="contactForm" />
+    <input type="hidden" name="form-name" value="{{ form_name }}" />
     <span class="inline-flex w-full rounded-md shadow-sm">
-      <button type="submit"
-        class="inline-flex items-center justify-center w-full px-6 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-gray-800 border border-transparent rounded-md hover:bg-gray-900 focus:outline-none focus:border-cool-gray-700 focus:shadow-outline-cool-gray active:bg-cool-gray-700">
-        Submit
+      <button type="submit" class="flex items-center justify-center w-full px-8 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-pink-600 border border-transparent rounded-md hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-pink md:py-4 md:text-lg md:px-10">
+        {{ button_text }}
       </button>
     </span>
   </div>

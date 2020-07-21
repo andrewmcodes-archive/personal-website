@@ -1,0 +1,24 @@
+<strong>Default</strong>
+{% rendercontent 'shared/section' %}
+  {% render "shared/placeholder" %}
+{% endrendercontent %}
+
+<strong>Specified bg-color</strong>
+{% rendercontent 'shared/section', bg_color: "bg-blue-600" %}
+  {% render "shared/placeholder" %}
+{% endrendercontent %}
+
+<strong>Specified shadow</strong>
+{% rendercontent 'shared/section', shadow: "shadow-lg" %}
+  {% render "shared/placeholder" %}
+{% endrendercontent %}
+
+<strong>Specified rounded</strong>
+{% rendercontent 'shared/section', rounded: "rounded-full" %}
+  {% render "shared/placeholder" %}
+{% endrendercontent %}
+
+<strong>Specified bg-color, shadow, and rounded</strong>
+{% rendercontent 'shared/section', bg_color: "bg-blue-800", shadow: "shadow-lg", rounded: "rounded" %}
+  {% render "shared/placeholder" %}
+{% endrendercontent %}

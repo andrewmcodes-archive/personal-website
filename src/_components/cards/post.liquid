@@ -1,0 +1,39 @@
+---
+name: "Cards: Blog Post"
+description: The content for your blog post card
+variables:
+  post:
+    - object
+    - a post object
+mocks:
+  post:
+    title: My mocked title
+    thumb_img_path: https://via.placeholder.com/480
+    category: mock
+    url: https://mymocked.path
+    excerpt: "lorem ipsum stuff and things"
+    date: 2020-07-11T04:01:34.736Z
+---
+
+<article class="flex flex-col overflow-hidden transition-transform duration-300 ease-in-out transform bg-white rounded-lg shadow sm:shadow-md md:shadow-lg hover:-translate-y-2 hover:shadow-xl">
+  <a href="{{ post.url }}" class="h-full">
+    <div class="flex-shrink-0">
+      <img class="object-cover w-full h-48" src="{{ post.thumb_img_path }}" alt="{{ post.title }}" />
+    </div>
+    <div class="flex flex-col justify-between flex-1 p-6 bg-white">
+      <div class="flex-1 prose">
+        <h3 class="overflow-hidden break-words">
+          {{ post.title }}
+        </h3>
+        <p>
+          {{ post.excerpt }}
+        </p>
+      </div>
+      <div class="mt-6">
+        <span class="text-sm leading-5 text-gray-500">
+          {{ post.date | date: "%B %-d, %Y" }}
+        </span>
+      </div>
+    </div>
+  </a>
+</article>

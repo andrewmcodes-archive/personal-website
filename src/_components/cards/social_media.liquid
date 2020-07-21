@@ -1,0 +1,27 @@
+---
+name: "Cards: Social Media"
+description: Small social media cards
+variables:
+  resource:
+    - object
+    - A resource object
+mocks:
+  resource:
+    name: "twitter"
+    sr: "Twitter"
+    url: "https://twitter.com/andrewmcodes"
+    username: "@andrewmcodes"
+    brand_color: "bg-blue-400"
+---
+
+<li class="flex items-center col-span-1 overflow-hidden bg-white border border-gray-200 rounded-md shadow-sm">
+  <a class="prose" href="{{ resource.url }}" target="_blank">
+    <div class="flex items-center justify-center flex-shrink-0 w-16 h-16 text-sm font-medium leading-5 text-center text-white {{ resource.brand_color }}">
+      {% svg "assets/images/icons/{{ resource.name }}.svg" %}
+    </div>
+    <div class="flex-1 px-4 py-2 truncate">
+      <a href="{{ resource.url }}" class="text-sm font-medium leading-5 text-gray-900 transition duration-150 ease-in-out hover:text-gray-600">{{ resource.sr }}</a>
+      <p class="text-sm leading-5 text-gray-500">{{ resource.username }}</p>
+    </div>
+  </a>
+</li>

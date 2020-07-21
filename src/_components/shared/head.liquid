@@ -1,25 +1,33 @@
+---
+name: Head
+description: The content that goes in the <head> tag
+variables:
+  metadata:
+    - data
+    - metadata for the site
+  title:
+    - string
+    - The title of the current page
+---
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 {% capture page_title %}{{ title | strip_html | strip_newlines }}{% endcapture %}
-<title>{% if page_title != "" %}{{ page_title | escape }} |
-  {{ metadata.title | escape }}{% else %}{{ metadata.title | escape }}: {{ metadata.tagline | escape }}{% endif %}
-</title>
+<title>{% if page_title != "" %}{{ page_title | escape }} | {{ metadata.title | escape }}{% else %}{{ metadata.title | escape }}: {{ metadata.tagline | escape }}{% endif %}</title>
 
-{% seo title=false %}
+<meta name="description" content="{{ metadata.description }}" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
 <link rel="preload" href="{% webpack_path css %}" as="style" />
-<link rel="prefetch" href="/blog/" />
+<link rel="prefetch" href="/posts/" />
+<link rel="prefetch" href="/projects/" />
 <link rel="prefetch" href="/about/" />
-<link rel="prefetch" href="/skills/" />
-
-<!-- Assets -->
 <link rel="stylesheet" href="{% webpack_path css %}" />
 <script src="{% webpack_path js %}" defer></script>
-<!-- Inter Font -->
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-<!-- Analytics -->
 <script async defer data-domain="andrewm.codes" src="https://plausible.io/js/plausible.js"></script>
+
+{% seo %}
+{% feed_meta %}

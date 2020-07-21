@@ -2,8 +2,22 @@
 layout: default
 ---
 
-{% rendercontent "shared/post", title: page.title, image: page.header_img_path %}
-  {% rendercontent "shared/content_layout" %}
-    {{ content }}
-  {% endrendercontent %}
-{% endrendercontent %}
+{% render "shared/back_to_top" %}
+
+<section class="pb-10">
+  <div class="py-16 bg-gray-700" style="
+    background-blend-mode: multiply;
+    background-image: url('{{ page.header_img_path }}');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 420px;">
+    {% render "shared/header", text: page.title, color: "text-gray-100" %}
+  </div>
+  <article class="py-8">
+    {% rendercontent 'shared/container', variation: "content" %}
+      {% rendercontent 'shared/section', bg_color: "bg-white", shadow: "shadow-lg", rounded: "rounded" %}
+        {{ content }}
+      {% endrendercontent %}
+    {% endrendercontent %}
+  </article>
+</section>

@@ -2,9 +2,6 @@
   // EDITOR
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": true
-  },
   // LIQUID
   "[liquid]": {
     "editor.formatOnSave": false
@@ -12,10 +9,6 @@
   // HTML
   "[html]": {
     "editor.formatOnSave": false
-  },
-  // JS
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // RUBY
   "ruby.useBundler": true,
@@ -25,13 +18,6 @@
     "standard": true,
     "rubocop": false
   },
-  // STYLESHEETS
-  // "[postcss]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
-  // },
-  "css.validate": false,
-  "less.validate": false,
-  "scss.validate": false,
   "ruby.format": "standard",
   // GIT
   "git.ignoreLimitWarning": true,
@@ -39,18 +25,17 @@
   "solargraph.diagnostics": true,
   // FILES
   "files.associations": {
+    "*.svg": "html",
     "*.css": "postcss",
-    "*.js.liquid": "javascript",
-    ".stylelintrc": "json"
+    "*.js.liquid": "javascript"
   },
   // EMMET
   "emmet.includeLanguages": {
     "liquid": "html",
-    "postcss": "css"
+    "postcss": "css",
+    "markdown": "html"
   },
   "emmet.syntaxProfiles": {
     "postcss": "css"
-  },
-  // CSPELL
-  "cSpell.words": ["postcsseasings"]
+  }
 }

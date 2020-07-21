@@ -1,23 +1,15 @@
-# Welcome to Bridgetown!
-#
-# This config file is for settings that affect your whole site, values
-# which you are expected to set up once and rarely edit after that.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec bridgetown serve'. If you change this file, please restart the
-# server process.
-#
-# For reloadable site metadata like title, SEO description, social media
-# handles, etc., take a look at src/_data/site_metadata.yml
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
+baseurl: "" # OPTIONAL: the subpath of your site, e.g. /blog
+url: "https://www.andrewm.codes" # the base hostname & protocol for your site, e.g. https://example.com
 
-url: "https://www.andrewm.codes"
 permalink: simple
 timezone: America/New_York
+
+cloudinary:
+  cloud_name: andrewmcodes
+
+pagination:
+  enabled: true
+  per_page: 6
 
 defaults:
   - scope:
@@ -29,15 +21,10 @@ defaults:
       path: "assets/pdf"
     values:
       pdf: true
+  - scope:
+      path: "assets/images"
+    values:
+      image: true
 
-cloudinary:
-  cloud_name: andrewmcodes
-
-pagination:
-  enabled: true
-
-collections:
-  podcasts:
-    output: true
-    sort_by: priority
-    name: Podcasts
+svg:
+  optimize: true

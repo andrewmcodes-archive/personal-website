@@ -1,0 +1,13 @@
+---
+layout: default
+
+---
+
+<section class="py-10">
+  {% render "shared/header", text: page.title %}
+  <article>
+    {% rendercontent 'shared/container', variation: "wrapper" %}
+      {{ content }}
+    {% endrendercontent %}
+  </article>
+</section>
