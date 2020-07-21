@@ -3,6 +3,7 @@ layout: default
 ---
 
 <div class="mb-4">
+  <!-- Landing -->
   <div class="relative overflow-hidden bg-gray-900">
     <div class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full">
       <div class="relative h-full max-w-screen-xl mx-auto">
@@ -64,27 +65,29 @@ layout: default
     </div>
   </div>
 
-
-    <div class="pb-16 mt-8 sm:mt-12 sm:pb-20 lg:pb-28">
-      <div class="relative">
-        <div class="absolute inset-0 -mt-12 bg-gray-900 sm:-mt-16 h-1/2"></div>
-        <div class="relative max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
-          <div class="max-w-lg mx-auto overflow-hidden rounded-lg shadow-lg lg:max-w-none lg:flex">
-            <div class="px-6 py-8 bg-white lg:flex-shrink-1 lg:p-12">
-              <h3 class="text-2xl font-extrabold leading-8 text-gray-900 sm:text-3xl sm:leading-9">
-                Hire Me!
-              </h3>
-              <p class="mt-6 prose">
-                I am currently searching for a role as a full stack Ruby on Rails developer. My dream job would be working with talented engineers on a product, not just the front or back end of a stack.
-              </p>
-              <div class="mt-8">
-                <div class="flex items-center">
-                  <h4 class="flex-shrink-0 pr-4 text-sm font-semibold leading-5 tracking-wider text-pink-600 uppercase bg-white">
-                    Quick Navigation:
-                  </h4>
-                  <div class="flex-1 border-t-2 border-gray-200"></div>
-                </div>
-                <div class="prose">
+  <!-- Hire Me -->
+  <div class="pb-16 mt-8 sm:mt-12 sm:pb-20 lg:pb-28">
+    <div class="relative">
+      <div class="absolute inset-0 -mt-12 bg-gray-900 sm:-mt-16 h-1/2"></div>
+      <div class="relative max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-lg mx-auto overflow-hidden rounded-lg shadow-lg lg:max-w-none lg:flex">
+          <div class="px-6 py-8 bg-white lg:flex-shrink-1 lg:p-12">
+            <h3 class="text-2xl font-extrabold leading-8 text-gray-900 sm:text-3xl sm:leading-9">
+              Hire Me!
+            </h3>
+            <p class="mt-6 prose">
+              I am currently searching for a role as a full stack Ruby on Rails developer. My dream job would be working
+              with talented engineers on a product, not just the front or back end of a stack.
+            </p>
+            <div class="mt-8">
+              <div class="flex items-center">
+                <h4
+                  class="flex-shrink-0 pr-4 text-sm font-semibold leading-5 tracking-wider text-pink-600 uppercase bg-white">
+                  Quick Navigation:
+                </h4>
+                <div class="flex-1 border-t-2 border-gray-200"></div>
+              </div>
+              <div class="prose">
                 <ul>
                   <li>
                     <a href="/about/">Learn more about me -></a>
@@ -102,40 +105,43 @@ layout: default
                     <a href="/projects/">Check out podcast appearances -></a>
                   </li>
                 </ul>
-                </div>
               </div>
             </div>
-            <div class="px-6 py-8 text-center bg-gray-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
-              <p class="text-xl font-medium leading-6 text-gray-900">
-                Want to learn more?
-              </p>
-              <div class="mt-6">
-                <div class="rounded-md shadow">
-                  <a href="/contact" class="flex items-center justify-center px-5 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md hover:bg-gray-800 focus:outline-none focus:shadow-outline">
-                    Contact Me
-                  </a>
-                </div>
+          </div>
+          <div class="px-6 py-8 text-center bg-gray-50 lg:flex-shrink-0 lg:flex lg:flex-col lg:justify-center lg:p-12">
+            <p class="text-xl font-medium leading-6 text-gray-900">
+              Want to learn more?
+            </p>
+            <div class="mt-6">
+              <div class="rounded-md shadow">
+                <a href="/contact"
+                  class="flex items-center justify-center px-5 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md hover:bg-gray-800 focus:outline-none focus:shadow-outline">
+                  Contact Me
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
+  <!-- Post cards -->
   <div class="pb-16 sm:pb-20 lg:pb-28">
-  {% rendercontent 'shared/container', variation: 2 %}
-    <div class="text-center">
-      <h2 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-        From the blog
-      </h2>
-      <p class="max-w-2xl mx-auto mt-3 text-xl leading-7 prose text-gray-500 sm:mt-4">
-        These are just my latest posts. You can <a>view all of them here!</a>
-      </p>
-    </div>
-    <div class="grid max-w-lg gap-5 mx-auto mt-12 md:grid-cols-2 lg:grid-cols-3 md:max-w-none">
-      {% for post in site.posts limit: 3 %}
-      {% render "blog/post_card", post: post %}
-      {% endfor %}
-    </div>
-  {% endrendercontent %}
+    {% rendercontent 'shared/container' %}
+      <div class="text-center">
+        <h2 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+          From the blog
+        </h2>
+        <p class="max-w-2xl mx-auto mt-3 text-xl leading-7 prose text-gray-500 sm:mt-4">
+          These are just my latest posts. You can <a>view all of them here!</a>
+        </p>
+      </div>
+      <div class="grid max-w-lg gap-5 mx-auto mt-12 md:grid-cols-2 lg:grid-cols-3 md:max-w-none">
+        {% for post in site.posts limit: 3 %}
+          {% render "cards/post", post: post %}
+        {% endfor %}
+      </div>
+    {% endrendercontent %}
+  </div>
 </div>

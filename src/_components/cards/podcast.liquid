@@ -7,11 +7,14 @@ variables:
     - a podcast show object
 mocks:
   show:
-    title: Remote Ruby
-    subtitle: Three Rubyists having conversations and interviewing others about Ruby and web development..
-    image_url: https://assets/images.transistor.fm/file/transistor/assets/images/show/112/full_1559164364-artwork.jpg
-    url: https://remoteruby.transistor.fm
-    description: Three Rubyists having conversations and interviewing others about Ruby and web development.
+    title: The Ruby Blend
+    subtitle: A Ruby Focused Podcast for Developers
+    image_url: https://res.cloudinary.com/andrewmcodes/image/upload/v1593758052/podcasts/the-ruby-blend.jpg
+    url: https://www.therubyblend.com
+    description: The Ruby Blend is a new Ruby focused podcast bringing you panel
+      discussions, guest interviews, and much more to keep you up to date on
+      what’s happening in the Ruby development community mixed with sprinkles
+      from other developer communities.
 ---
 
 <a href="{{ show.url }}" target="_blank" class="flex flex-col overflow-hidden transition-transform duration-300 ease-in-out transform rounded-lg shadow sm:shadow-md md:shadow-lg hover:-translate-y-2 hover:shadow-xl">
@@ -24,7 +27,7 @@ mocks:
         <h3 class="overflow-hidden break-words">
           {{ show.title }}
         </h3>
-        <p>
+        <p class="truncate-4-lines">
           {{ show.description }}
         </p>
       </div>

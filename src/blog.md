@@ -1,14 +1,14 @@
 ---
 layout: blog
 title: Blog
-permalink: /blog/
+permalink: /posts/
 pagination:
   enabled: true
 ---
 
 <div class="grid max-w-lg gap-5 mx-auto mt-12 md:grid-cols-2 lg:grid-cols-3 md:max-w-none">
   {% for post in paginator.documents %}
-    {% render "blog/post_card", post: post %}
+    {% render "cards/post", post: post %}
   {% endfor %}
 </div>
 <div class="mt-8 md:mt-8">

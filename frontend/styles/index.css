@@ -54,14 +54,11 @@ td:first-child {
   @apply text-sm leading-5 text-gray-100;
 }
 
-#hero-section {
-  height: 100%;
-  width: 100vw;
-  background-attachment: local;
-  background-image: url(https://res.cloudinary.com/andrewmcodes/image/upload/v1595316111/andrewm.codes/full_hd_jpg_iiehe0.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.truncate-4-lines {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 @import "tailwindcss/components";

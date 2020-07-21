@@ -3,8 +3,8 @@ name: Container
 description: Different containers
 variables:
   variation:
-    - integer
-    - What container variation to use
+    - string
+    - "[optional] What container variation to use. Valid options are content and wrapper."
   bg_color:
     - string
     - The background color class
@@ -16,18 +16,16 @@ variables:
 ---
 
 {% case variation %}
-  {% when 1 %}
+  {% when "content" %}
      {% assign class_names = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" %}
-  {% when 2 %}
-     {% assign class_names = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" %}
-  {% when 3 %}
+  {% when "wrapper" %}
      {% assign class_names = "container mx-auto px-4 sm:px-6 lg:px-8" %}
   {% else %}
      {% assign class_names = "max-w-7xl mx-auto sm:px-6 lg:px-8" %}
 {% endcase %}
 
 <div class="{{ class_names }} {{ bg_color }} {{ text_color }}">
-  {% if variation == 1 %}
+  {% if variation == "content" %}
     <div class="max-w-3xl mx-auto">
       {{ content }}
     </div>

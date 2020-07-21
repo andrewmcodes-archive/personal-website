@@ -5,7 +5,7 @@ layout: default
 <section class="py-10">
   {% render "shared/header", text: page.title %}
   <article>
-    {% rendercontent 'shared/container', variation: 1 %}
+    {% rendercontent 'shared/container', variation: "content" %}
       {% rendercontent 'shared/section', bg_color: "bg-white", shadow: "shadow-lg", rounded: "rounded" %}
         {{ content }}
       {% endrendercontent %}
