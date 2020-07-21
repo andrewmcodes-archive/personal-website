@@ -45,18 +45,37 @@ collections:
         name: index
         file: src/index.md
         fields:
-          - { label: Layout, name: title, widget: hidden, default: home }
+          - { label: Layout, name: title, widget: string, default: home }
           - { label: Body, name: body, widget: markdown }
       # ABOUT
       - label: About Page
         name: about
         file: src/about.md
         fields:
-          - { label: Title, name: title, widget: hidden, default: About }
+          - { label: Title, name: title, widget: string, default: About }
           - { label: Layout, name: layout, widget: hidden, default: page }
-          - { label: Permalink, name: permalink, widget: string, default: "/about/" }
+          - {
+              label: Permalink,
+              name: permalink,
+              widget: string,
+              default: "/about/",
+            }
           - { label: Cloudinary ID, name: cloudinary_id, widget: string }
           - { label: Cloudinary Alt, name: cloudinary_alt, widget: string }
+          - { label: Body, name: body, widget: markdown }
+      # USES
+      - label: Uses Page
+        name: uses
+        file: src/uses.md
+        fields:
+          - { label: Title, name: title, widget: string, default: Uses }
+          - { label: Layout, name: layout, widget: hidden, default: content }
+          - {
+              label: Permalink,
+              name: permalink,
+              widget: string,
+              default: "/uses/",
+            }
           - { label: Body, name: body, widget: markdown }
   ######
   - name: "config"
@@ -157,7 +176,13 @@ collections:
             widget: "list"
             fields:
               - { label: Name, name: name, widget: string }
-              - { label: Active, name: active, widget: boolean, default: true, required: false }
+              - {
+                  label: Active,
+                  name: active,
+                  widget: boolean,
+                  default: true,
+                  required: false,
+                }
               - { label: Subtitle, name: subtitle, widget: string }
               - { label: Url, name: url, widget: string }
               - { label: Icon, name: icon, widget: string }

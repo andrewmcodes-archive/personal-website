@@ -1,0 +1,26 @@
+---
+name: "Landing: Posts Section"
+description: The 'posts' section of the landing page.
+variables:
+  articles:
+    - collection
+    - A collection of posts
+---
+
+<div class="pb-16 sm:pb-20 lg:pb-28">
+  {% rendercontent 'shared/container' %}
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+        From the blog
+      </h2>
+      <p class="max-w-2xl mx-auto mt-3 text-xl leading-7 prose text-gray-500 sm:mt-4">
+        These are just my latest posts. You can <a href="/posts/">view all of them here!</a>
+      </p>
+    </div>
+    {% rendercontent 'shared/grid' %}
+      {% for post in articles limit:3 %}
+        {% render "cards/post", post: post %}
+      {% endfor %}
+    {% endrendercontent %}
+  {% endrendercontent %}
+</div>
