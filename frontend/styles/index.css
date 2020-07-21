@@ -54,10 +54,10 @@ td:first-child {
   @apply text-sm leading-5 text-gray-100;
 }
 
-.truncate-4-lines {
+.truncate-2-lines {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
