@@ -1,0 +1,21 @@
+<div class="bg-gray-800">
+  <strong class="ml-3 text-white">Default</strong>
+  {% rendercontent 'shared/container' %}
+    {% render "shared/placeholder" %}
+  {% endrendercontent %}
+
+  <strong class="ml-3 text-white">Variation 1</strong>
+  {% rendercontent 'shared/container', variation: 1 %}
+    {% render "shared/placeholder" %}
+  {% endrendercontent %}
+
+  <strong class="ml-3 text-white">Variation 2</strong>
+  {% rendercontent 'shared/container', variation: 2 %}
+    {% render "shared/placeholder" %}
+  {% endrendercontent %}
+
+  <strong class="ml-3 text-white">Variation 3</strong>
+  {% rendercontent 'shared/container', variation: 3 %}
+    {% render "shared/placeholder" %}
+  {% endrendercontent %}
+</div>

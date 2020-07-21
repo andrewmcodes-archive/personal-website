@@ -1,0 +1,34 @@
+---
+name: Nav Link
+description: Navigation links
+variables:
+  mobile:
+    - boolean
+    - Indicates whether to use mobile styling
+  url:
+    - url
+    - The url for the link
+  text:
+    - string
+    - The content for the link
+  page_url:
+    - url
+    - The url of the current page
+---
+
+{% if mobile %}
+  {% assign class_names = "block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:text-gray-800 focus:bg-gray-50 focus:border-gray-300 transition duration-150 ease-in-out" %}
+  {% if page_url == url %}
+    {% assign class_names = "block pl-3 pr-4 py-2 border-l-4 border-pink-500 text-base font-medium text-pink-700 bg-pink-100 focus:outline-none focus:text-pink-800 focus:bg-pink-100 focus:border-pink-700 transition duration-150 ease-in-out" %}
+  {% endif %}
+{% else %}
+  {% assign class_names = "inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out" %}
+  {% if page_url == url %}
+    {% assign class_names = "inline-flex items-center px-1 pt-1 border-b-2 border-pink-500 text-sm font-medium leading-5 text-gray-900 focus:outline-none focus:border-pink-700 transition duration-150 ease-in-out" %}
+  {% endif %}
+{% endif %}
+
+
+<a href="{{ url }}" class="{{ class_names }}">
+  {{ text }}
+</a>

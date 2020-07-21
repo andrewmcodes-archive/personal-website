@@ -1,0 +1,74 @@
+navbar:
+  - name: Home
+    link: /
+    target: _self
+  - name: About
+    link: /about/
+    target: _self
+  - name: Blog
+    link: /blog/
+    target: _self
+  - name: Experience
+    link: /experience/
+    target: _self
+  - name: Projects
+    link: /projects/
+    target: _self
+  - name: Podcasts
+    link: /podcasts/
+    target: _self
+  - name: Contact
+    link: /contact/
+    target: _self
+main:
+  - name: Home
+    link: /
+    target: _self
+  - name: About
+    link: /about/
+    target: _self
+  - name: Blog
+    link: /blog/
+    target: _self
+  - name: Contact
+    link: /contact/
+    target: _self
+community:
+  - name: Projects
+    link: /projects/
+    target: _self
+  - name: Podcasts
+    link: /podcasts/
+    target: _self
+  - name: Social Media
+    link: /social-media/
+    target: _self
+  - name: Uses
+    link: /uses/
+    target: _self
+professional:
+  - name: Hire Me
+    link: /contact/
+    target: _self
+  - name: Experience
+    link: /experience/
+    target: _self
+  - name: Resume
+    link: /assets/pdf/Andrew_Mason_Resume.pdf
+    target: _blank
+  - name: Stack Experience
+    link: /stack/
+    target: _self
+site:
+  - name: Status Page
+    link: https://andrewmcodes.instatus.com
+    target: _blank
+  - name: Public Analytics
+    link: https://plausible.io/andrewm.codes
+    target: _blank
+  - name: Design System
+    link: /components/
+    target: _self
+  - name: Site Repository
+    link: https://github.com/andrewmcodes/personal-site
+    target: _blank

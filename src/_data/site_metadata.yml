@@ -1,20 +1,10 @@
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.metadata.title }}, {{ site.metadata.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.metadata.myvariable }}.
+title: Andrew Mason - Ruby on Rails Developer
+tagline: My personal site and blog
+email: andrew@andrewm.codes
+description: >-
+  Hire Me! I am a full-stack developer, specializing in Ruby on Rails, and I am looking for my next position. My name is Andrew Mason, and this is my website and blog.
 
-title: "Andrew Mason - Ruby on Rails Developer"
-tagline: My personal site
-email: andrewmcodes@protonmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Hire Me! I am a full-stack developer, specializing in Ruby on Rails, and I am looking for my next position. My name is Andrew Mason, and this is my website.
-
-defaults:
-  - scope:
-      path: ""
-    values:
-      image: https://res.cloudinary.com/andrewmcodes/image/upload/c_scale,e_progressbar,w_240/v1592107148/personal/headshot.png
+github: "andrewmcodes/my-personal-site"
 
 author:
   email: andrewmcodes@protonmail.com
@@ -26,40 +16,3 @@ twitter:
   username: andrewmcodes
   creator: andrewmcodes
   card: summary
-
-dev_portfolios:
-  - name: Sourcerer
-    url: https://sourcerer.io/andrewmcodes
-  - name: CodeTrace
-    url: https://codetrace.com/users/andrewmcodes
-  - name: stackshare
-    url: https://stackshare.io/andrewmcodes
-  - name: GitHub
-    url: https://github.com/andrewmcodes
-  - name: Coders Rank
-    url: https://profile.codersrank.io/user/andrewmcodes
-
-navigation:
-  - name: "About"
-    url: "/about"
-  - name: "Blog"
-    url: "/blog"
-  - name: "Skills"
-    url: "/skills"
-  - name: "Projects"
-    url: "/projects"
-  - name: "Experience"
-    url: "/experience"
-  - name: "Podcasts"
-    url: "/podcasts"
-  - name: "Contact"
-    url: "/contact"
-actions:
-  primary:
-    name: "Hire Me!"
-    url: "/hire-me"
-
-banner:
-  visible: true
-  message: Site is under construction!
-  full_message: Site is under construction! If you encounter a bug, opening an issue would be very appreciated!

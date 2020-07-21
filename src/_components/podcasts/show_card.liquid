@@ -1,0 +1,39 @@
+---
+name: "Podcast: Show Card"
+description: The content for your podcast show card
+variables:
+  show:
+    - object
+    - a podcast show object
+mocks:
+  show:
+    title: Remote Ruby
+    subtitle: Three Rubyists having conversations and interviewing others about Ruby and web development..
+    image_url: https://assets/images.transistor.fm/file/transistor/assets/images/show/112/full_1559164364-artwork.jpg
+    url: https://remoteruby.transistor.fm
+    description: Three Rubyists having conversations and interviewing others about Ruby and web development.
+---
+
+<a href="{{ show.url }}" target="_blank" class="flex flex-col overflow-hidden transition-transform duration-300 ease-in-out transform rounded-lg shadow sm:shadow-md md:shadow-lg hover:-translate-y-2 hover:shadow-xl">
+  <div class="flex-shrink-0">
+    <img class="object-cover w-full h-64" src="{{ show.image_url }}" alt="{{ show.title }}" />
+  </div>
+  <div class="flex flex-col justify-between flex-1 p-6 bg-white">
+    <div class="flex-1">
+      <div class="block prose">
+        <h3 class="overflow-hidden break-words">
+          {{ show.title }}
+        </h3>
+        <p>
+          {{ show.description }}
+        </p>
+      </div>
+    </div>
+    <div class="flex items-center mt-6">
+      <div class="flex text-sm leading-5 text-gray-500">
+        {% svg "assets/images/icons/episodes.svg" %}
+        <span class="pl-2">{{ show.episodes | size }}</span>
+      </div>
+    </div>
+  </div>
+</a>

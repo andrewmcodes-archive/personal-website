@@ -1,0 +1,195 @@
+oss:
+  - name: "Ruby Meetup: Online"
+    subtitle: Gatsby site to try and get interest around remote Ruby meetups.
+    url: https://rubymeetup.online
+    icon: javascript
+    involvement: creator
+    active: true
+  - name: Dishwasher
+    subtitle: A CLI tool to help you delete GitHub forks.
+    url: https://github.com/andrewmcodes/dishwasher
+    icon: ruby
+    involvement: creator
+    active: true
+  - name: Bridgetown
+    subtitle: A Webpack-aware, Ruby-powered static site generator for the modern
+      Jamstack era
+    url: https://github.com/bridgetownrb/bridgetown
+    icon: ruby
+    involvement: contributor
+    active: true
+  - name: bridgetown-inline-svg
+    subtitle: SVG optimizer and inliner for Bridgetown
+    url: https://github.com/andrewmcodes/bridgetown-inline-svg
+    icon: ruby
+    involvement: creator
+    active: true
+  - name: shiplane
+    url: https://github.com/kirillian/shiplane
+    subtitle: Convert your development docker-compose yaml files into
+      production-ready docker deployments
+    icon: ruby
+    involvement: contributor
+    active: true
+  - name: bridgetown-netlify-cms-starter
+    subtitle: A template to help you get started with Bridgetown + Netlify CMS
+    url: https://github.com/andrewmcodes/bridgetown-netlify-cms-starter
+    icon: javascript
+    involvement: creator
+    active: true
+  - name: ViewComponent
+    subtitle: View components for Rails
+    url: https://github.com/github/view_component
+    icon: ruby
+    involvement: contributor
+    active: true
+  - name: jumpstart
+    subtitle: Easily jumpstart a new Rails application with a bunch of great
+      features by default
+    url: https://github.com/excid3/jumpstart
+    icon: rails
+    involvement: contributor
+    active: true
+  - name: react-performance
+    subtitle: Let's make our apps fast
+    url: https://github.com/kentcdodds/react-performance
+    icon: javascript
+    involvement: contributor
+    active: false
+  - name: testing-node-apps
+    subtitle: This is a workshop repo to teach you how to test your Node.js Apps!
+    url: https://github.com/kentcdodds/testing-node-apps
+    icon: javascript
+    involvement: contributor
+    active: false
+  - name: stimulus_reflex
+    subtitle: Build reactive SPAs with Rails and Stimulus
+    url: https://github.com/hopsoft/stimulus_reflex
+    icon: ruby
+    involvement: maintainer
+    active: true
+  - name: tailwindcss-stimulus-components
+    subtitle: "A set of StimulusJS components for TailwindCSS apps "
+    url: https://github.com/excid3/tailwindcss-stimulus-components
+    icon: javascript
+    involvement: contributor
+    active: true
+  - name: shotgun
+    subtitle: Ready to go Rails App with TailwindCSS, ViewComponent, Devise, and more!
+    url: https://github.com/andrewmcodes/shotgun
+    icon: rails
+    involvement: creator
+    active: true
+  - name: stimulus_reflex_expo
+    subtitle: StimulusReflex demos
+    url: https://github.com/hopsoft/stimulus_reflex_expo
+    icon: ruby
+    involvement: contributor
+    active: true
+  - name: awesome-bridgetown
+    subtitle: A curated list of awesome things related to Bridgetown
+    url: https://github.com/andrewmcodes/awesome-bridgetown
+    icon: github
+    involvement: creator
+    active: true
+  - name: cable_ready
+    subtitle: Out-of-band Server Triggered DOM Operations
+    url: https://github.com/hopsoft/cable_ready
+    icon: javascript
+    involvement: contributor
+    active: true
+  - name: redux-form
+    subtitle: A Higher Order Component using react-redux to keep form state in a
+      Redux store
+    url: https://github.com/redux-form/redux-form
+    icon: javascript
+    involvement: contributor
+    active: false
+  - active: false
+    name: CodeFund
+    url: https://github.com/gitcoinco/code_fund_ads
+    icon: rails
+    subtitle: CodeFund is an open source platform that helps fund maintainers,
+      bloggers, and builders through non-tracking ethical ads
+    involvement: maintainer
+  - active: true
+    name: attractor
+    url: https://github.com/julianrubisch/attractor
+    subtitle: code complexity metrics visualization and exploration tool for ruby
+      and javascript
+    icon: ruby
+    involvement: contributor
+  - active: true
+    name: awesome-lucky
+    subtitle: A collection of awesome Lucky libraries, tools, frameworks, and resources
+    url: https://github.com/andrewmcodes/awesome-lucky
+    icon: github
+    involvement: creator
+  - active: true
+    name: Rails Weblog
+    subtitle: The official blog of the Ruby on Rails team
+    url: https://weblog.rubyonrails.org
+    icon: rails
+    involvement: contributor
+  - active: false
+    name: use-deep-compare-effect
+    subtitle: " It's react's useEffect hook, except using deep comparison on the
+      inputs, not reference equality"
+    url: https://github.com/kentcdodds/use-deep-compare-effect
+    icon: javascript
+    involvement: contributor
+  - active: true
+    name: awesome-ruby
+    url: https://awesome-ruby.com/
+    subtitle: A collection of awesome Ruby libraries, tools, frameworks and software
+    icon: ruby
+    involvement: contributor
+  - active: true
+    name: consolidated_screening_list
+    subtitle: " Ruby client for interfacing with the Consolidated Screening List (CSL)"
+    url: https://github.com/andrewmcodes/consolidated_screening_list
+    icon: ruby
+    involvement: maintainer
+  - active: true
+    name: andrewmcodes_gem
+    subtitle: A business card in your terminal
+    url: https://github.com/andrewmcodes/andrewmcodes_gem
+    icon: ruby
+    involvement: creator
+  - active: false
+    name: Onshore Studios
+    subtitle: Onshore Studios' Website build w/ TailwindCSS
+    url: https://github.com/andrewmcodes/onshore-production
+    icon: javascript
+    involvement: creator
+  - active: true
+    name: applocale-ruby
+    url: https://github.com/applocale/applocale-ruby
+    subtitle: RubyGem for interfacing with AppLocale.dev to pull translations
+    icon: ruby
+    involvement: contributor
+  - active: true
+    name: bundler-audit-action
+    url: https://github.com/andrewmcodes/bundler-audit-action
+    subtitle: GitHub Action for running bundler-audit
+    icon: ruby
+    involvement: creator
+demos:
+  - name: "Ruby Meetup: Online"
+    subtitle: Gatsby site to try and get interest around remote Ruby meetups.
+    url: https://rubymeetup.online
+    icon: javascript
+    involvement: creator
+    active: true
+  - name: Rails + Coverband Demo
+    subtitle: Demo Rails app showcasing how to integrate Coverband
+    url: https://github.com/andrewmcodes/rails_coverage_tools
+    icon: rails
+    involvement: creator
+    active: false
+  - name: rails_tailwind
+    subtitle: Demo Rails app showcasing how to integrate TailwindCSS 1.1
+    url: https://github.com/andrewmcodes/rails_tailwind
+    icon: rails
+    involvement: creator
+    active: false
