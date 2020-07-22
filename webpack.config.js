@@ -1,6 +1,7 @@
 const path = require("path")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const ManifestPlugin = require("webpack-manifest-plugin")
+const TerserPlugin = require("terser-webpack-plugin")
 
 module.exports = {
   entry: "./frontend/javascript/index.js",
@@ -11,6 +12,16 @@ module.exports = {
     builtAt: false,
     timings: false,
     children: false
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
+        parallel: true,
+        cache: true
+      })
+    ]
   },
   output: {
     path: path.resolve(__dirname, "output", "_bridgetown", "static", "js"),
