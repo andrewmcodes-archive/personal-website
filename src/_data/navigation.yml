@@ -70,5 +70,5 @@ site:
     link: /components/
     target: _self
   - name: Site Repository
-    link: https://github.com/andrewmcodes/personal-site
+    link: https://github.com/andrewmcodes/personal-website
     target: _blank
