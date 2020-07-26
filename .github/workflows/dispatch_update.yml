@@ -1,0 +1,15 @@
+name: dispatch update
+
+on: repository_dispatch
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Exit if dispatch is not 'update'
+        if: github.event.action != 'update'
+        run: exit 1
+
+      - name: Update
+        run: exit 1
