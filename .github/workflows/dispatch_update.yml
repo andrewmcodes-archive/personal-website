@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Exit if dispatch is not 'update'
         if: github.event.action != 'update'
-        run: exit 1
+        run: echo 'up-to-date'
 
       - name: Update
-        run: exit 1
+        run: echo 'updating'
