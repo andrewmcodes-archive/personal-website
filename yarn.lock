@@ -805,22 +805,13 @@
     globals "^11.1.0"
     lodash "^4.17.19"
 
-"@babel/types@^7.10.4", "@babel/types@^7.10.5":
+"@babel/types@^7.10.4", "@babel/types@^7.10.5", "@babel/types@^7.4.4":
   version "7.10.5"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.10.5.tgz#d88ae7e2fde86bfbfe851d4d81afa70a997b5d15"
   integrity sha512-ixV66KWfCI6GKoA/2H9v6bQdbfXEwwpOdQ8cRvb4F+eyvhlaHxWFMQB4+3d9QFJXZsiiiqVrewNV0DFEQpyT4Q==
   dependencies:
     "@babel/helper-validator-identifier" "^7.10.4"
     lodash "^4.17.19"
-    to-fast-properties "^2.0.0"
-
-"@babel/types@^7.4.4":
-  version "7.10.4"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.10.4.tgz#369517188352e18219981efd156bfdb199fff1ee"
-  integrity sha512-UTCFOxC3FsFHb7lkRMVvgLzaRVamXuAs2Tz4wajva4WxtVY82eZeaUBtC2Zt95FU9TiznuC0Zk35tsim8jeVpg==
-  dependencies:
-    "@babel/helper-validator-identifier" "^7.10.4"
-    lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
 "@dabh/diagnostics@^2.0.2":
@@ -2126,21 +2117,6 @@ chokidar@^2.1.8:
   optionalDependencies:
     fsevents "^1.2.7"
 
-chokidar@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.4.0.tgz#b30611423ce376357c765b9b8f904b9fba3c0be8"
-  integrity sha512-aXAaho2VJtisB/1fg1+3nlLJqGOuewTzQpd/Tz0yTg2R0e4IGtshYvtjowyEumcBv2z+y4+kc75Mz7j5xJskcQ==
-  dependencies:
-    anymatch "~3.1.1"
-    braces "~3.0.2"
-    glob-parent "~5.1.0"
-    is-binary-path "~2.1.0"
-    is-glob "~4.0.1"
-    normalize-path "~3.0.0"
-    readdirp "~3.4.0"
-  optionalDependencies:
-    fsevents "~2.1.2"
-
 chokidar@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.4.1.tgz#e905bdecf10eaa0a0b1db0c664481cc4cbc22ba1"
@@ -2968,10 +2944,10 @@ engine.io@~3.2.0:
     engine.io-parser "~2.1.0"
     ws "~3.3.1"
 
-enhanced-resolve@^4.1.0, enhanced-resolve@^4.1.1:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-4.2.0.tgz#5d43bda4a0fd447cb0ebbe71bef8deff8805ad0d"
-  integrity sha512-S7eiFb/erugyd1rLb6mQ3Vuq+EXHv5cpCkNqqIkYkBgN2QdFnyCZzFBleqwGEx4lgNGYij81BWnCrFNK7vxvjQ==
+enhanced-resolve@^4.1.1, enhanced-resolve@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/enhanced-resolve/-/enhanced-resolve-4.3.0.tgz#3b806f3bfafc1ec7de69551ef93cca46c1704126"
+  integrity sha512-3e87LvavsdxyoCfGusJnrZ5G8SLPOFeHSNpZI/ATL9a5leXo2k0w6MKnbqhdBad9qTobSfB20Ld7UmgoNbAZkQ==
   dependencies:
     graceful-fs "^4.1.2"
     memory-fs "^0.5.0"
@@ -5435,10 +5411,10 @@ percy-client@^3.2.0:
     request-promise "^4.2.2"
     walk "^2.3.14"
 
-percy@^0.27.1:
-  version "0.27.1"
-  resolved "https://registry.yarnpkg.com/percy/-/percy-0.27.1.tgz#e65b966f152a001a120b847cf491a3c2fa7f8cb7"
-  integrity sha512-BrRM+hakgTuicwpWShKGuCi1CSwwvCj7KDw+gVYl2EUXLQRe2g0HfCOy1XxSM6jo0NRSF8nBpuVFA2snLmCTJA==
+percy@^0.27.2:
+  version "0.27.2"
+  resolved "https://registry.yarnpkg.com/percy/-/percy-0.27.2.tgz#40295ff7517d2b2d624624a3c2cea708e03c78fc"
+  integrity sha512-21TzHlJcDiojMcP8gjVMHR8zPlffIE3FHfxDgEhKa0qaf7vbPT2DELb39j0UPBZOuizQ2t3s/qMnIJkdU0tAJA==
   dependencies:
     "@oclif/command" "1.5.19"
     "@oclif/config" "^1"
@@ -6957,10 +6933,10 @@ tailwindcss-debug-screens@^1.0.0:
   resolved "https://registry.yarnpkg.com/tailwindcss-debug-screens/-/tailwindcss-debug-screens-1.0.0.tgz#d677e0f9429176de1f70ab060a2b227b268bce90"
   integrity sha512-IJ6lcAFIKe3FyTr3iJF2ky5ujGoPP3J6roDi4B49zTZLQ/eMKq0ILHAGxGYylZmQsyIxIGqEM22DnUA6+RsS2Q==
 
-tailwindcss@^1.4.6:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.5.1.tgz#a3eb10024f8e10786b8b6badcf9665b013bd03ee"
-  integrity sha512-mBOxIk+U+9xECC6wllWiupPVfLuwTDvHb4d+8XTdZ8oYrZEH+NpFSlbATF5xWuCJQxDOZ1Dz7C0KN5tylcFhFg==
+tailwindcss@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-1.5.2.tgz#3e99526e55c600b9df9152b0db12449ed9770855"
+  integrity sha512-OR7wxFetvHruLkQABeQac7jFdTOs+MwXzsuccOuMItva9GBANPd2VX8NgJ3pdvuGSL23c5cVId9jsvuKgulBiQ==
   dependencies:
     "@fullhuman/postcss-purgecss" "^2.1.2"
     autoprefixer "^9.4.5"
@@ -7404,15 +7380,15 @@ watchpack-chokidar2@^2.0.0:
   dependencies:
     chokidar "^2.1.8"
 
-watchpack@^1.6.1:
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.7.2.tgz#c02e4d4d49913c3e7e122c3325365af9d331e9aa"
-  integrity sha512-ymVbbQP40MFTp+cNMvpyBpBtygHnPzPkHqoIwRRj/0B8KhqQwV8LaKjtbaxF2lK4vl8zN9wCxS46IFCU5K4W0g==
+watchpack@^1.7.4:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.7.4.tgz#6e9da53b3c80bb2d6508188f5b200410866cd30b"
+  integrity sha512-aWAgTW4MoSJzZPAicljkO1hsi1oKj/RRq/OJQh2PKI2UKL04c2Bs+MBOB+BBABHTXJpf9mCwHN7ANCvYsvY2sg==
   dependencies:
     graceful-fs "^4.1.2"
     neo-async "^2.5.0"
   optionalDependencies:
-    chokidar "^3.4.0"
+    chokidar "^3.4.1"
     watchpack-chokidar2 "^2.0.0"
 
 webpack-cli@^3.3.11:
@@ -7450,10 +7426,10 @@ webpack-sources@^1.1.0, webpack-sources@^1.4.0, webpack-sources@^1.4.1:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@^4.42.1:
-  version "4.43.0"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.43.0.tgz#c48547b11d563224c561dad1172c8aa0b8a678e6"
-  integrity sha512-GW1LjnPipFW2Y78OOab8NJlCflB7EFskMih2AHdvjbpKMeDJqEgSx24cXXXiPS65+WSwVyxtDsJH6jGX2czy+g==
+webpack@^4.44.0:
+  version "4.44.0"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.44.0.tgz#3b08f88a89470175f036f4a9496b8a0428668802"
+  integrity sha512-wAuJxK123sqAw31SpkPiPW3iKHgFUiKvO7E7UZjtdExcsRe3fgav4mvoMM7vvpjLHVoJ6a0Mtp2fzkoA13e0Zw==
   dependencies:
     "@webassemblyjs/ast" "1.9.0"
     "@webassemblyjs/helper-module-context" "1.9.0"
@@ -7463,7 +7439,7 @@ webpack@^4.42.1:
     ajv "^6.10.2"
     ajv-keywords "^3.4.1"
     chrome-trace-event "^1.0.2"
-    enhanced-resolve "^4.1.0"
+    enhanced-resolve "^4.3.0"
     eslint-scope "^4.0.3"
     json-parse-better-errors "^1.0.2"
     loader-runner "^2.4.0"
@@ -7476,7 +7452,7 @@ webpack@^4.42.1:
     schema-utils "^1.0.0"
     tapable "^1.1.3"
     terser-webpack-plugin "^1.4.3"
-    watchpack "^1.6.1"
+    watchpack "^1.7.4"
     webpack-sources "^1.4.1"
 
 what-the-diff@^0.6.0:
