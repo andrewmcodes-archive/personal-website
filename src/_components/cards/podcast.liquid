@@ -36,7 +36,7 @@ mocks:
       <div class="flex items-center mt-6">
         <div class="flex text-sm leading-5 text-gray-500">
           {% svg "assets/images/icons/episodes.svg" %}
-          <span class="pl-2">{{ podcasts[show.name].episodes | size }}</span>
+          <span class="pl-2">{{ show.episodes | size }}</span>
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 ---
+priority: 2
 title: Remote Ruby
 name: remote_ruby
 subtitle: Three Rubyists having conversations and interviewing others about Ruby
@@ -7,8 +8,10 @@ image_url: https://res.cloudinary.com/andrewmcodes/image/upload/v1593758052/podc
 show_url: https://remoteruby.transistor.fm
 description: Three Rubyists having conversations and interviewing others about
   Ruby and web development.
-priority: 2
 episodes:
+  - title: Andrew needs a job and TailwindCSS ViewComponents
+    date: 2020-07-03T12:00:59.708Z
+    url: https://share.transistor.fm/s/92bfc345
   - title: Advanced StimulusReflex & CableReady in real-world apps
     url: https://share.transistor.fm/s/77a6990e
     date: 2020-06-19 12:00:00.000000000 Z
@@ -91,7 +94,7 @@ episodes:
     date: 2019-09-20 13:00:00.000000000 Z
 ---
 
-{% assign show = site.data.podcasts.remote_ruby %}
-{% for episode in show.episodes %}
+{% assign episodes = page.episodes | sort: "date" | reverse %}
+{% for episode in episodes %}
 {% render "shared/list_item", url: episode.url, text: episode.title %}
 {% endfor %}

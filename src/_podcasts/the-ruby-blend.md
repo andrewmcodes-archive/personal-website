@@ -76,6 +76,7 @@ episodes:
     date: 2020-01-13 23:30:00.000000000 Z
 ---
 
-{% for episode in page.episodes %}
+{% assign episodes = page.episodes | sort: "date" | reverse %}
+{% for episode in episodes %}
 {% render "shared/list_item", url: episode.url, text: episode.title %}
 {% endfor %}

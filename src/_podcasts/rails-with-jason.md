@@ -14,7 +14,7 @@ episodes:
     date: 2019-08-21 10:00:00.000000000 Z
 ---
 
-{% assign show = site.data.podcasts.rails_with_jason %}
-{% for episode in show.episodes %}
+{% assign episodes = page.episodes | sort: "date" | reverse %}
+{% for episode in episodes %}
 {% render "shared/list_item", url: episode.url, text: episode.title %}
 {% endfor %}

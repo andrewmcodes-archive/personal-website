@@ -13,7 +13,7 @@ episodes:
 priority: 7
 ---
 
-{% assign show = site.data.podcasts.ruby_testing_podcast %}
-{% for episode in show.episodes %}
+{% assign episodes = page.episodes | sort: "date" | reverse %}
+{% for episode in episodes %}
 {% render "shared/list_item", url: episode.url, text: episode.title %}
 {% endfor %}
