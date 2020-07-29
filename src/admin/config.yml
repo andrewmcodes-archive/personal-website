@@ -161,18 +161,18 @@ collections:
         file: "src/_data/projects.yml"
         fields:
           - label: "Open Source"
-            name: "oss"
+            name: "projects"
             widget: "list"
             fields:
               - { label: Name, name: name, widget: string }
               - { label: Active, name: active, widget: boolean, default: true, required: false }
-              - { label: Subtitle, name: subtitle, widget: string }
+              - { label: Description, name: description, widget: string }
               - { label: Url, name: url, widget: string }
               - { label: Icon, name: icon, widget: string }
-              - label: "Involvement"
-                name: "involvement"
+              - label: "Category"
+                name: "category"
                 widget: "select"
-                options: ["creator", "maintainer", "contributor"]
+                options: ["maintainer", "contributor", "misc", "lists", "demo"]
 
       - label: "Categories"
         name: "categories"
