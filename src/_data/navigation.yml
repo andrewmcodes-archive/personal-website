@@ -47,9 +47,6 @@ community:
     link: /uses/
     target: _self
 professional:
-  - name: Hire Me
-    link: /contact/
-    target: _self
   - name: Experience
     link: /experience/
     target: _self
@@ -72,3 +69,16 @@ site:
   - name: Site Repository
     link: https://github.com/andrewmcodes/personal-website
     target: _blank
+quick_nav:
+  - name: Learn more about me
+    link: /about/
+    target: _self
+  - name: View digital resume
+    link: /experience/
+    target: _self
+  - name: View some of my projects
+    link: /projects/
+    target: _self
+  - name: Checkout podcast appearances
+    link: /podcasts/
+    target: _self

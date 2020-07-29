@@ -22,7 +22,7 @@ variables:
         </a>
         <div class="hidden space-x-6 lg:ml-6 lg:flex">
           {% for item in navigation.navbar %}
-            {% render "shared/nav_link", mobile: false, url: item.link, text: item.name, page_url: page.url %}
+          {% render "shared/nav_link", mobile: false, url: item.link, text: item.name, page_layout: page.layout, page_url: page.url, page: page %}
           {% endfor %}
         </div>
       </div>

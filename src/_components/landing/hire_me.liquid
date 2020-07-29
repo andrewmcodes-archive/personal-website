@@ -7,14 +7,10 @@ description: The 'hire me' section of the landing page.
     <div class="absolute inset-0 -mt-12 bg-gray-900 sm:-mt-16 h-1/2"></div>
     <div class="relative max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
       <div class="max-w-lg mx-auto overflow-hidden rounded-lg shadow-lg lg:max-w-none lg:flex">
-        <div class="px-6 py-8 bg-white lg:flex-shrink-1 lg:p-12">
+        <div class="w-full px-6 py-8 bg-white lg:flex-shrink-1 lg:p-12">
           <h3 class="text-2xl font-extrabold leading-8 text-gray-900 sm:text-3xl sm:leading-9">
-            Hire Me!
+            Welcome to my site!
           </h3>
-          <p class="mt-6 prose">
-            I am currently searching for a role as a full stack Ruby on Rails developer. My dream job would be working
-            with talented engineers on a product, not just the front or back end of a stack.
-          </p>
           <div class="mt-8">
             <div class="flex items-center">
               <h4
@@ -24,22 +20,14 @@ description: The 'hire me' section of the landing page.
               <div class="flex-1 border-t-2 border-gray-200"></div>
             </div>
             <div class="prose">
-              <ul>
-                <li>
-                  <a href="/about/">Learn more about me</a>
+              <ul class="grid grid-cols-1 gap-1 lg:grid-cols-2">
+                {% for item in quick_nav %}
+                  <li>
+                  <a href="{{ item.link }}" target="{{item.target }}" class="text-base leading-6 text-gray-300 hover:text-white">
+                    {{ item.name }}
+                  </a>
                 </li>
-                <li>
-                  <a href="/experience/">View digital resume</a>
-                </li>
-                <li>
-                  <a href="/assets/pdf/Andrew_Mason_Resume.pdf" target="_blank">View PDF resume</a>
-                </li>
-                <li>
-                  <a href="/projects/">View some of my projects</a>
-                </li>
-                <li>
-                  <a href="/projects/">Check out podcast appearances</a>
-                </li>
+                {% endfor %}
               </ul>
             </div>
           </div>
