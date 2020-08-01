@@ -27,15 +27,17 @@ permalink: /projects/
     {% rendercontent 'shared/container', variation: "wrapper" %}
       <div class="grid grid-cols-1 gap-5 mt-3 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {% for project in oss_creator_projects %}
-          <a href="{{ project.url }}" target="_blank" class="flex items-center col-span-1 transition-transform duration-300 ease-in-out transform bg-white border border-gray-200 rounded-lg shadow sm:shadow-md md:shadow-lg hover:-translate-y-2 hover:shadow-xl">
-              <div class="flex items-center justify-center flex-shrink-0 w-16 text-sm font-medium leading-5 text-center text-gray-800">
-                {% svg "assets/images/icons/{{ project.icon }}.svg" %}
-              </div>
-              <div class="flex-1 px-4 py-2">
-                <h4 class="text-sm font-medium leading-5 text-gray-900">{{ project.name }}</h4>
-                <p class="text-sm leading-5 text-gray-500 text-wrap">{{ project.description }}</p>
-              </div>
-          </a>
+          <article>
+            <a href="{{ project.url }}" target="_blank" class="flex items-center col-span-1 transition-transform duration-300 ease-in-out transform bg-white border border-gray-200 rounded-lg shadow sm:shadow-md md:shadow-lg hover:-translate-y-2 hover:shadow-xl">
+                <div class="flex items-center justify-center flex-shrink-0 w-16 text-sm font-medium leading-5 text-center text-gray-800">
+                  {% svg "assets/images/icons/{{ project.icon }}.svg" %}
+                </div>
+                <div class="flex-1 px-4 py-2">
+                  <h4 class="text-sm font-medium leading-5 text-gray-900">{{ project.name }}</h4>
+                  <p class="text-sm leading-5 text-gray-500 text-wrap">{{ project.description }}</p>
+                </div>
+            </a>
+          </article>
         {% endfor %}
       </div>
     {% endrendercontent %}
