@@ -33,4 +33,5 @@ group :bridgetown_plugins do
   gem "bridgetown-inline-svg", "~> 1.1.0"
   gem "bridgetown-quick-search", "~> 1.0.3"
   gem "bridgetown-seo-tag", "~> 3.0.5"
+  gem "bridgetown-plausible-tag", "~> 0.0.1"
 end

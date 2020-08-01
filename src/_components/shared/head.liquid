@@ -27,7 +27,6 @@ variables:
 <link rel="prefetch" href="/about/" />
 <link rel="stylesheet" href="{% webpack_path css %}" />
 <script src="{% webpack_path js %}" defer></script>
-<script async defer data-domain="andrewm.codes" src="https://plausible.io/js/plausible.js"></script>
-
+{% plausible %}
 {% seo %}
 {% feed_meta %}

@@ -39,3 +39,6 @@ defaults:
 
 svg:
   optimize: true
+
+plausible:
+  domain: andrewm.codes
