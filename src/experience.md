@@ -5,8 +5,7 @@ permalink: /experience/
 ---
 
 <div class="bg-white border-b border-gray-200">
-  <div class="flex flex-wrap items-center justify-between mb-4 sm:flex-no-wrap">
-      <strong>I am available to hire!</strong>
+  <div class="flex flex-wrap items-center justify-end mb-4 sm:flex-no-wrap">
       <div>
         <a href="/contact/">Contact Me</a>
         <a class="ml-4" href="/assets/pdf/Andrew_Mason_Resume.pdf" target="_blank">Download Resume</a>

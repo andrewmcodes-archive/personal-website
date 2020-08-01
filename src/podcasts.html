@@ -5,7 +5,7 @@ permalink: /podcasts/
 ---
 
 {% rendercontent "shared/grid" %}
-  {% for show in site.data.podcasts.shows %}
-    {% render "cards/podcast", show: show %}
+  {% for show in site.podcasts %}
+    {% render "cards/podcast", show: show, podcasts: site.data.podcasts %}
   {% endfor %}
 {% endrendercontent %}

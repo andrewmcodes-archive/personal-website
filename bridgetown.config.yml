@@ -11,6 +11,13 @@ pagination:
   enabled: true
   per_page: 6
 
+collections:
+  podcasts:
+    output: true
+    permalink: /:collection/:path
+    sort_by: priority
+    name: Podcasts
+
 defaults:
   - scope:
       path: _posts
@@ -25,6 +32,10 @@ defaults:
       path: "assets/images"
     values:
       image: true
+  - scope:
+      path: _podcasts
+    values:
+      layout: podcasts
 
 svg:
   optimize: true

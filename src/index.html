@@ -4,6 +4,7 @@ layout: default
 
 <div class="mb-4">
   {% render "landing/splash" %}
-  {% render "landing/hire_me" %}
+  {% render "landing/hire_me", quick_nav: site.data.navigation.quick_nav %}
+  <!-- {% render "landing/pages" %} -->
   {% render "landing/posts", articles: site.posts %}
 </div>
