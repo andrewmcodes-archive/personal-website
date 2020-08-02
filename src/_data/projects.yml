@@ -4,7 +4,8 @@ projects:
     icon: rails
     active: true
     url: https://github.com/rubyforgood/casa
-    description: Volunteer management system for nonprofit CASA, which serves foster youth in counties across America.
+    description: Volunteer management system for nonprofit CASA, which serves foster
+      youth in counties across America.
   - name: dotfiles
     category: misc
     icon: github
@@ -168,7 +169,8 @@ projects:
     category: contributor
     active: true
   - name: redux-form
-    description: A Higher Order Component using react-redux to keep form state in a Redux store
+    description: A Higher Order Component using react-redux to keep form state in a
+      Redux store
     url: https://github.com/redux-form/redux-form
     icon: javascript
     category: contributor
@@ -177,12 +179,14 @@ projects:
     active: false
     url: https://github.com/gitcoinco/code_fund_ads
     icon: rails
-    description: CodeFund is an open source platform that helps fund maintainers, bloggers, and builders through non-tracking ethical ads
+    description: CodeFund is an open source platform that helps fund maintainers,
+      bloggers, and builders through non-tracking ethical ads
     category: maintainer
   - active: true
     name: attractor
     url: https://github.com/julianrubisch/attractor
-    description: code complexity metrics visualization and exploration tool for ruby and javascript
+    description: code complexity metrics visualization and exploration tool for ruby
+      and javascript
     icon: ruby
     category: contributor
   - active: true
@@ -246,7 +250,7 @@ projects:
     icon: javascript
     category: maintainer
     active: true
-  - name: "Rails + Coverband Demo"
+  - name: Rails + Coverband Demo
     description: Demo Rails app showcasing how to integrate Coverband
     url: https://github.com/andrewmcodes/rails_coverage_tools
     icon: rails
@@ -258,3 +262,9 @@ projects:
     icon: rails
     category: maintainer
     active: false
+  - active: true
+    url: https://github.com/andrewmcodes/bridgetown-plausible-tag
+    name: bridgetown-plausible-tag
+    description: A Bridgetown plugin to integrate Plausible analytics
+    icon: ruby
+    category: maintainer
