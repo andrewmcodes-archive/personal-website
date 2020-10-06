@@ -1,11 +1,11 @@
 ---
-title: About
 layout: content
+title: About
 permalink: /about/
 cloudinary_id: personal/headshot
 cloudinary_alt: Andrew Mason Headshot
+intro_paragraph: ""
 ---
-
 <img alt="{{ page.cloudinary_alt }}" class="w-48 h-48 mx-auto rounded-full" src="{{ page.cloudinary_id | cloudinary_url: "medium" }}" />
 
 **Andrew Mason**: Full Stack Ruby on Rails Developer
